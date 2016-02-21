@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes> 
+
+	<include name="HomeWidgets_ListVars">
+		<left>-155</left>
+		<top>220</top>
+		<width>1900</width>
+		<height>800</height>
+		<onup>SetProperty(Movement,1)</onup>
+		<ondown>ClearProperty(Movement)</ondown>
+		<viewtype label="535">List</viewtype>
+		<scrolltime tween="Quadratic" easing="out">300</scrolltime>
+		<orientation>horizontal</orientation>
+		<preloaditems>2</preloaditems>
+		<focusposition>1</focusposition>
+	</include>
+
+	<include name="HomeWidgetsLists_VideoLabels">
+		<control type="label">
+			<left>215</left>
+			<top>200</top>
+			<height>30</height>
+			<width>800</width>
+			<textcolor>white</textcolor>
+			<shadowcolor>99000000</shadowcolor>
+			<font>FontSize_38</font>
+			<align>left</align>
+			<label>$INFO[ListItem.label]</label>
+		</control>
+		<control type="label">
+			<left>215</left>
+			<top>230</top>
+			<height>30</height>
+			<width>800</width>
+			<textcolor>77white</textcolor>
+			<shadowcolor>99000000</shadowcolor>
+			<font>FontSize_22</font>
+			<align>left</align>
+			<label>$INFO[ListItem.Property(Label3)]</label>
+		</control>
+		<control type="label">
+			<left>215</left>
+			<top>232</top>
+			<height>30</height>
+			<width>800</width>
+			<textcolor>77white</textcolor>
+			<shadowcolor>99000000</shadowcolor>
+			<font>FontSize_22</font>
+			<align>left</align>
+			<label>$INFO[ListItem.Label2]</label>
+			<animation effect="slide" start="0,0" end="45,0" condition="IsEmpty(ListItem.Property(Label3))">Conditional</animation>
+		</control>
+		<control type="image">
+			<left>216</left>
+			<top>237</top>
+			<width>34</width>
+			<height>22</height>
+			<colordiffuse>77white</colordiffuse>
+			<aspectratio align="left" aligny="center">stretch</aspectratio>
+			<texture>$VAR[HomeWidgetsDefFlags]</texture>
+		</control>
+	</include>
+
+	<include name="HomeWidgetsLists_MusicLabels">
+		<control type="label">
+			<left>255</left>
+			<top>165</top>
+			<height>30</height>
+			<width>800</width>
+			<textcolor>white</textcolor>
+			<shadowcolor>99000000</shadowcolor>
+			<font>FontSize_38</font>
+			<align>left</align>
+			<label>$INFO[ListItem.label]</label>
+		</control>
+		<control type="label">
+			<left>257</left>
+			<top>195</top>
+			<height>30</height>
+			<width>800</width>
+			<textcolor>77white</textcolor>
+			<shadowcolor>99000000</shadowcolor>
+			<font>FontSize_22</font>
+			<align>left</align>
+			<label>$INFO[ListItem.Label2]</label>
+		</control>
+		<control type="label">
+			<left>257</left>
+			<top>195</top>
+			<height>30</height>
+			<width>800</width>
+			<textcolor>77white</textcolor>
+			<shadowcolor>99000000</shadowcolor>
+			<font>FontSize_22</font>
+			<align>left</align>
+			<label>$INFO[ListItem.Property(Label3)]</label>
+		</control>
+	</include>
+
+	<include name="HomeWidgets_WeatherAndClock">
+		<control type="group">
+			<left>25</left>
+			<top>45</top>
+			<include>WeatherAndClock</include>
+		</control>
+	</include>
+
+	<variable name="HomeWidgetsFanart">
+		<value condition="Control.HasFocus(81)">$INFO[Container(81).ListItem.Property(FanartImage)]</value>
+		<value condition="Control.HasFocus(82)">$INFO[Container(82).ListItem.Property(FanartImage)]</value>
+		<value condition="Control.HasFocus(83)">$INFO[Container(83).ListItem.Property(FanartImage)]</value>
+	</variable>
+
+	<variable name="HomeWidgetsDefFlags">
+		<value condition="Control.HasFocus(81) + IntegerGreaterThan(Container(81).ListItem.Property(VideoResolution),719)">flags/def/hd.png</value>
+		<value condition="Control.HasFocus(81) + !IsEmpty(Container(81).ListItem.Property(VideoResolution))">flags/def/sd.png</value>
+		<value condition="Control.HasFocus(82) + IntegerGreaterThan(Container(82).ListItem.Property(VideoResolution),719)">flags/def/hd.png</value>
+		<value condition="Control.HasFocus(82) + !IsEmpty(Container(82).ListItem.Property(VideoResolution))">flags/def/sd.png</value>
+		<value condition="Control.HasFocus(83) + IntegerGreaterThan(Container(83).ListItem.Property(VideoResolution),719)">flags/def/hd.png</value>
+		<value condition="Control.HasFocus(83) + !IsEmpty(Container(83).ListItem.Property(VideoResolution))">flags/def/sd.png</value>
+	</variable>
+
+
+	<variable name="WidgetLabel-1">
+		<value condition="StringCompare(Window(home).Property(SubMenu),1)">$INFO[Skin.String(1-WidgetLabel-1)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),2)">$INFO[Skin.String(2-WidgetLabel-1)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),3)">$INFO[Skin.String(3-WidgetLabel-1)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),4)">$INFO[Skin.String(4-WidgetLabel-1)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),5)">$INFO[Skin.String(5-WidgetLabel-1)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),6)">$INFO[Skin.String(6-WidgetLabel-1)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),7)">$INFO[Skin.String(7-WidgetLabel-1)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),8)">$INFO[Skin.String(8-WidgetLabel-1)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),9)">$INFO[Skin.String(9-WidgetLabel-1)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),10)">$INFO[Skin.String(10-WidgetLabel-1)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),11)">$INFO[Skin.String(11-WidgetLabel-1)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),12)">$INFO[Skin.String(12-WidgetLabel-1)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),13)">$INFO[Skin.String(13-WidgetLabel-1)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),14)">$INFO[Skin.String(14-WidgetLabel-1)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),15)">$INFO[Skin.String(15-WidgetLabel-1)]</value>
+		<value>$LOCALIZE[31330] 1</value>
+	</variable>
+	<variable name="WidgetLabel-2">
+		<value condition="StringCompare(Window(home).Property(SubMenu),1)">$INFO[Skin.String(1-WidgetLabel-2)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),2)">$INFO[Skin.String(2-WidgetLabel-2)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),3)">$INFO[Skin.String(3-WidgetLabel-2)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),4)">$INFO[Skin.String(4-WidgetLabel-2)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),5)">$INFO[Skin.String(5-WidgetLabel-2)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),6)">$INFO[Skin.String(6-WidgetLabel-2)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),7)">$INFO[Skin.String(7-WidgetLabel-2)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),8)">$INFO[Skin.String(8-WidgetLabel-2)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),9)">$INFO[Skin.String(9-WidgetLabel-2)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),10)">$INFO[Skin.String(10-WidgetLabel-2)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),11)">$INFO[Skin.String(11-WidgetLabel-2)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),12)">$INFO[Skin.String(12-WidgetLabel-2)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),13)">$INFO[Skin.String(13-WidgetLabel-2)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),14)">$INFO[Skin.String(14-WidgetLabel-2)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),15)">$INFO[Skin.String(15-WidgetLabel-2)]</value>
+		<value>$LOCALIZE[31330] 2</value>
+	</variable>
+	<variable name="WidgetLabel-3">
+		<value condition="StringCompare(Window(home).Property(SubMenu),1)">$INFO[Skin.String(1-WidgetLabel-3)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),2)">$INFO[Skin.String(2-WidgetLabel-3)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),3)">$INFO[Skin.String(3-WidgetLabel-3)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),4)">$INFO[Skin.String(4-WidgetLabel-3)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),5)">$INFO[Skin.String(5-WidgetLabel-3)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),6)">$INFO[Skin.String(6-WidgetLabel-3)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),7)">$INFO[Skin.String(7-WidgetLabel-3)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),8)">$INFO[Skin.String(8-WidgetLabel-3)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),9)">$INFO[Skin.String(9-WidgetLabel-3)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),10)">$INFO[Skin.String(10-WidgetLabel-3)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),11)">$INFO[Skin.String(11-WidgetLabel-3)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),12)">$INFO[Skin.String(12-WidgetLabel-3)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),13)">$INFO[Skin.String(13-WidgetLabel-3)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),14)">$INFO[Skin.String(14-WidgetLabel-3)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),15)">$INFO[Skin.String(15-WidgetLabel-3)]</value>
+		<value>$LOCALIZE[31330] 3</value>
+	</variable>
+	<variable name="WidgetLabel-4">
+		<value condition="StringCompare(Window(home).Property(SubMenu),1)">$INFO[Skin.String(1-WidgetLabel-4)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),2)">$INFO[Skin.String(2-WidgetLabel-4)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),3)">$INFO[Skin.String(3-WidgetLabel-4)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),4)">$INFO[Skin.String(4-WidgetLabel-4)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),5)">$INFO[Skin.String(5-WidgetLabel-4)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),6)">$INFO[Skin.String(6-WidgetLabel-4)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),7)">$INFO[Skin.String(7-WidgetLabel-4)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),8)">$INFO[Skin.String(8-WidgetLabel-4)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),9)">$INFO[Skin.String(9-WidgetLabel-4)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),10)">$INFO[Skin.String(10-WidgetLabel-4)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),11)">$INFO[Skin.String(11-WidgetLabel-4)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),12)">$INFO[Skin.String(12-WidgetLabel-4)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),13)">$INFO[Skin.String(13-WidgetLabel-4)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),14)">$INFO[Skin.String(14-WidgetLabel-4)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),15)">$INFO[Skin.String(15-WidgetLabel-4)]</value>
+		<value>$LOCALIZE[31330] 4</value>
+	</variable>
+	<variable name="WidgetLabel-5">
+		<value condition="StringCompare(Window(home).Property(SubMenu),1)">$INFO[Skin.String(1-WidgetLabel-5)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),2)">$INFO[Skin.String(2-WidgetLabel-5)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),3)">$INFO[Skin.String(3-WidgetLabel-5)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),4)">$INFO[Skin.String(4-WidgetLabel-5)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),5)">$INFO[Skin.String(5-WidgetLabel-5)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),6)">$INFO[Skin.String(6-WidgetLabel-5)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),7)">$INFO[Skin.String(7-WidgetLabel-5)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),8)">$INFO[Skin.String(8-WidgetLabel-5)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),9)">$INFO[Skin.String(9-WidgetLabel-5)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),10)">$INFO[Skin.String(10-WidgetLabel-5)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),11)">$INFO[Skin.String(11-WidgetLabel-5)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),12)">$INFO[Skin.String(12-WidgetLabel-5)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),13)">$INFO[Skin.String(13-WidgetLabel-5)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),14)">$INFO[Skin.String(14-WidgetLabel-5)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),15)">$INFO[Skin.String(15-WidgetLabel-5)]</value>
+		<value>$LOCALIZE[31330] 5</value>
+	</variable>
+	<variable name="WidgetLabel-6">
+		<value condition="StringCompare(Window(home).Property(SubMenu),1)">$INFO[Skin.String(1-WidgetLabel-6)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),2)">$INFO[Skin.String(2-WidgetLabel-6)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),3)">$INFO[Skin.String(3-WidgetLabel-6)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),4)">$INFO[Skin.String(4-WidgetLabel-6)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),5)">$INFO[Skin.String(5-WidgetLabel-6)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),6)">$INFO[Skin.String(6-WidgetLabel-6)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),7)">$INFO[Skin.String(7-WidgetLabel-6)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),8)">$INFO[Skin.String(8-WidgetLabel-6)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),9)">$INFO[Skin.String(9-WidgetLabel-6)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),10)">$INFO[Skin.String(10-WidgetLabel-6)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),11)">$INFO[Skin.String(11-WidgetLabel-6)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),12)">$INFO[Skin.String(12-WidgetLabel-6)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),13)">$INFO[Skin.String(13-WidgetLabel-6)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),14)">$INFO[Skin.String(14-WidgetLabel-6)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),15)">$INFO[Skin.String(15-WidgetLabel-6)]</value>
+		<value>$LOCALIZE[31330] 6</value>
+	</variable>
+	<variable name="WidgetLabel-7">
+		<value condition="StringCompare(Window(home).Property(SubMenu),1)">$INFO[Skin.String(1-WidgetLabel-7)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),2)">$INFO[Skin.String(2-WidgetLabel-7)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),3)">$INFO[Skin.String(3-WidgetLabel-7)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),4)">$INFO[Skin.String(4-WidgetLabel-7)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),5)">$INFO[Skin.String(5-WidgetLabel-7)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),6)">$INFO[Skin.String(6-WidgetLabel-7)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),7)">$INFO[Skin.String(7-WidgetLabel-7)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),8)">$INFO[Skin.String(8-WidgetLabel-7)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),9)">$INFO[Skin.String(9-WidgetLabel-7)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),10)">$INFO[Skin.String(10-WidgetLabel-7)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),11)">$INFO[Skin.String(11-WidgetLabel-7)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),12)">$INFO[Skin.String(12-WidgetLabel-7)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),13)">$INFO[Skin.String(13-WidgetLabel-7)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),14)">$INFO[Skin.String(14-WidgetLabel-7)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),15)">$INFO[Skin.String(15-WidgetLabel-7)]</value>
+		<value>$LOCALIZE[31330] 7</value>
+	</variable>
+	<variable name="WidgetLabel-8">
+		<value condition="StringCompare(Window(home).Property(SubMenu),1)">$INFO[Skin.String(1-WidgetLabel-8)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),2)">$INFO[Skin.String(2-WidgetLabel-8)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),3)">$INFO[Skin.String(3-WidgetLabel-8)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),4)">$INFO[Skin.String(4-WidgetLabel-8)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),5)">$INFO[Skin.String(5-WidgetLabel-8)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),6)">$INFO[Skin.String(6-WidgetLabel-8)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),7)">$INFO[Skin.String(7-WidgetLabel-8)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),8)">$INFO[Skin.String(8-WidgetLabel-8)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),9)">$INFO[Skin.String(9-WidgetLabel-8)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),10)">$INFO[Skin.String(10-WidgetLabel-8)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),11)">$INFO[Skin.String(11-WidgetLabel-8)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),12)">$INFO[Skin.String(12-WidgetLabel-8)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),13)">$INFO[Skin.String(13-WidgetLabel-8)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),14)">$INFO[Skin.String(14-WidgetLabel-8)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),15)">$INFO[Skin.String(15-WidgetLabel-8)]</value>
+		<value>$LOCALIZE[31330] 8</value>
+	</variable>
+	<variable name="WidgetAction-1">
+		<value condition="StringCompare(Window(home).Property(SubMenu),1)">$INFO[Skin.String(1-WidgetList-1)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),2)">$INFO[Skin.String(2-WidgetList-1)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),3)">$INFO[Skin.String(3-WidgetList-1)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),4)">$INFO[Skin.String(4-WidgetList-1)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),5)">$INFO[Skin.String(5-WidgetList-1)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),6)">$INFO[Skin.String(6-WidgetList-1)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),7)">$INFO[Skin.String(7-WidgetList-1)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),8)">$INFO[Skin.String(8-WidgetList-1)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),9)">$INFO[Skin.String(9-WidgetList-1)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),10)">$INFO[Skin.String(10-WidgetList-1)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),11)">$INFO[Skin.String(11-WidgetList-1)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),12)">$INFO[Skin.String(12-WidgetList-1)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),13)">$INFO[Skin.String(13-WidgetList-1)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),14)">$INFO[Skin.String(14-WidgetList-1)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),15)">$INFO[Skin.String(15-WidgetList-1)]</value>
+	</variable>
+	<variable name="WidgetAction-2">
+		<value condition="StringCompare(Window(home).Property(SubMenu),1)">$INFO[Skin.String(1-WidgetList-2)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),2)">$INFO[Skin.String(2-WidgetList-2)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),3)">$INFO[Skin.String(3-WidgetList-2)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),4)">$INFO[Skin.String(4-WidgetList-2)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),5)">$INFO[Skin.String(5-WidgetList-2)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),6)">$INFO[Skin.String(6-WidgetList-2)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),7)">$INFO[Skin.String(7-WidgetList-2)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),8)">$INFO[Skin.String(8-WidgetList-2)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),9)">$INFO[Skin.String(9-WidgetList-2)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),10)">$INFO[Skin.String(10-WidgetList-2)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),11)">$INFO[Skin.String(11-WidgetList-2)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),12)">$INFO[Skin.String(12-WidgetList-2)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),13)">$INFO[Skin.String(13-WidgetList-2)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),14)">$INFO[Skin.String(14-WidgetList-2)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),15)">$INFO[Skin.String(15-WidgetList-2)]</value>
+	</variable>
+	<variable name="WidgetAction-3">
+		<value condition="StringCompare(Window(home).Property(SubMenu),1)">$INFO[Skin.String(1-WidgetList-3)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),2)">$INFO[Skin.String(2-WidgetList-3)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),3)">$INFO[Skin.String(3-WidgetList-3)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),4)">$INFO[Skin.String(4-WidgetList-3)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),5)">$INFO[Skin.String(5-WidgetList-3)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),6)">$INFO[Skin.String(6-WidgetList-3)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),7)">$INFO[Skin.String(7-WidgetList-3)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),8)">$INFO[Skin.String(8-WidgetList-3)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),9)">$INFO[Skin.String(9-WidgetList-3)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),10)">$INFO[Skin.String(10-WidgetList-3)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),11)">$INFO[Skin.String(11-WidgetList-3)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),12)">$INFO[Skin.String(12-WidgetList-3)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),13)">$INFO[Skin.String(13-WidgetList-3)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),14)">$INFO[Skin.String(14-WidgetList-3)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),15)">$INFO[Skin.String(15-WidgetList-3)]</value>
+	</variable>
+	<variable name="WidgetAction-4">
+		<value condition="StringCompare(Window(home).Property(SubMenu),1)">$INFO[Skin.String(1-WidgetList-4)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),2)">$INFO[Skin.String(2-WidgetList-4)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),3)">$INFO[Skin.String(3-WidgetList-4)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),4)">$INFO[Skin.String(4-WidgetList-4)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),5)">$INFO[Skin.String(5-WidgetList-4)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),6)">$INFO[Skin.String(6-WidgetList-4)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),7)">$INFO[Skin.String(7-WidgetList-4)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),8)">$INFO[Skin.String(8-WidgetList-4)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),9)">$INFO[Skin.String(9-WidgetList-4)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),10)">$INFO[Skin.String(10-WidgetList-4)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),11)">$INFO[Skin.String(11-WidgetList-4)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),12)">$INFO[Skin.String(12-WidgetList-4)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),13)">$INFO[Skin.String(13-WidgetList-4)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),14)">$INFO[Skin.String(14-WidgetList-4)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),15)">$INFO[Skin.String(15-WidgetList-4)]</value>
+	</variable>
+	<variable name="WidgetAction-5">
+		<value condition="StringCompare(Window(home).Property(SubMenu),1)">$INFO[Skin.String(1-WidgetList-5)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),2)">$INFO[Skin.String(2-WidgetList-5)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),3)">$INFO[Skin.String(3-WidgetList-5)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),4)">$INFO[Skin.String(4-WidgetList-5)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),5)">$INFO[Skin.String(5-WidgetList-5)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),6)">$INFO[Skin.String(6-WidgetList-5)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),7)">$INFO[Skin.String(7-WidgetList-5)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),8)">$INFO[Skin.String(8-WidgetList-5)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),9)">$INFO[Skin.String(9-WidgetList-5)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),10)">$INFO[Skin.String(10-WidgetList-5)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),11)">$INFO[Skin.String(11-WidgetList-5)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),12)">$INFO[Skin.String(12-WidgetList-5)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),13)">$INFO[Skin.String(13-WidgetList-5)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),14)">$INFO[Skin.String(14-WidgetList-5)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),15)">$INFO[Skin.String(15-WidgetList-5)]</value>
+	</variable>
+	<variable name="WidgetAction-6">
+		<value condition="StringCompare(Window(home).Property(SubMenu),1)">$INFO[Skin.String(1-WidgetList-6)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),2)">$INFO[Skin.String(2-WidgetList-6)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),3)">$INFO[Skin.String(3-WidgetList-6)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),4)">$INFO[Skin.String(4-WidgetList-6)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),5)">$INFO[Skin.String(5-WidgetList-6)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),6)">$INFO[Skin.String(6-WidgetList-6)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),7)">$INFO[Skin.String(7-WidgetList-6)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),8)">$INFO[Skin.String(8-WidgetList-6)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),9)">$INFO[Skin.String(9-WidgetList-6)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),10)">$INFO[Skin.String(10-WidgetList-6)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),11)">$INFO[Skin.String(11-WidgetList-6)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),12)">$INFO[Skin.String(12-WidgetList-6)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),13)">$INFO[Skin.String(13-WidgetList-6)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),14)">$INFO[Skin.String(14-WidgetList-6)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),15)">$INFO[Skin.String(15-WidgetList-6)]</value>
+	</variable>
+	<variable name="WidgetAction-7">
+		<value condition="StringCompare(Window(home).Property(SubMenu),1)">$INFO[Skin.String(1-WidgetList-7)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),2)">$INFO[Skin.String(2-WidgetList-7)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),3)">$INFO[Skin.String(3-WidgetList-7)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),4)">$INFO[Skin.String(4-WidgetList-7)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),5)">$INFO[Skin.String(5-WidgetList-7)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),6)">$INFO[Skin.String(6-WidgetList-7)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),7)">$INFO[Skin.String(7-WidgetList-7)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),8)">$INFO[Skin.String(8-WidgetList-7)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),9)">$INFO[Skin.String(9-WidgetList-7)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),10)">$INFO[Skin.String(10-WidgetList-7)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),11)">$INFO[Skin.String(11-WidgetList-7)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),12)">$INFO[Skin.String(12-WidgetList-7)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),13)">$INFO[Skin.String(13-WidgetList-7)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),14)">$INFO[Skin.String(14-WidgetList-7)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),15)">$INFO[Skin.String(15-WidgetList-7)]</value>
+	</variable>
+	<variable name="WidgetAction-8">
+		<value condition="StringCompare(Window(home).Property(SubMenu),1)">$INFO[Skin.String(1-WidgetList-8)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),2)">$INFO[Skin.String(2-WidgetList-8)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),3)">$INFO[Skin.String(3-WidgetList-8)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),4)">$INFO[Skin.String(4-WidgetList-8)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),5)">$INFO[Skin.String(5-WidgetList-8)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),6)">$INFO[Skin.String(6-WidgetList-8)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),7)">$INFO[Skin.String(7-WidgetList-8)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),8)">$INFO[Skin.String(8-WidgetList-8)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),9)">$INFO[Skin.String(9-WidgetList-8)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),10)">$INFO[Skin.String(10-WidgetList-8)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),11)">$INFO[Skin.String(11-WidgetList-8)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),12)">$INFO[Skin.String(12-WidgetList-8)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),13)">$INFO[Skin.String(13-WidgetList-8)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),14)">$INFO[Skin.String(14-WidgetList-8)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),15)">$INFO[Skin.String(15-WidgetList-8)]</value>
+	</variable>
+
+
+	<variable name="WidgetStyle-1">
+		<value condition="StringCompare(Window(home).Property(SubMenu),1) + Skin.HasSetting(1-WidgetStyle-1)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),2) + Skin.HasSetting(2-WidgetStyle-1)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),3) + Skin.HasSetting(3-WidgetStyle-1)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),4) + Skin.HasSetting(4-WidgetStyle-1)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),5) + Skin.HasSetting(5-WidgetStyle-1)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),6) + Skin.HasSetting(6-WidgetStyle-1)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),7) + Skin.HasSetting(7-WidgetStyle-1)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),8) + Skin.HasSetting(8-WidgetStyle-1)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),9) + Skin.HasSetting(9-WidgetStyle-1)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),10) + Skin.HasSetting(10-WidgetStyle-1)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),11) + Skin.HasSetting(11-WidgetStyle-1)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),12) + Skin.HasSetting(12-WidgetStyle-1)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),13) + Skin.HasSetting(13-WidgetStyle-1)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),14) + Skin.HasSetting(14-WidgetStyle-1)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),15) + Skin.HasSetting(15-WidgetStyle-1)">$LOCALIZE[31326]</value>
+		<value>$LOCALIZE[31084]</value>
+	</variable>
+	<variable name="WidgetStyle-2">
+		<value condition="StringCompare(Window(home).Property(SubMenu),1) + Skin.HasSetting(1-WidgetStyle-2)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),2) + Skin.HasSetting(2-WidgetStyle-2)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),3) + Skin.HasSetting(3-WidgetStyle-2)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),4) + Skin.HasSetting(4-WidgetStyle-2)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),5) + Skin.HasSetting(5-WidgetStyle-2)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),6) + Skin.HasSetting(6-WidgetStyle-2)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),7) + Skin.HasSetting(7-WidgetStyle-2)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),8) + Skin.HasSetting(8-WidgetStyle-2)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),9) + Skin.HasSetting(9-WidgetStyle-2)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),10) + Skin.HasSetting(10-WidgetStyle-2)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),11) + Skin.HasSetting(11-WidgetStyle-2)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),12) + Skin.HasSetting(12-WidgetStyle-2)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),13) + Skin.HasSetting(13-WidgetStyle-2)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),14) + Skin.HasSetting(14-WidgetStyle-2)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),15) + Skin.HasSetting(15-WidgetStyle-2)">$LOCALIZE[31326]</value>
+		<value>$LOCALIZE[31084]</value>
+	</variable>
+	<variable name="WidgetStyle-3">
+		<value condition="StringCompare(Window(home).Property(SubMenu),1) + Skin.HasSetting(1-WidgetStyle-3)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),2) + Skin.HasSetting(2-WidgetStyle-3)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),3) + Skin.HasSetting(3-WidgetStyle-3)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),4) + Skin.HasSetting(4-WidgetStyle-3)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),5) + Skin.HasSetting(5-WidgetStyle-3)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),6) + Skin.HasSetting(6-WidgetStyle-3)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),7) + Skin.HasSetting(7-WidgetStyle-3)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),8) + Skin.HasSetting(8-WidgetStyle-3)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),9) + Skin.HasSetting(9-WidgetStyle-3)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),10) + Skin.HasSetting(10-WidgetStyle-3)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),11) + Skin.HasSetting(11-WidgetStyle-3)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),12) + Skin.HasSetting(12-WidgetStyle-3)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),13) + Skin.HasSetting(13-WidgetStyle-3)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),14) + Skin.HasSetting(14-WidgetStyle-3)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),15) + Skin.HasSetting(15-WidgetStyle-3)">$LOCALIZE[31326]</value>
+		<value>$LOCALIZE[31084]</value>
+	</variable>
+	<variable name="WidgetStyle-4">
+		<value condition="StringCompare(Window(home).Property(SubMenu),1) + Skin.HasSetting(1-WidgetStyle-4)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),2) + Skin.HasSetting(2-WidgetStyle-4)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),3) + Skin.HasSetting(3-WidgetStyle-4)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),4) + Skin.HasSetting(4-WidgetStyle-4)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),5) + Skin.HasSetting(5-WidgetStyle-4)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),6) + Skin.HasSetting(6-WidgetStyle-4)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),7) + Skin.HasSetting(7-WidgetStyle-4)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),8) + Skin.HasSetting(8-WidgetStyle-4)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),9) + Skin.HasSetting(9-WidgetStyle-4)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),10) + Skin.HasSetting(10-WidgetStyle-4)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),11) + Skin.HasSetting(11-WidgetStyle-4)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),12) + Skin.HasSetting(12-WidgetStyle-4)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),13) + Skin.HasSetting(13-WidgetStyle-4)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),14) + Skin.HasSetting(14-WidgetStyle-4)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),15) + Skin.HasSetting(15-WidgetStyle-4)">$LOCALIZE[31326]</value>
+		<value>$LOCALIZE[31084]</value>
+	</variable>
+	<variable name="WidgetStyle-5">
+		<value condition="StringCompare(Window(home).Property(SubMenu),1) + Skin.HasSetting(1-WidgetStyle-5)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),2) + Skin.HasSetting(2-WidgetStyle-5)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),3) + Skin.HasSetting(3-WidgetStyle-5)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),4) + Skin.HasSetting(4-WidgetStyle-5)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),5) + Skin.HasSetting(5-WidgetStyle-5)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),6) + Skin.HasSetting(6-WidgetStyle-5)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),7) + Skin.HasSetting(7-WidgetStyle-5)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),8) + Skin.HasSetting(8-WidgetStyle-5)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),9) + Skin.HasSetting(9-WidgetStyle-5)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),10) + Skin.HasSetting(10-WidgetStyle-5)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),11) + Skin.HasSetting(11-WidgetStyle-5)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),12) + Skin.HasSetting(12-WidgetStyle-5)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),13) + Skin.HasSetting(13-WidgetStyle-5)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),14) + Skin.HasSetting(14-WidgetStyle-5)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),15) + Skin.HasSetting(15-WidgetStyle-5)">$LOCALIZE[31326]</value>
+		<value>$LOCALIZE[31084]</value>
+	</variable>
+	<variable name="WidgetStyle-6">
+		<value condition="StringCompare(Window(home).Property(SubMenu),1) + Skin.HasSetting(1-WidgetStyle-6)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),2) + Skin.HasSetting(2-WidgetStyle-6)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),3) + Skin.HasSetting(3-WidgetStyle-6)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),4) + Skin.HasSetting(4-WidgetStyle-6)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),5) + Skin.HasSetting(5-WidgetStyle-6)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),6) + Skin.HasSetting(6-WidgetStyle-6)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),7) + Skin.HasSetting(7-WidgetStyle-6)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),8) + Skin.HasSetting(8-WidgetStyle-6)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),9) + Skin.HasSetting(9-WidgetStyle-6)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),10) + Skin.HasSetting(10-WidgetStyle-6)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),11) + Skin.HasSetting(11-WidgetStyle-6)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),12) + Skin.HasSetting(12-WidgetStyle-6)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),13) + Skin.HasSetting(13-WidgetStyle-6)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),14) + Skin.HasSetting(14-WidgetStyle-6)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),15) + Skin.HasSetting(15-WidgetStyle-6)">$LOCALIZE[31326]</value>
+		<value>$LOCALIZE[31084]</value>
+	</variable>
+	<variable name="WidgetStyle-7">
+		<value condition="StringCompare(Window(home).Property(SubMenu),1) + Skin.HasSetting(1-WidgetStyle-7)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),2) + Skin.HasSetting(2-WidgetStyle-7)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),3) + Skin.HasSetting(3-WidgetStyle-7)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),4) + Skin.HasSetting(4-WidgetStyle-7)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),5) + Skin.HasSetting(5-WidgetStyle-7)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),6) + Skin.HasSetting(6-WidgetStyle-7)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),7) + Skin.HasSetting(7-WidgetStyle-7)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),8) + Skin.HasSetting(8-WidgetStyle-7)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),9) + Skin.HasSetting(9-WidgetStyle-7)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),10) + Skin.HasSetting(10-WidgetStyle-7)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),11) + Skin.HasSetting(11-WidgetStyle-7)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),12) + Skin.HasSetting(12-WidgetStyle-7)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),13) + Skin.HasSetting(13-WidgetStyle-7)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),14) + Skin.HasSetting(14-WidgetStyle-7)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),15) + Skin.HasSetting(15-WidgetStyle-7)">$LOCALIZE[31326]</value>
+		<value>$LOCALIZE[31084]</value>
+	</variable>
+	<variable name="WidgetStyle-8">
+		<value condition="StringCompare(Window(home).Property(SubMenu),1) + Skin.HasSetting(1-WidgetStyle-8)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),2) + Skin.HasSetting(2-WidgetStyle-8)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),3) + Skin.HasSetting(3-WidgetStyle-8)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),4) + Skin.HasSetting(4-WidgetStyle-8)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),5) + Skin.HasSetting(5-WidgetStyle-8)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),6) + Skin.HasSetting(6-WidgetStyle-8)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),7) + Skin.HasSetting(7-WidgetStyle-8)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),8) + Skin.HasSetting(8-WidgetStyle-8)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),9) + Skin.HasSetting(9-WidgetStyle-8)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),10) + Skin.HasSetting(10-WidgetStyle-8)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),11) + Skin.HasSetting(11-WidgetStyle-8)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),12) + Skin.HasSetting(12-WidgetStyle-8)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),13) + Skin.HasSetting(13-WidgetStyle-8)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),14) + Skin.HasSetting(14-WidgetStyle-8)">$LOCALIZE[31326]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),15) + Skin.HasSetting(15-WidgetStyle-8)">$LOCALIZE[31326]</value>
+		<value>$LOCALIZE[31084]</value>
+	</variable>
+
+	<variable name="WidgetLayout">
+		<value condition="StringCompare(Window(home).Property(SubMenu),1) + StringCompare(Container(211).CurrentItem,1) + !IsEmpty(Skin.String(1-WidgetLayout-1))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),2) + StringCompare(Container(211).CurrentItem,1) + !IsEmpty(Skin.String(2-WidgetLayout-1))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),3) + StringCompare(Container(211).CurrentItem,1) + !IsEmpty(Skin.String(3-WidgetLayout-1))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),4) + StringCompare(Container(211).CurrentItem,1) + !IsEmpty(Skin.String(4-WidgetLayout-1))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),5) + StringCompare(Container(211).CurrentItem,1) + !IsEmpty(Skin.String(5-WidgetLayout-1))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),6) + StringCompare(Container(211).CurrentItem,1) + !IsEmpty(Skin.String(6-WidgetLayout-1))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),7) + StringCompare(Container(211).CurrentItem,1) + !IsEmpty(Skin.String(7-WidgetLayout-1))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),8) + StringCompare(Container(211).CurrentItem,1) + !IsEmpty(Skin.String(8-WidgetLayout-1))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),9) + StringCompare(Container(211).CurrentItem,1) + !IsEmpty(Skin.String(9-WidgetLayout-1))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),10) + StringCompare(Container(211).CurrentItem,1) + !IsEmpty(Skin.String(10-WidgetLayout-1))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),11) + StringCompare(Container(211).CurrentItem,1) + !IsEmpty(Skin.String(11-WidgetLayout-1))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),12) + StringCompare(Container(211).CurrentItem,1) + !IsEmpty(Skin.String(12-WidgetLayout-1))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),13) + StringCompare(Container(211).CurrentItem,1) + !IsEmpty(Skin.String(13-WidgetLayout-1))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),14) + StringCompare(Container(211).CurrentItem,1) + !IsEmpty(Skin.String(14-WidgetLayout-1))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),15) + StringCompare(Container(211).CurrentItem,1) + !IsEmpty(Skin.String(15-WidgetLayout-1))">$LOCALIZE[31325]</value>
+
+		<value condition="StringCompare(Window(home).Property(SubMenu),1) + StringCompare(Container(211).CurrentItem,2) + !IsEmpty(Skin.String(1-WidgetLayout-2))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),2) + StringCompare(Container(211).CurrentItem,2) + !IsEmpty(Skin.String(2-WidgetLayout-2))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),3) + StringCompare(Container(211).CurrentItem,2) + !IsEmpty(Skin.String(3-WidgetLayout-2))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),4) + StringCompare(Container(211).CurrentItem,2) + !IsEmpty(Skin.String(4-WidgetLayout-2))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),5) + StringCompare(Container(211).CurrentItem,2) + !IsEmpty(Skin.String(5-WidgetLayout-2))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),6) + StringCompare(Container(211).CurrentItem,2) + !IsEmpty(Skin.String(6-WidgetLayout-2))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),7) + StringCompare(Container(211).CurrentItem,2) + !IsEmpty(Skin.String(7-WidgetLayout-2))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),8) + StringCompare(Container(211).CurrentItem,2) + !IsEmpty(Skin.String(8-WidgetLayout-2))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),9) + StringCompare(Container(211).CurrentItem,2) + !IsEmpty(Skin.String(9-WidgetLayout-2))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),10) + StringCompare(Container(211).CurrentItem,2) + !IsEmpty(Skin.String(10-WidgetLayout-2))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),11) + StringCompare(Container(211).CurrentItem,2) + !IsEmpty(Skin.String(11-WidgetLayout-2))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),12) + StringCompare(Container(211).CurrentItem,2) + !IsEmpty(Skin.String(12-WidgetLayout-2))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),13) + StringCompare(Container(211).CurrentItem,2) + !IsEmpty(Skin.String(13-WidgetLayout-2))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),14) + StringCompare(Container(211).CurrentItem,2) + !IsEmpty(Skin.String(14-WidgetLayout-2))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),15) + StringCompare(Container(211).CurrentItem,2) + !IsEmpty(Skin.String(15-WidgetLayout-2))">$LOCALIZE[31325]</value>	
+
+		<value condition="StringCompare(Window(home).Property(SubMenu),1) + StringCompare(Container(211).CurrentItem,3) + !IsEmpty(Skin.String(1-WidgetLayout-3))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),2) + StringCompare(Container(211).CurrentItem,3) + !IsEmpty(Skin.String(2-WidgetLayout-3))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),3) + StringCompare(Container(211).CurrentItem,3) + !IsEmpty(Skin.String(3-WidgetLayout-3))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),4) + StringCompare(Container(211).CurrentItem,3) + !IsEmpty(Skin.String(4-WidgetLayout-3))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),5) + StringCompare(Container(211).CurrentItem,3) + !IsEmpty(Skin.String(5-WidgetLayout-3))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),6) + StringCompare(Container(211).CurrentItem,3) + !IsEmpty(Skin.String(6-WidgetLayout-3))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),7) + StringCompare(Container(211).CurrentItem,3) + !IsEmpty(Skin.String(7-WidgetLayout-3))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),8) + StringCompare(Container(211).CurrentItem,3) + !IsEmpty(Skin.String(8-WidgetLayout-3))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),9) + StringCompare(Container(211).CurrentItem,3) + !IsEmpty(Skin.String(9-WidgetLayout-3))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),10) + StringCompare(Container(211).CurrentItem,3) + !IsEmpty(Skin.String(10-WidgetLayout-3))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),11) + StringCompare(Container(211).CurrentItem,3) + !IsEmpty(Skin.String(11-WidgetLayout-3))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),12) + StringCompare(Container(211).CurrentItem,3) + !IsEmpty(Skin.String(12-WidgetLayout-3))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),13) + StringCompare(Container(211).CurrentItem,3) + !IsEmpty(Skin.String(13-WidgetLayout-3))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),14) + StringCompare(Container(211).CurrentItem,3) + !IsEmpty(Skin.String(14-WidgetLayout-3))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),15) + StringCompare(Container(211).CurrentItem,3) + !IsEmpty(Skin.String(15-WidgetLayout-3))">$LOCALIZE[31325]</value>	
+
+		<value condition="StringCompare(Window(home).Property(SubMenu),1) + StringCompare(Container(211).CurrentItem,4) + !IsEmpty(Skin.String(1-WidgetLayout-4))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),2) + StringCompare(Container(211).CurrentItem,4) + !IsEmpty(Skin.String(2-WidgetLayout-4))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),3) + StringCompare(Container(211).CurrentItem,4) + !IsEmpty(Skin.String(3-WidgetLayout-4))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),4) + StringCompare(Container(211).CurrentItem,4) + !IsEmpty(Skin.String(4-WidgetLayout-4))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),5) + StringCompare(Container(211).CurrentItem,4) + !IsEmpty(Skin.String(5-WidgetLayout-4))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),6) + StringCompare(Container(211).CurrentItem,4) + !IsEmpty(Skin.String(6-WidgetLayout-4))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),7) + StringCompare(Container(211).CurrentItem,4) + !IsEmpty(Skin.String(7-WidgetLayout-4))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),8) + StringCompare(Container(211).CurrentItem,4) + !IsEmpty(Skin.String(8-WidgetLayout-4))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),9) + StringCompare(Container(211).CurrentItem,4) + !IsEmpty(Skin.String(9-WidgetLayout-4))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),10) + StringCompare(Container(211).CurrentItem,4) + !IsEmpty(Skin.String(10-WidgetLayout-4))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),11) + StringCompare(Container(211).CurrentItem,4) + !IsEmpty(Skin.String(11-WidgetLayout-4))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),12) + StringCompare(Container(211).CurrentItem,4) + !IsEmpty(Skin.String(12-WidgetLayout-4))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),13) + StringCompare(Container(211).CurrentItem,4) + !IsEmpty(Skin.String(13-WidgetLayout-4))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),14) + StringCompare(Container(211).CurrentItem,4) + !IsEmpty(Skin.String(14-WidgetLayout-4))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),15) + StringCompare(Container(211).CurrentItem,4) + !IsEmpty(Skin.String(15-WidgetLayout-4))">$LOCALIZE[31325]</value>	
+
+		<value condition="StringCompare(Window(home).Property(SubMenu),1) + StringCompare(Container(211).CurrentItem,5) + !IsEmpty(Skin.String(1-WidgetLayout-5))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),2) + StringCompare(Container(211).CurrentItem,5) + !IsEmpty(Skin.String(2-WidgetLayout-5))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),3) + StringCompare(Container(211).CurrentItem,5) + !IsEmpty(Skin.String(3-WidgetLayout-5))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),4) + StringCompare(Container(211).CurrentItem,5) + !IsEmpty(Skin.String(4-WidgetLayout-5))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),5) + StringCompare(Container(211).CurrentItem,5) + !IsEmpty(Skin.String(5-WidgetLayout-5))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),6) + StringCompare(Container(211).CurrentItem,5) + !IsEmpty(Skin.String(6-WidgetLayout-5))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),7) + StringCompare(Container(211).CurrentItem,5) + !IsEmpty(Skin.String(7-WidgetLayout-5))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),8) + StringCompare(Container(211).CurrentItem,5) + !IsEmpty(Skin.String(8-WidgetLayout-5))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),9) + StringCompare(Container(211).CurrentItem,5) + !IsEmpty(Skin.String(9-WidgetLayout-5))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),10) + StringCompare(Container(211).CurrentItem,5) + !IsEmpty(Skin.String(10-WidgetLayout-5))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),11) + StringCompare(Container(211).CurrentItem,5) + !IsEmpty(Skin.String(11-WidgetLayout-5))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),12) + StringCompare(Container(211).CurrentItem,5) + !IsEmpty(Skin.String(12-WidgetLayout-5))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),13) + StringCompare(Container(211).CurrentItem,5) + !IsEmpty(Skin.String(13-WidgetLayout-5))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),14) + StringCompare(Container(211).CurrentItem,5) + !IsEmpty(Skin.String(14-WidgetLayout-5))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),15) + StringCompare(Container(211).CurrentItem,5) + !IsEmpty(Skin.String(15-WidgetLayout-5))">$LOCALIZE[31325]</value>
+
+		<value condition="StringCompare(Window(home).Property(SubMenu),1) + StringCompare(Container(211).CurrentItem,6) + !IsEmpty(Skin.String(1-WidgetLayout-6))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),2) + StringCompare(Container(211).CurrentItem,6) + !IsEmpty(Skin.String(2-WidgetLayout-6))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),3) + StringCompare(Container(211).CurrentItem,6) + !IsEmpty(Skin.String(3-WidgetLayout-6))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),4) + StringCompare(Container(211).CurrentItem,6) + !IsEmpty(Skin.String(4-WidgetLayout-6))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),5) + StringCompare(Container(211).CurrentItem,6) + !IsEmpty(Skin.String(5-WidgetLayout-6))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),6) + StringCompare(Container(211).CurrentItem,6) + !IsEmpty(Skin.String(6-WidgetLayout-6))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),7) + StringCompare(Container(211).CurrentItem,6) + !IsEmpty(Skin.String(7-WidgetLayout-6))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),8) + StringCompare(Container(211).CurrentItem,6) + !IsEmpty(Skin.String(8-WidgetLayout-6))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),9) + StringCompare(Container(211).CurrentItem,6) + !IsEmpty(Skin.String(9-WidgetLayout-6))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),10) + StringCompare(Container(211).CurrentItem,6) + !IsEmpty(Skin.String(10-WidgetLayout-6))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),11) + StringCompare(Container(211).CurrentItem,6) + !IsEmpty(Skin.String(11-WidgetLayout-6))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),12) + StringCompare(Container(211).CurrentItem,6) + !IsEmpty(Skin.String(12-WidgetLayout-6))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),13) + StringCompare(Container(211).CurrentItem,6) + !IsEmpty(Skin.String(13-WidgetLayout-6))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),14) + StringCompare(Container(211).CurrentItem,6) + !IsEmpty(Skin.String(14-WidgetLayout-6))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),15) + StringCompare(Container(211).CurrentItem,6) + !IsEmpty(Skin.String(15-WidgetLayout-6))">$LOCALIZE[31325]</value>	
+
+		<value condition="StringCompare(Window(home).Property(SubMenu),1) + StringCompare(Container(211).CurrentItem,7) + !IsEmpty(Skin.String(1-WidgetLayout-7))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),2) + StringCompare(Container(211).CurrentItem,7) + !IsEmpty(Skin.String(2-WidgetLayout-7))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),3) + StringCompare(Container(211).CurrentItem,7) + !IsEmpty(Skin.String(3-WidgetLayout-7))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),4) + StringCompare(Container(211).CurrentItem,7) + !IsEmpty(Skin.String(4-WidgetLayout-7))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),5) + StringCompare(Container(211).CurrentItem,7) + !IsEmpty(Skin.String(5-WidgetLayout-7))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),6) + StringCompare(Container(211).CurrentItem,7) + !IsEmpty(Skin.String(6-WidgetLayout-7))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),7) + StringCompare(Container(211).CurrentItem,7) + !IsEmpty(Skin.String(7-WidgetLayout-7))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),8) + StringCompare(Container(211).CurrentItem,7) + !IsEmpty(Skin.String(8-WidgetLayout-7))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),9) + StringCompare(Container(211).CurrentItem,7) + !IsEmpty(Skin.String(9-WidgetLayout-7))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),10) + StringCompare(Container(211).CurrentItem,7) + !IsEmpty(Skin.String(10-WidgetLayout-7))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),11) + StringCompare(Container(211).CurrentItem,7) + !IsEmpty(Skin.String(11-WidgetLayout-7))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),12) + StringCompare(Container(211).CurrentItem,7) + !IsEmpty(Skin.String(12-WidgetLayout-7))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),13) + StringCompare(Container(211).CurrentItem,7) + !IsEmpty(Skin.String(13-WidgetLayout-7))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),14) + StringCompare(Container(211).CurrentItem,7) + !IsEmpty(Skin.String(14-WidgetLayout-7))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),15) + StringCompare(Container(211).CurrentItem,7) + !IsEmpty(Skin.String(15-WidgetLayout-7))">$LOCALIZE[31325]</value>	
+
+		<value condition="StringCompare(Window(home).Property(SubMenu),1) + StringCompare(Container(211).CurrentItem,8) + !IsEmpty(Skin.String(1-WidgetLayout-8))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),2) + StringCompare(Container(211).CurrentItem,8) + !IsEmpty(Skin.String(2-WidgetLayout-8))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),3) + StringCompare(Container(211).CurrentItem,8) + !IsEmpty(Skin.String(3-WidgetLayout-8))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),4) + StringCompare(Container(211).CurrentItem,8) + !IsEmpty(Skin.String(4-WidgetLayout-8))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),5) + StringCompare(Container(211).CurrentItem,8) + !IsEmpty(Skin.String(5-WidgetLayout-8))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),6) + StringCompare(Container(211).CurrentItem,8) + !IsEmpty(Skin.String(6-WidgetLayout-8))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),7) + StringCompare(Container(211).CurrentItem,8) + !IsEmpty(Skin.String(7-WidgetLayout-8))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),8) + StringCompare(Container(211).CurrentItem,8) + !IsEmpty(Skin.String(8-WidgetLayout-8))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),9) + StringCompare(Container(211).CurrentItem,8) + !IsEmpty(Skin.String(9-WidgetLayout-8))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),10) + StringCompare(Container(211).CurrentItem,8) + !IsEmpty(Skin.String(10-WidgetLayout-8))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),11) + StringCompare(Container(211).CurrentItem,8) + !IsEmpty(Skin.String(11-WidgetLayout-8))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),12) + StringCompare(Container(211).CurrentItem,8) + !IsEmpty(Skin.String(12-WidgetLayout-8))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),13) + StringCompare(Container(211).CurrentItem,8) + !IsEmpty(Skin.String(13-WidgetLayout-8))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),14) + StringCompare(Container(211).CurrentItem,8) + !IsEmpty(Skin.String(14-WidgetLayout-8))">$LOCALIZE[31325]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),15) + StringCompare(Container(211).CurrentItem,8) + !IsEmpty(Skin.String(15-WidgetLayout-8))">$LOCALIZE[31325]</value>	
+
+		<value>$LOCALIZE[31083]</value>
+		
+	</variable>
+
+	<variable name="SubmenuProperty">
+		<value condition="StringCompare(Window(home).Property(SubMenu),1)">1</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),2)">2</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),3)">3</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),4)">4</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),5)">5</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),6)">6</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),7)">7</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),8)">8</value>
+	</variable>
+
+
+	<variable name="WidgetView">
+		<value condition="StringCompare(Window(home).Property(SubMenu),1) + !IsEmpty(Skin.String(1-WidgetView))">$INFO[Skin.String(1-WidgetView)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),2) + !IsEmpty(Skin.String(2-WidgetView))">$INFO[Skin.String(2-WidgetView)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),3) + !IsEmpty(Skin.String(3-WidgetView))">$INFO[Skin.String(3-WidgetView)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),4) + !IsEmpty(Skin.String(4-WidgetView))">$INFO[Skin.String(4-WidgetView)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),5) + !IsEmpty(Skin.String(5-WidgetView))">$INFO[Skin.String(5-WidgetView)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),6) + !IsEmpty(Skin.String(6-WidgetView))">$INFO[Skin.String(6-WidgetView)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),7) + !IsEmpty(Skin.String(7-WidgetView))">$INFO[Skin.String(7-WidgetView)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),8) + !IsEmpty(Skin.String(8-WidgetView))">$INFO[Skin.String(8-WidgetView)]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),1) + IsEmpty(Skin.String(1-WidgetView))">$LOCALIZE[31203]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),2) + IsEmpty(Skin.String(2-WidgetView))">$LOCALIZE[31203]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),3) + IsEmpty(Skin.String(3-WidgetView))">$LOCALIZE[31203]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),4) + IsEmpty(Skin.String(4-WidgetView))">$LOCALIZE[31203]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),5) + IsEmpty(Skin.String(5-WidgetView))">$LOCALIZE[31203]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),6) + IsEmpty(Skin.String(6-WidgetView))">$LOCALIZE[31203]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),7) + IsEmpty(Skin.String(7-WidgetView))">$LOCALIZE[31203]</value>
+		<value condition="StringCompare(Window(home).Property(SubMenu),8) + IsEmpty(Skin.String(8-WidgetView))">$LOCALIZE[31203]</value>
+	</variable>
+
+
+</includes>

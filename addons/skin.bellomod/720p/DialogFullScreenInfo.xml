@@ -1,0 +1,187 @@
+<window type="dialog" id="142">
+	<defaultcontrol always="true">603</defaultcontrol>
+	<controls>
+		<control type="image" id="1">
+			<description>Vignette</description>
+			<include>FullscreenDimensions</include>
+			<texture background="true">windows/bg/bg_vignette.png</texture>
+			<fadetime>FanartCrossfadeTime</fadetime>
+			<visible>Window.IsActive(InfoDialog) + !Window.IsActive(ShutdownMenu)</visible>
+			<animation effect="fade" time="300">Visible</animation>
+			<animation effect="fade" time="400" delay="300">Hidden</animation>
+		</control>
+		<control type="image" id="1">
+			<description>Vignette</description>
+			<include>FullscreenDimensions</include>
+			<texture background="true">windows/bg/bg_vignette.png</texture>
+			<include>BackgroundFade</include>
+			<fadetime>FanartCrossfadeTime</fadetime>
+			<visible>!Window.IsActive(SliderDialog)</visible>
+		</control>
+		<control type="image" id="1">
+			<description>Diffuse</description>
+			<include>FullscreenDimensions</include>
+			<texture background="true">views/other/menus_overlay.png</texture>
+			<include>BackgroundFade</include>
+			<fadetime>FanartCrossfadeTime</fadetime>
+			<visible>!Window.IsActive(SliderDialog)</visible>
+		</control>
+	
+		<control type="group" id="1">
+			<left>190</left>
+			<top>0</top>
+			<width>980</width>
+			<height>720</height>
+
+            <animation type="WindowOpen">
+                <effect type="slide" start="-150,0" end="0,0" time="450" delay="0" tween="sine" easing="out" />
+                <effect type="fade" start="0" end="100" time="450" delay="0" tween="sine" easing="out" />
+            </animation>
+            <animation type="WindowClose">
+                <effect type="slide" start="0,0" end="-200,0" time="400" delay="0" tween="sine" easing="out" />
+                <effect type="fade" start="100" end="0" time="400" delay="0" tween="sine" easing="out" />
+            </animation>
+            <animation type="Visible">
+                <effect type="slide" start="-150,0" end="0,0" time="450" delay="0" tween="sine" easing="out" />
+                <effect type="fade" start="0" end="100" time="450" delay="0" tween="sine" easing="out" />
+            </animation>
+            <animation type="Hidden">
+                <effect type="slide" start="0,0" end="-300,0" time="400" delay="0" tween="sine" easing="out" />
+                <effect type="fade" start="100" end="0" time="400" delay="0" tween="sine" easing="out" />
+            </animation>
+            
+			<!-- Hintergrund -->
+			<control type="image" id="1">
+				<left>80</left>
+				<top>45</top>
+				<width>780</width>
+				<height>600</height>
+				<fadetime>200</fadetime>
+				<texture background="true">osd/tile.png</texture>
+				<colordiffuse>D9FFFFFF</colordiffuse>
+				<include>FanartFade</include>
+			</control>
+
+            <!-- Kanalnummer + Name -->
+            <control type="label" id="1">
+                <description>Title label</description>
+                <left>300</left>
+                <top>105</top>
+                <height>30</height>
+                <width>620</width>
+                <label>$INFO[VideoPlayer.ChannelNumber,,. ]$INFO[VideoPlayer.ChannelName]</label>
+                <align>left</align>
+                <aligny>center</aligny>
+                <font>FontSize_36</font>
+                <textcolor>white</textcolor>
+                <shadowcolor>55000000</shadowcolor>
+            </control>
+            
+            <!-- Senungstitel -->
+            <control type="label" id="1">
+                <description>Label</description>
+                <left>300</left>
+                <top>136</top>
+                <height>30</height>
+                <width>620</width>
+                <label>$INFO[VideoPlayer.Title]</label>
+                <align>left</align>
+                <aligny>center</aligny>
+                <font>FontSize_22</font>
+                <textcolor>99white</textcolor>
+                <shadowcolor>55000000</shadowcolor>     
+            </control>
+            
+            <!-- EPG-Anzeige -->
+            <control type="textbox">
+                <top>170</top>
+                <left>150</left>
+                <height>500</height>
+                <width>620</width>
+                <font>FontSize_20</font>
+                <textcolor>99white</textcolor>
+                <shadowcolor>55000000</shadowcolor>
+                <align>justify</align>
+                <autoscroll delay="8000" time="2000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+                <label fallback="195">$INFO[VideoPlayer.Plot]</label>
+            </control>
+            
+            <!-- Picon -->
+            <control type="image" id="1">
+                <left>150</left>
+                <top>90</top>
+                <width>110</width>
+                <height>66</height>
+                <aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+                <texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/thumb_back.png</texture>
+                <fadetime>800</fadetime>
+            </control>
+            <control type="image" id="1">
+                <left>150</left>
+                <top>90</top>
+                <width>110</width>
+                <height>66</height>
+                <aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+                <texture background="true" fallback="thumbs/fallback_poster_tp.png" diffuse="thumbs/poster_diffuse.png">$VAR[VideoPlayerThumb]</texture>
+                <fadetime>800</fadetime>
+            </control>
+            <control type="image" id="1">
+                <left>150</left>
+                <top>90</top>
+                <width>122</width>
+                <height>78</height>
+                <texture background="true">thumbs/poster_overlay.png</texture>
+                <aspectratio align="center" aligny="center">stretch</aspectratio>
+                <fadetime>800</fadetime>
+            </control>
+            
+            <!-- Zeitanzeige  -->
+            <control type="textbox">
+                <top>105</top>
+                <left>590</left>
+                <height>20</height>
+                <width>100</width>
+                <font>FontSize_18</font>
+                <textcolor>osdinfo</textcolor>
+                <shadowcolor>55000000</shadowcolor>
+                <label>Laufzeit:</label>
+            </control>
+            <control type="textbox">
+                <top>135</top>
+                <left>590</left>
+                <height>20</height>
+                <width>100</width>
+                <font>FontSize_18</font>
+                <textcolor>osdinfo</textcolor>
+                <shadowcolor>55000000</shadowcolor>
+                <label>Restzeit:</label>
+            </control>
+            <control type="label" id="1">
+                <description>Time Label</description>
+                <left>691</left>
+                <top>110</top>
+                <width>80</width>
+                <height>20</height>
+                <font>FontSize_18</font>
+                <textcolor>osdinfo</textcolor>
+                <shadowcolor>55000000</shadowcolor>
+                <align>left</align>
+                <aligny>center</aligny>
+                <label>$INFO[Player.Time]</label>
+            </control>
+            <control type="label" id="1">
+                <description>Time Remaining Label</description>
+                <left>680</left>
+                <top>140</top>
+                <width>80</width>
+                <height>20</height>
+                <font>FontSize_18</font>
+                <textcolor>osdinfo</textcolor>
+                <shadowcolor>55000000</shadowcolor>
+                <align>right</align>
+                <aligny>center</aligny>
+                <label>-$INFO[Player.TimeRemaining]</label>
+            </control>
+		</control>
+	</controls>
+</window>
