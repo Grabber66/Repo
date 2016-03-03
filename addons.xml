@@ -687,12 +687,12 @@
   </extension>
 </addon>
 
-<addon id="skin.bellomodjarvis" name="BelloMOD" version="5.0.0" provider-name="Grabber66, thx sualfred">
+<addon id="skin.bellomodjarvis" name="BelloMOD" version="5.0.1" provider-name="Grabber66, thx sualfred">
   <requires>
-        <import addon="xbmc.gui" version="5.10.0" />
+        <import addon="xbmc.gui" version="5.10.0"/>
         <import addon="service.skin.widgets" version="0.0.32"/>
         <import addon="service.library.data.provider" version="0.1.5" />
-        <import addon="script.artwork.downloader" version="13.1.0" />
+		<import addon="script.artwork.downloader" version="13.1.0" />
         <import addon="script.globalsearch" version="6.0.6" />
         <import addon="script.artistslideshow" version="1.8.7" />
         <import addon="script.playalbum" version="2.0.2" />
@@ -707,10 +707,13 @@
         <import addon="script.bellofredo.extrapack" version="1.1.1" />
         <import addon="script.favourites" version="6.0.3" />
     </requires>
-    <extension point="xbmc.gui.skin" defaultthemename="Textures.xbt" effectslowdown="0.75" debugging="false">
-        <res width="1280" height="720" aspect="16:9" default="true" folder="720p"/>
-    </extension>
-  <extension point="xbmc.addon.metadata">
+	<extension
+	    point="xbmc.gui.skin"
+    	debugging="false"
+	    effectslowdown="0.75">
+    	<res width="1280" height="720" aspect="16:9" default="true" folder="720p"/>
+	</extension>
+	<extension point="xbmc.addon.metadata">
     <summary lang="en">A GUI for Kodi Media Center</summary>
     <description lang="en">This skin started as an unofficial Port of the Bello skin (by Nessus) for the Kodi 15.x Nightlies and ended up in an independent skin with a lot of modifications, such as 100% customizable widgets, new themes, modded elements, hundreds of improvements, and much more... MOD edited the Infobar</description>
     <disclaimer lang="en">Mouse usage is not supported</disclaimer>
