@@ -152,7 +152,7 @@
 							<onclick>Skin.Reset(Startup_Playlist_Path)</onclick>
 							<onclick>Skin.ToggleSetting(UseIntro)</onclick>
 							<selected>Skin.HasSetting(UseIntro)</selected>
-						</control>						
+						</control>
 						<control type="radiobutton" id="8102">
 							<include>SettingsRadioButton</include>
 							<label>21398</label>
@@ -160,7 +160,7 @@
 							<onclick>Skin.Reset(Startup_Playlist_Path)</onclick>
 							<onclick>Skin.ToggleSetting(Use_Startup_Playlist)</onclick>
 							<selected>Skin.HasSetting(Use_Startup_Playlist)</selected>
-						</control>						
+						</control>
 						<control type="button" id="8103">
 							<include>SettingsButton</include>
 							<label>• $LOCALIZE[15311]</label>
@@ -343,14 +343,14 @@
 							<selected>!Skin.HasSetting(HideLibraryStats)</selected>
 							<visible>!StringCompare(Skin.String(MainMenuStyle),vertical)</visible>
 						</control>
-						
+
 						<control type="radiobutton" id="8315">
 							<description>Hide Home NP VideoInfo</description>
 							<include>SettingsRadioButton</include>
 							<label>- $LOCALIZE[31104]</label>
 							<onclick>Skin.ToggleSetting(HideHomeNPCovers)</onclick>
 							<selected>!Skin.HasSetting(HideHomeNPCovers)</selected>
-							<visible>!StringCompare(Skin.String(MainMenuStyle),vertical)</visible>		
+							<visible>!StringCompare(Skin.String(MainMenuStyle),vertical)</visible>
 						</control>
 
 
@@ -362,32 +362,32 @@
 							<selected>!Skin.HasSetting(HideIconMenuLabels)</selected>
 							<visible>SubString(Skin.String(MainMenuStyle),icons)</visible>
 						</control>
-						
+
 						<control type="radiobutton" id="8318">
 							<description>Hide Library Details Widgets</description>
 							<include>SettingsRadioButton</include>
 							<label>- $LOCALIZE[31482]</label>
 							<onclick>Skin.ToggleSetting(HideWidgetLibraryStats)</onclick>
 							<selected>!Skin.HasSetting(HideWidgetLibraryStats)</selected>
-							<visible>StringCompare(Skin.String(MainMenuStyle),vertical)</visible>		
+							<visible>StringCompare(Skin.String(MainMenuStyle),vertical)</visible>
 						</control>
-						
+
 						<control type="radiobutton" id="8319">
 							<description>Hide Menu Icons</description>
 							<include>SettingsRadioButton</include>
 							<label>- $LOCALIZE[31483]</label>
 							<onclick>Skin.ToggleSetting(HideVerticalMenuIcons)</onclick>
 							<selected>!Skin.HasSetting(HideVerticalMenuIcons)</selected>
-							<visible>StringCompare(Skin.String(MainMenuStyle),vertical)</visible>		
+							<visible>StringCompare(Skin.String(MainMenuStyle),vertical)</visible>
 						</control>
-						
+
 						<control type="radiobutton" id="8321">
 							<description>Hide Menu Icons</description>
 							<include>SettingsRadioButton</include>
 							<label>- $LOCALIZE[31485]</label>
 							<onclick>Skin.ToggleSetting(HideVerticalMenuSeperator)</onclick>
 							<selected>!Skin.HasSetting(HideVerticalMenuSeperator)</selected>
-							<visible>StringCompare(Skin.String(MainMenuStyle),vertical)</visible>		
+							<visible>StringCompare(Skin.String(MainMenuStyle),vertical)</visible>
 						</control>
 						<control type="radiobutton" id="8322">
 							<description>Hide Scroll Diffuse</description>
@@ -395,9 +395,9 @@
 							<label>- $LOCALIZE[31490]</label>
 							<onclick>Skin.ToggleSetting(HideVerticalMenuScrollDiffuse)</onclick>
 							<selected>!Skin.HasSetting(HideVerticalMenuScrollDiffuse)</selected>
-							<visible>StringCompare(Skin.String(MainMenuStyle),vertical)</visible>		
+							<visible>StringCompare(Skin.String(MainMenuStyle),vertical)</visible>
 						</control>
-						
+
 						<!-- Common Settings -->
 						<control type="button" id="8307">
 							<disabledcolor>55white</disabledcolor>
@@ -421,7 +421,7 @@
 							<selected>Skin.HasSetting(HomeMenuAnimation)</selected>
 							<enable>!Skin.HasSetting(DisablePurpleBar)</enable>
 						</control>
-						
+
 						<control type="button" id="8335">
 							<description>Hide Menu Icons</description>
 							<include>SettingsButton</include>
@@ -529,7 +529,7 @@
 							<selected>!Skin.HasSetting(DisablePowerButton)</selected>
 							<visible>!Skin.HasSetting(DisableTopMenu)</visible>
 						</control>
-						
+
 					</control>
 					<!--==============================-->
 					<!--==== widget section  ====-->
@@ -578,7 +578,7 @@
 						<control type="button" id="8505">
 							<include>SettingsButton</include>
 							<label>- $LOCALIZE[31380] #4</label>
-							<label2>[COLOR=selected]$VAR[CustomWidgetSettingsLabel4][/COLOR]</label2>							
+							<label2>[COLOR=selected]$VAR[CustomWidgetSettingsLabel4][/COLOR]</label2>
 							<onclick>SetProperty(EditCustomWidgets,widgetgroup4,SkinSettings)</onclick>
 							<onclick>ActivateWindow(1120)</onclick>
 						</control>
@@ -777,7 +777,7 @@
 						<control type="button" id="8410">
 							<include>SettingsButton</include>
 							<label>$LOCALIZE[31299]</label>
-							<label2>[COLOR=selected]$VAR[SettingsConditionalWeatherLabels][/COLOR]</label2>							
+							<label2>[COLOR=selected]$VAR[SettingsConditionalWeatherLabels][/COLOR]</label2>
 							<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31318])</onclick>
 							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(ConditionalWeatherArt,Extrapack)||Skin.SetString(WeatherFanartDir,special://profile/addon_data/skin.bellofredo.extrapack/weatherfanarts/))</onclick>
 							<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31136])</onclick>
@@ -802,7 +802,7 @@
 						<onleft>8800</onleft>
 						<onright>9000</onright>
 						<onup>8500</onup>
-						<ondown>8500</ondown>				
+						<ondown>8500</ondown>
 						<control type="button" id="8501">
 							<disabledcolor>55white</disabledcolor>
 							<include>SettingsButton</include>
@@ -824,14 +824,14 @@
 							<label>- $LOCALIZE[31157]</label>
 							<onclick>SetProperty(ManageButtons,managemusicviews)</onclick>
 							<onclick>ActivateWindow(1118)</onclick>
-						</control>	
+						</control>
 						<!--Show IDs-->
 						<control type="button" id="8503">
 							<description>Hide Music Views</description>
 							<include>SettingsButton</include>
 							<label>- Show IDs</label>
 							<onclick>RunScript(script.toolbox,info=textviewer,header=Skin View IDs,text='"$VAR[ViewIDText]"')</onclick>
-						</control>											
+						</control>
 						<control type="button" id="8504">
 							<disabledcolor>55white</disabledcolor>
 							<include>SettingsButton</include>
@@ -849,7 +849,7 @@
 							<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31122])</onclick>
 							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(WatchedFlag,hidden))</onclick>
 							<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31119])</onclick>
-						</control>	
+						</control>
 						<!-- genre icons -->
 						<control type="button" id="8520">
 							<include>SettingsButton</include>
@@ -862,27 +862,6 @@
 							<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[24075])</onclick>
 							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(GenreSource,disabled))</onclick>
 							<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31460])</onclick>
-						</control>		
-						<!--IMDb Rating Update-->
-						<control type="button" id="8506">
-							<description>IMDb Rating Updater</description>
-							<label>- $LOCALIZE[31092]</label>
-							<include>SettingsButton</include>
-							<label2>[COLOR=selected]$VAR[IMDbUpdateLabels][/COLOR]</label2>
-							<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31187] / $LOCALIZE[31188] / $LOCALIZE[31189])</onclick>
-							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(AutoUpdateRatings,all))</onclick>
-							<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31187] / $LOCALIZE[31188])</onclick>
-							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(AutoUpdateRatings,onlymovies))</onclick>
-							<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31187])</onclick>
-							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(AutoUpdateRatings,top250))</onclick>
-							<onclick>SetProperty(Dialog.4.Label,$LOCALIZE[31188])</onclick>
-							<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(AutoUpdateRatings,movies))</onclick>
-							<onclick>SetProperty(Dialog.5.Label,$LOCALIZE[31189])</onclick>
-							<onclick>SetProperty(Dialog.5.BuiltIn,Skin.SetString(AutoUpdateRatings,mpaa))</onclick>
-							<onclick>SetProperty(Dialog.6.Label,$LOCALIZE[31066])</onclick>
-							<onclick>SetProperty(Dialog.6.BuiltIn,Skin.Reset(AutoUpdateRatings))</onclick>
-							<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31191])</onclick>
-							<enable>System.HasAddon(script.imdbupdate)</enable>
 						</control>
 						<!--Artwork Downloader-->
 						<control type="radiobutton" id="8507">
@@ -892,7 +871,7 @@
 							<onclick>Skin.ToggleSetting(AutoUpdateArt)</onclick>
 							<selected>Skin.HasSetting(AutoUpdateArt)</selected>
 							<enable>System.HasAddon(script.artwork.downloader)</enable>
-						</control>																	
+						</control>
 						<control type="button" id="8508">
 							<disabledcolor>55white</disabledcolor>
 							<include>SettingsButton</include>
@@ -957,7 +936,7 @@
 						<onleft>8800</onleft>
 						<onright>9000</onright>
 						<onup>8600</onup>
-						<ondown>8600</ondown>																
+						<ondown>8600</ondown>
 						<control type="button" id="8601">
 							<disabledcolor>55white</disabledcolor>
 							<include>SettingsButton</include>
@@ -1016,7 +995,7 @@
 							<label>- $LOCALIZE[1045]</label>
 							<onclick>Addon.OpenSettings($INFO[Skin.String(LyricScript_Path)])</onclick>
 							<visible>!IsEmpty(Skin.String(LyricScript_Path))</visible>
-						</control>																					
+						</control>
 						<control type="button" id="8611">
 							<disabledcolor>55white</disabledcolor>
 							<include>SettingsButton</include>
@@ -1035,7 +1014,7 @@
 							<label>- $LOCALIZE[1045]</label>
 							<onclick>Addon.OpenSettings($INFO[Skin.String(TrailersAddon_Path)])</onclick>
 							<visible>Skin.HasSetting(trailers) + !IsEmpty(Skin.String(TrailersAddon_Path))</visible>
-						</control>																					
+						</control>
 						<control type="button" id="8614">
 							<disabledcolor>55white</disabledcolor>
 							<include>SettingsButton</include>
@@ -1061,7 +1040,7 @@
 							<onclick>Skin.ToggleSetting(EnableNextAiredNotifications)</onclick>
 							<selected>Skin.HasSetting(EnableNextAiredNotifications)</selected>
 							<visible>Skin.HasSetting(NextAiredEnabled) + System.HasAddon(script.tv.show.next.aired)</visible>
-						</control>																				
+						</control>
 						<control type="button" id="8618">
 							<disabledcolor>55white</disabledcolor>
 							<include>SettingsButton</include>
@@ -1149,7 +1128,7 @@
 							<onclick condition="!Skin.HasSetting(Vis-Visualization)">Skin.Reset(AmbilightMode)</onclick>
 							<onclick>Skin.ToggleSetting(Vis-Visualization)</onclick>
 							<selected>!Skin.HasSetting(Vis-Visualization)</selected>
-						</control>				
+						</control>
 						<control type="radiobutton" id="8752">
 							<description>Ambilight Mode</description>
 							<label>- $LOCALIZE[31317]</label>
@@ -1233,7 +1212,7 @@
 							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(ArtistLogo,AlbumDir))</onclick>
 							<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[13113])</onclick>
 							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(ArtistLogo,Disabled))</onclick>
-							<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31342])</onclick>							
+							<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31342])</onclick>
 						</control>
 					</control>
 					<control type="scrollbar" id="60">

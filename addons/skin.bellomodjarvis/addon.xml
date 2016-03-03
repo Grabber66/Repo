@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon id="skin.bellomodjarvis" name="BelloMOD" version="5.0.1" provider-name="Grabber66, thx sualfred">
   <requires>
-        <import addon="xbmc.gui" version="5.10.0"/>
-        <import addon="service.skin.widgets" version="0.0.32"/>
-        <import addon="service.library.data.provider" version="0.1.5" />
-		<import addon="script.artwork.downloader" version="13.1.0" />
-        <import addon="script.globalsearch" version="6.0.6" />
-        <import addon="script.artistslideshow" version="1.8.7" />
-        <import addon="script.playalbum" version="2.0.2" />
-        <import addon="script.extendedinfo" version="4.5.1" />
-        <import addon="script.skin.info.service" version="1.0.0" />
-        <import addon="script.grab.fanart" version="0.14.1" />
-        <import addon="script.skinshortcuts" version="1.0.6" />
-        <import addon="weather.openweathermap.extended" version="3.2.5" />
-        <import addon="plugin.audio.tuneinradio" version="2.1.0" />
-        <import addon="script.toolbox" version="1.1.1" />
-        <import addon="script.imdbupdate" version="0.7.4" />
-        <import addon="script.bellofredo.extrapack" version="1.1.1" />
-        <import addon="script.favourites" version="6.0.3" />
+	<import addon="xbmc.gui" version="5.10.0"/>
+	<import addon="service.skin.widgets" version="0.0.32"/>
+	<import addon="service.library.data.provider" version="0.1.5" />
+	<import addon="script.artwork.downloader" version="13.1.0" />
+	<import addon="script.globalsearch" version="6.0.6" />
+	<import addon="script.artistslideshow" version="1.8.7" />
+	<import addon="script.playalbum" version="2.0.2" />
+	<import addon="script.extendedinfo" version="4.5.1" />
+	<import addon="script.skin.info.service" version="1.0.0" />
+	<import addon="script.grab.fanart" version="0.14.1" />
+	<import addon="script.skinshortcuts" version="1.0.6" />
+	<import addon="weather.openweathermap.extended" version="3.2.5" />
+	<import addon="plugin.audio.tuneinradio" version="2.1.0" />
+	<import addon="script.toolbox" version="1.1.1" />
+	<import addon="script.bellofredo.extrapack" version="1.1.1" />
+	<import addon="script.favourites" version="6.0.3" />
     </requires>
 	<extension
 	    point="xbmc.gui.skin"
