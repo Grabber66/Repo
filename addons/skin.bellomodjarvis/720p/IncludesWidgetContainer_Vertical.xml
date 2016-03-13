@@ -1536,7 +1536,6 @@
 					<onback>SetFocus(20)</onback>	
 					<ondown>ClearProperty(WidgetHasFocus,Home)</ondown>		
 					<onback>ClearProperty(WidgetHasFocus,Home)</onback>			
-					<onclick condition="stringcompare(Skin.String(QuickNavWidgetMusicType),4)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[Container(450).ListItem.Label],return)</onclick>
 					<onclick condition="stringcompare(Skin.String(QuickNavWidgetMusicType),5) + !IsEmpty(Container(450).ListItem.DBID)">RunScript(script.playalbum,albumid=$INFO[Container(450).ListItem.DBID])</onclick>
 					<onclick condition="stringcompare(Skin.String(QuickNavWidgetMusicType),5) + IsEmpty(Container(450).ListItem.DBID)">PlayMedia("musicdb://recentlyplayedalbums/-1/")</onclick>
 					<onclick condition="!stringcompare(Skin.String(QuickNavWidgetMusicType),4) + !stringcompare(Skin.String(QuickNavWidgetMusicType),5)">SetFocus(450)</onclick>
@@ -1604,83 +1603,10 @@
 			</control>
 
 			<!-- =========== -->
-			<!-- Amazon Sandmann Plugin 	 -->
-			<!-- =========== --> 
-			<control type="group" id="9073">
-				<visible>StringCompare(Container(20).ListItem.Property(widget),amazondb) + System.HasAddon(plugin.video.amazon)</visible>
-				<include>VerticalMenuWidgetUpDown</include>
-				<include>WidgetContainer_Vertical</include>				
-				<control type="group" id="4513">
-					<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
-					<visible>Container(750).OnNext + IntegerGreaterThan(Container(750).NumItems,1)</visible>					
-				</control>
-				<control type="group" id="4514">
-					<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
-					<visible>Container(750).OnPrevious + IntegerGreaterThan(Container(750).NumItems,1)</visible>
-				</control>
-				<control type="group">
-					<include>WidgetEmptyPosters_Vertical</include>
-				</control>	
-				<control type="button" id="90731">
-					<description>invisible control button for widgets</description>
-					<onleft>Control.Move(750,-1)</onleft>
-					<onright>Control.Move(750,1)</onright>
-					<onup condition="!Skin.HasSetting(LockWidgetSwitch) + Control.IsVisible(75)">SetFocus(75)</onup>
-					<onup condition="[Skin.HasSetting(LockWidgetSwitch) | !Control.IsVisible(75)] + [Control.IsVisible(210) | Control.IsVisible(211) | Control.IsVisible(212) | Control.IsVisible(214)]">SetFocus(21)</onup>
-					<ondown>SetFocus(20)</ondown>
-					<onback>SetFocus(20)</onback>	
-					<ondown>ClearProperty(WidgetHasFocus,Home)</ondown>		
-					<onback>ClearProperty(WidgetHasFocus,Home)</onback>
-					<onclick>SetFocus(750)</onclick>
-					<onclick>Select</onclick>			
-					<onclick>SetFocus(90731)</onclick>	
-					<include>TopButton</include>
-				</control>
-				<control type="fixedlist" id="750">				
-					<visible>System.HasAddon(plugin.video.amazon)</visible>
-					<include>WidgetPosterLayout_Vertical</include>
-					<content limit="15" target="video">$VAR[QuickNav_WidgetListContentAmazonDB]</content>				
-				</control>						
-				<control type="button" id="75">
-					<description>invisible control button for category</description>
-					<visible allowhiddenfocus="false">!Skin.HasSetting(LockWidgetSwitch)</visible>
-					<visible>StringCompare(Container(20).ListItem.Property(widget),amazondb)</visible>
-					<ondown condition="IntegerGreaterThan(Container(750).NumItems,0)">SetFocus(90731)</ondown>
-					<ondown condition="!IntegerGreaterThan(Container(750).NumItems,0)">SetFocus(20)</ondown>
-					<onback condition="IntegerGreaterThan(Container(750).NumItems,0)">SetFocus(90731)</onback>
-					<onback condition="!IntegerGreaterThan(Container(750).NumItems,0)">SetFocus(20)</onback>
-					<onup condition="[Control.IsVisible(210) | Control.IsVisible(211) | Control.IsVisible(212) | Control.IsVisible(214)]">SetFocus(21)</onup>				
-					<include>TopButton</include>
-					<!-- on right switches -->
-					<onright condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),1)">Skin.SetString(QuickNavWidgetAmazonDBType,2)</onright>
-					<onright condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),2)">Skin.SetString(QuickNavWidgetAmazonDBType,3)</onright>
-					<onright condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),3)">Skin.SetString(QuickNavWidgetAmazonDBType,4)</onright>
-					<onright condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),4)">Skin.SetString(QuickNavWidgetAmazonDBType,5)</onright>
-					<onright condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),5)">Skin.SetString(QuickNavWidgetAmazonDBType,6)</onright>
-					<onright condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),6)">Skin.SetString(QuickNavWidgetAmazonDBType,1)</onright>
-					<!-- on left switches -->
-					<onleft condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),1)">Skin.SetString(QuickNavWidgetAmazonDBType,6)</onleft>
-					<onleft condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),6)">Skin.SetString(QuickNavWidgetAmazonDBType,5)</onleft>
-					<onleft condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),5)">Skin.SetString(QuickNavWidgetAmazonDBType,4)</onleft>
-					<onleft condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),4)">Skin.SetString(QuickNavWidgetAmazonDBType,3)</onleft>
-					<onleft condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),3)">Skin.SetString(QuickNavWidgetAmazonDBType,2)</onleft>
-					<onleft condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),2)">Skin.SetString(QuickNavWidgetAmazonDBType,1)</onleft>
-					<!-- on click command -->
-					<onclick>ActivateWindow(Videos,$VAR[QuickNav_WidgetListContentAmazonDB])</onclick>	
-				</control>
-				<include name="WidgetBottomLabels_Vertical">
-					<param name="Container">750</param>
-				</include>				
-				<include name="ParamWidgetCounterLoading_Vertical">
-					<param name="Container">750</param>  
-				</include>
-			</control>
-
-			<!-- =========== -->
-			<!-- Amazon AddonScriptorDE Plugin 	 -->
+			<!-- Amazon Music Plugin not ready yet	 -->
 			<!-- =========== --> 
 			<control type="group" id="9074">,
-				<visible>StringCompare(Container(20).ListItem.Property(widget),amazon) + System.HasAddon(plugin.video.prime_instant)</visible>
+				<visible>StringCompare(Container(20).ListItem.Property(widget),amazon) + System.HasAddon(plugin.audio.prime_music)</visible>
 				<include>VerticalMenuWidgetUpDown</include>
 				<include>WidgetContainer_Vertical</include>	
 				<control type="group" id="4513">
@@ -1812,75 +1738,6 @@
 				</include>			
 				<include name="ParamWidgetCounterLoading_Vertical">
 					<param name="Container">550</param>  
-				</include>
-			</control>
-
-			<!-- =========== -->
-			<!-- YouTube -->
-			<!-- =========== -->
-			<control type="group" id="9098">
-				<description>youtube widget</description>
-				<visible>StringCompare(Container(20).ListItem.Property(widget),youtube)</visible>
-				<include>VerticalMenuWidgetUpDown</include>
-				<include>WidgetContainer_Vertical</include>
-				<control type="group" id="4513">
-					<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
-					<visible>Container(653).OnNext + IntegerGreaterThan(Container(653).NumItems,1)</visible>					
-				</control>
-				<control type="group" id="4514">
-					<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
-					<visible>Container(653).OnPrevious + IntegerGreaterThan(Container(653).NumItems,1)</visible>
-				</control>
-				<control type="group">
-					<include>WidgetEmptyBoxes_Vertical</include>
-				</control>
-				<control type="button" id="90981">
-					<description>invisible control button for widgets</description>
-					<onleft>Control.Move(653,-1)</onleft>
-					<onright>Control.Move(653,1)</onright>
-					<onup condition="!Skin.HasSetting(LockWidgetSwitch) + Control.IsVisible(66)">SetFocus(66)</onup>
-					<onup condition="[Skin.HasSetting(LockWidgetSwitch) | !Control.IsVisible(66)] + [Control.IsVisible(210) | Control.IsVisible(211) | Control.IsVisible(212) | Control.IsVisible(214)]">SetFocus(21)</onup>
-					<ondown>SetFocus(20)</ondown>
-					<onback>SetFocus(20)</onback>
-					<ondown>ClearProperty(WidgetHasFocus,Home)</ondown>		
-					<onback>ClearProperty(WidgetHasFocus,Home)</onback>	
-					<onclick>SetFocus(653)</onclick>
-					<onclick>Select</onclick>			
-					<onclick>SetFocus(90981)</onclick>	
-					<include>TopButton</include>
-				</control>
-				<control type="fixedlist" id="653">	
-					<include>WidgetSquareLayout_Vertical</include>
-					<content target="video">$VAR[QuickNav_WidgetListContentYouTube]</content>
-				</control>
-				<control type="button" id="66">
-					<description>invisible control button for category</description>
-					<visible allowhiddenfocus="false">!Skin.HasSetting(LockWidgetSwitch)</visible>
-					<visible>StringCompare(Container(20).ListItem.Property(widget),youtube)</visible>
-					<ondown condition="IntegerGreaterThan(Container(653).NumItems,0)">SetFocus(90981)</ondown>
-					<ondown condition="!IntegerGreaterThan(Container(653).NumItems,0)">SetFocus(20)</ondown>
-					<onback condition="IntegerGreaterThan(Container(653).NumItems,0)">SetFocus(90981)</onback>
-					<onback condition="!IntegerGreaterThan(Container(653).NumItems,0)">SetFocus(20)</onback>
-					<onup condition="[Control.IsVisible(210) | Control.IsVisible(211) | Control.IsVisible(212) | Control.IsVisible(214)]">SetFocus(21)</onup>		
-					<include>TopButton</include>
-					<!-- on right switches -->
-					<onright condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),1)">Skin.SetString(QuickNavWidgetYouTubeType,2)</onright>
-					<onright condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),2)">Skin.SetString(QuickNavWidgetYouTubeType,3)</onright>
-					<onright condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),3)">Skin.SetString(QuickNavWidgetYouTubeType,4)</onright>
-					<onright condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),4)">Skin.SetString(QuickNavWidgetYouTubeType,1)</onright>
-					<!-- on left switches -->
-					<onleft condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),1)">Skin.SetString(QuickNavWidgetYouTubeType,4)</onleft>
-					<onleft condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),4">Skin.SetString(QuickNavWidgetYouTubeType,3)</onleft>
-					<onleft condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),3">Skin.SetString(QuickNavWidgetYouTubeType,2)</onleft>
-					<onleft condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),2)">Skin.SetString(QuickNavWidgetYouTubeType,1)</onleft>
-					<!-- on click command -->
-					<onclick>ActivateWindow(Videos,$VAR[QuickNav_WidgetListContentYouTube])</onclick>	
-				</control>
-				<include name="WidgetBottomLabels_Vertical">
-					<param name="Container">653</param>  
-				</include>			
-				<include name="ParamWidgetCounterLoading_Vertical">
-					<param name="Container">653</param>   
 				</include>
 			</control>
 
@@ -2134,10 +1991,6 @@
 					<onclick>SetFocus(90991)</onclick>	
 					<include>TopButton</include>
 				</control>
-				<control type="fixedlist" id="650">	
-					<include>WidgetSquareLayout_Vertical</include>
-					<content>plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=$VAR[RSSVideoFeedURL]</content>
-				</control>			
 				<control type="button" id="65">
 					<description>invisible control button for category</description>
 					<visible allowhiddenfocus="false">!Skin.HasSetting(LockWidgetSwitch)</visible>
@@ -2179,7 +2032,6 @@
 					<onleft condition="stringcompare(Skin.String(RSSVideoFeedURL),NBA)">Skin.SetString(RSSVideoFeedURL,GameTrailers)</onleft>
 					<onleft condition="stringcompare(Skin.String(RSSVideoFeedURL),Custom)">Skin.SetString(RSSVideoFeedURL,NBA)</onleft>
 					<!-- on click command -->
-					<onclick>ActivateWindow(Videos,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=$VAR[RSSVideoFeedURL])</onclick>	
 				</control>
 				<include name="WidgetBottomLabels_Vertical">
 					<param name="Container">650</param>  

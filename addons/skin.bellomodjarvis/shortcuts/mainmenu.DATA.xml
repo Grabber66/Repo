@@ -48,21 +48,10 @@
 		<defaultID>plugin.video.amazon</defaultID>
 		<icon>special://skin/extras/icons/amazon.png</icon>
 		<thumb />
-		<action>ActivateWindow(10025,"plugin://plugin.video.amazon",return)</action>
-		<visible>System.HasAddon(plugin.video.amazon)</visible>	
+		<action>ActivateWindow(10025,"plugin://plugin.audio.prime_music",return)</action>
+		<visible>System.HasAddon(plugin.audio.prime_music)</visible>	
 	</shortcut>
 	
-	<!-- YouTube -->
-	<shortcut>
-		<label>YouTube</label>
-		<label2>Video Add-On</label2>
-		<defaultID>plugin.video.youtube</defaultID>
-		<icon>special://skin/extras/icons/youtube.png</icon>
-		<thumb />
-		<action>ActivateWindow(10025,"plugin://plugin.video.youtube",return)</action>
-		<visible>System.HasAddon(plugin.video.youtube)</visible>	
-	</shortcut>
-
 	<!-- Trailers -->
 	<shortcut>
 		<label>$LOCALIZE[31018]</label>

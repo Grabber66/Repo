@@ -687,7 +687,7 @@
   </extension>
 </addon>
 
-<addon id="skin.bellomodjarvis" name="BelloMOD" version="5.0.2" provider-name="Grabber66, thx sualfred">
+<addon id="skin.bellomodjarvis" name="BelloMOD" version="5.0.3" provider-name="Grabber66, thx sualfred">
   <requires>
 	<import addon="xbmc.gui" version="5.10.0"/>
 	<import addon="service.skin.widgets" version="0.0.32"/>

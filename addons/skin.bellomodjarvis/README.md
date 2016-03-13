@@ -7,6 +7,8 @@ Now i want to update the skin for Jarvis an change some design parts.
 - modify the Infobar more like my loved neutrino design
 - remove viewtype "Lovefilm"
 - to use the skin addon "Bello Extrapack" you need to install Sualfreds repo !
+- remove Amazon Video / Youtube
+- add amazon music (currently testing)
 
 # original Features by Sualfred:
 - 100% complete customizable home widget support

@@ -78,9 +78,7 @@
 					<onup condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup3)">SetFocus(90931)</onup>
 					<onup condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup4)">SetFocus(90941)</onup>
 					<onup condition="StringCompare(Container(20).ListItem.Property(widget),rssvideowidget)">SetFocus(90991)</onup>
-					<onup condition="StringCompare(Container(20).ListItem.Property(widget),amazondb)">SetFocus(90731)</onup>
 					<onup condition="StringCompare(Container(20).ListItem.Property(widget),amazon)">SetFocus(90741)</onup>
-					<onup condition="StringCompare(Container(20).ListItem.Property(widget),youtube)">SetFocus(90981)</onup>
 					<onup condition="StringCompare(Container(20).ListItem.Property(widget),tvchannels)">SetFocus(90641)</onup>
 					<onup condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/music)">SetFocus(90711)</onup>
 					<onup condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/video)">SetFocus(90721)</onup>
@@ -568,9 +566,7 @@
 					<onright condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup3)">SetFocus(90931)</onright>
 					<onright condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup4)">SetFocus(90941)</onright>
 					<onright condition="StringCompare(Container(20).ListItem.Property(widget),rssvideowidget)">SetFocus(90991)</onright>
-					<onright condition="StringCompare(Container(20).ListItem.Property(widget),amazondb)">SetFocus(90731)</onright>
 					<onright condition="StringCompare(Container(20).ListItem.Property(widget),amazon)">SetFocus(90741)</onright>
-					<onright condition="StringCompare(Container(20).ListItem.Property(widget),youtube)">SetFocus(90981)</onright>
 					<onright condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/music)">SetFocus(90711)</onright>
 					<onright condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/video)">SetFocus(90721)</onright>
 					<onright condition="StringCompare(Container(20).ListItem.Property(widget),tvchannels)">SetFocus(90641)</onright>

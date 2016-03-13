@@ -1,3 +1,7 @@
+[B][COLOR=FF56ADDA]v5.0.3[/COLOR][/B]
+• Remove youtube & Amazon Video
+• add Amazon Music (testing)
+
 [B][COLOR=FF56ADDA]v5.0.2[/COLOR][/B]
 • Removed addon requirements
 • first Jarvis test release
