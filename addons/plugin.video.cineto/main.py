@@ -13,12 +13,12 @@ thumbUrl = addonInfo.getAddonInfo('path')+SEP+"resources"+SEP+"img"+SEP
 dataUrl = xbmc.translatePath(addonInfo.getAddonInfo('profile'))
 
 # -- main urls --
-urlMain = "http://cine.to"
-urlSearch = "http://cine.to/request/search"
-urlMeta = "http://cine.to/request/entry"
-urlLinks = "http://cine.to/request/links"
-urlPics = "http://s.cine.to/cover/"
-urlStream = "http://cine.to/out/"
+urlMain = "https://cine.to"
+urlSearch = "https://cine.to/request/search"
+urlMeta = "https://cine.to/request/entry"
+urlLinks = "https://cine.to/request/links"
+urlPics = "https://s.cine.to/cover/"
+urlStream = "https://cine.to/out/"
 
 # -- get Values from config settings
 yearStart = xbmcplugin.getSetting(thisPlugin,'start_year')
@@ -58,7 +58,7 @@ def mainContent(genre=0, genreName="",page=1):
 		lang.sort()
 		l = ",".join(lang)
 		title = entry['title']+" ("+l+" "+qual+")"
-		picture = "http:"+entry['cover']
+		picture = "https"+entry['cover']
 		#print picture
 		if langSelect[0:2] == "al":
 			addDirectoryItem(title.encode('utf-8'), {"selector":2, "name": entry['title'].encode('utf-8'), "imdb":entry['imdb'].encode('utf-8'),"lang":l.encode('utf-8')},picture)
@@ -89,7 +89,7 @@ def showMovie(title, imdb, lang):
 	picture = urlPics + imdb + ".jpg"
 	addDirectoryItem("."+title.encode('utf-8')+".",{},picture)
 	for l in lang.split(","):
-		print "'"+l+"' imdb " + str(imdb) 
+		print "'"+l+"' imdb " + str(imdb)
 		pd = "ID="+str(imdb)+"&lang="+str(l)
 		linkData = getData(urlLinks,pd)
 		print linkData
