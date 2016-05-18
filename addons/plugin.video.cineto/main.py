@@ -25,7 +25,7 @@ yearStart = xbmcplugin.getSetting(thisPlugin,'start_year')
 yearEnd = xbmcplugin.getSetting(thisPlugin,'end_year')
 imdbRating = xbmcplugin.getSetting(thisPlugin,'imdb_rating')
 langSelect = xbmcplugin.getSetting(thisPlugin,'lang_select')
-print "langSetting"+langSelect
+print "langSetting "+langSelect
 # -- searchquery --
 sQ = ""
 
@@ -41,8 +41,10 @@ def mainContent(genre=0, genreName="",page=1):
 	global thisPlugin, urlSearch
 	print "[cineto][mainSite] started"
 	query = q(genre,page)
+	#print "[cineto] query"
 	#print query
 	data = getData(urlSearch,query)
+	#print "[cineto] data"
 	#print data
 	jsonContent = json.loads(data)
 	addDirectoryItem(".Genre. ("+str(genreName)+")", {"selector":"1"})
@@ -58,7 +60,7 @@ def mainContent(genre=0, genreName="",page=1):
 		lang.sort()
 		l = ",".join(lang)
 		title = entry['title']+" ("+l+" "+qual+")"
-		picture = "https"+entry['cover']
+		picture = "http:"+entry['cover']
 		#print picture
 		if langSelect[0:2] == "al":
 			addDirectoryItem(title.encode('utf-8'), {"selector":2, "name": entry['title'].encode('utf-8'), "imdb":entry['imdb'].encode('utf-8'),"lang":l.encode('utf-8')},picture)
@@ -71,10 +73,11 @@ def changeGenre():
 	global thisPlugin, urlMain
 	print "[cineto][changeGenre] started"
 	addDirectoryItem(".all.", {"genreData":0})
-	httpData = getData(urlMain,"")
-	reCategories = r'class="list-group-item">([^<]+)<small>([^<]+)</small>'
+	httpData = getData(urlMain+"/#","")
+	print httpData
+	reCategories = r'data-id="[0-9]+" href="#" class="list-group-item">([^<]+)<small>([^<]?)</small>'
 	cats = re.findall(reCategories,httpData)
-	#print cats
+	print cats
 	d = 0
 	for c in cats:
 		print c
@@ -89,7 +92,7 @@ def showMovie(title, imdb, lang):
 	picture = urlPics + imdb + ".jpg"
 	addDirectoryItem("."+title.encode('utf-8')+".",{},picture)
 	for l in lang.split(","):
-		print "'"+l+"' imdb " + str(imdb)
+		print "'"+l+"' imdb " + str(imdb) 
 		pd = "ID="+str(imdb)+"&lang="+str(l)
 		linkData = getData(urlLinks,pd)
 		print linkData

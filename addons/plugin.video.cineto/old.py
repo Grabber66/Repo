@@ -19,6 +19,8 @@ def getJSON(url, postData):
 		req.add_header('User-Agent', 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3')
 		response = urllib2.urlopen(req)
 		dr = response.read()
+		print "-response-"
+		print dr
 		print response.geturl()
 		response.close()
 		return dr
@@ -37,7 +39,7 @@ def getStreamUrl(url):
 	except:
 		return False
 
-siteUrl = "http://cine.to"
+siteUrl = "https://cine.to"
 print "requesting "+siteUrl
 
 search = {'kind':'all',
@@ -51,7 +53,7 @@ search = {'kind':'all',
 			
 # kind all, cinema, retail
 # genreList = { 'All','Action','Adventure','Animation','Biography','Comedy','Crime','Documentary','Drama','Family','Fantasy','FilmNoirt','History','Horror','Music','Musical','Mystery','Romance','SciFi','Sport','Thriller','War','Western'}
-siteUrl = "http://cine.to/request/search"
+siteUrl = "https://cine.to/request/search"
 pd = "kind=all&genre=0&rating=5&year%5B%5D=2010&year%5B%5D=2016&term=&page=3&count=24"
 do = getJSON(siteUrl,pd)
 #print do
