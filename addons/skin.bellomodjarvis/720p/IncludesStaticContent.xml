@@ -701,7 +701,7 @@
 			<label>[COLOR=blue]$LOCALIZE[31246][/COLOR]</label>
 			<property name="Label3">$LOCALIZE[31207]</property>
 			<onclick>PreviousMenu</onclick>
-		  <onclick>ActivateWindow(Music,RecentlyAddedAlbums,return)</onclick>
+		  <onclick>ActivateWindow(MusicLibrary,RecentlyAddedAlbums,return)</onclick>
 			<property name="RecentAlbum1">$INFO[Window(Home).Property(RecentAlbum.1.Thumb)]</property>
 			<property name="RecentAlbum2">$INFO[Window(Home).Property(RecentAlbum.2.Thumb)]</property>
 			<property name="RecentAlbum3">$INFO[Window(Home).Property(RecentAlbum.3.Thumb)]</property>
@@ -809,7 +809,7 @@
 			<label>[COLOR=blue]$LOCALIZE[31262][/COLOR]</label>
 			<property name="Label3">$LOCALIZE[31210]</property>
 			<onclick>PreviousMenu</onclick>
-		  <onclick>ActivateWindow(Music,RecentlyPlayedAlbums,return)</onclick>
+		  <onclick>ActivateWindow(MusicLibrary,RecentlyPlayedAlbums,return)</onclick>
 			<property name="RecommendedAlbum1">$INFO[Window(Home).Property(RecommendedAlbum.1.Thumb)]</property>
 			<property name="RecommendedAlbum2">$INFO[Window(Home).Property(RecommendedAlbum.2.Thumb)]</property>
 			<property name="RecommendedAlbum3">$INFO[Window(Home).Property(RecommendedAlbum.3.Thumb)]</property>
@@ -917,7 +917,7 @@
 			<label>[COLOR=blue]$LOCALIZE[31252][/COLOR]</label>
 			<property name="Label3">$LOCALIZE[31213]</property>
 			<onclick>PreviousMenu</onclick>
-		  <onclick>ActivateWindow(Music,Albums,return)</onclick>
+		  <onclick>ActivateWindow(MusicLibrary,Albums,return)</onclick>
 			<property name="RandomAlbum1">$INFO[Window(Home).Property(RandomAlbum.1.Thumb)]</property>
 			<property name="RandomAlbum2">$INFO[Window(Home).Property(RandomAlbum.2.Thumb)]</property>
 			<property name="RandomAlbum3">$INFO[Window(Home).Property(RandomAlbum.3.Thumb)]</property>
@@ -1094,7 +1094,7 @@
 			<label>$LOCALIZE[31243]</label>
 			<icon>DefaultMusicRecentlyAdded.png</icon>
 	    <onclick>PreviousMenu</onclick>
-      <onclick>ActivateWindow(Music,RecentlyAddedAlbums,return)</onclick>
+      <onclick>ActivateWindow(MusicLibrary,RecentlyAddedAlbums,return)</onclick>
 			<visible>Library.HasContent(Music)</visible>
 		  <visible>!Skin.HasSetting(QuickNavNewMusicButton)</visible>
 	 </item>
@@ -1114,23 +1114,23 @@
 	 </item>
 	 <item id="13">
 			<label>$LOCALIZE[31371]</label>
-			<icon>special://skin/extras/icons/UpdateMusic.png</icon>
+			<icon>special://skin/extras/icons/UpdateMusicLibrary.png</icon>
 	    <onclick>PreviousMenu</onclick>
       <onclick>UpdateLibrary(music)</onclick>
-		  <visible>!Skin.HasSetting(QuickNavUpdateMusicButton)</visible>
+		  <visible>!Skin.HasSetting(QuickNavUpdateMusicLibraryButton)</visible>
 	 </item>
 	 <item id="14">
 			<label>$LOCALIZE[31373]</label>
-			<icon>special://skin/extras/icons/CleanMusic.png</icon>
+			<icon>special://skin/extras/icons/CleanMusicLibrary.png</icon>
 	    <onclick>PreviousMenu</onclick>
       <onclick>CleanLibrary(Music)</onclick>
-		  <visible>!Skin.HasSetting(QuickNavCleanMusicButton)</visible>
+		  <visible>!Skin.HasSetting(QuickNavCleanMusicLibraryButton)</visible>
 	 </item>
 	 <item id="15">
 			<label>$LOCALIZE[589]</label>
 			<icon>special://skin/extras/icons/PartyMode.png</icon>
 	    <onclick>PreviousMenu</onclick>
-      <onclick>ActivateWindow(Music,Songs,return)</onclick>
+      <onclick>ActivateWindow(MusicLibrary,Songs,return)</onclick>
       <onclick>PlayerControl(PartyMode)</onclick>
 <!--  <onclick>AlarmClock(PartyMode,PlayerControl(PartyMode),00:01,silent)</onclick>
       <onclick>AlarmClock(GoFullscreen,Action(Fullscreen),00:02,silent)</onclick> -->

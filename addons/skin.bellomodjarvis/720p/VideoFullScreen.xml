@@ -30,14 +30,14 @@
 			<visible>Window.IsActive(PVROSDChannels) | Window.IsActive(PVROSDGuide) | Window.IsActive(ShutdownMenu)</visible>
 		</control>
 
-
+         
 		<!-- ============================ -->
 		<!-- === VideoFullcreen Code ==== -->
 		<!-- ============================ -->
 		<control type="group" id="1">
 			<control type="image" id="1">
 				<left>0</left>
-				<top>500</top><!-- mod +90 -->
+				<top>410</top>
 				<width>1280</width>
 				<height>220</height>
 				<fadetime>200</fadetime>
@@ -48,7 +48,7 @@
 			</control>
 			<control type="group" id="1">
 				<left>35</left>
-				<top>415</top><!-- mod +90 -->
+				<top>325</top>
 				<visible>[Player.ShowInfo | [Player.Paused + Skin.HasSetting(ShowVideoInfo)] | Window.IsActive(VideoOSD)] + ![Window.IsActive(SliderDialog) | Window.IsActive(SeekBar) | Window.IsActive(OSDVideoSettings) | Window.IsActive(OSDAudioSettings) | Window.IsActive(VideoBookmarks) | Window.IsActive(SelectDialog) | Window.IsActive(SubtitleSearch) | Window.IsActive(ShutdownMenu) | Window.IsActive(favourites) | Window.IsActive(NumericInput) | Window.IsActive(PVROSDChannels) | Window.IsActive(PVROSDGuide)] + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 				<animation type="WindowOpen">
 					<effect type="slide" start="-150,0" end="0,0" time="450" delay="0" tween="sine" easing="out" />
@@ -68,7 +68,7 @@
 				</animation>
 				<!-- Movies/Episodes Cover -->
 				<control type="group" id="1">
-					<visible>[VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster))]</visible>
+					<visible>SubString(Player.Folderpath,/lovefilm/) | [VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster))]</visible>
 					<control type="image" id="1">
 						<left>10</left>
 						<top>10</top>
@@ -142,12 +142,12 @@
 				<!-- Videos -->
 				<control type="group" id="1">
 					<top>60</top>
-					<visible>[!VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes) + !VideoPlayer.Content(LiveTV)] | [IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster)) + !VideoPlayer.Content(LiveTV)]</visible>
+					<visible>[!SubString(Player.Folderpath,/lovefilm/) + !VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes) + !VideoPlayer.Content(LiveTV)] | [IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster)) + !VideoPlayer.Content(LiveTV) + !SubString(Player.Folderpath,/lovefilm/)]</visible>
 					<control type="image" id="1">
 						<left>8</left>
 						<top>8</top>
-						<width>149</width>
-						<height>149</height>
+						<width>274</width>
+						<height>199</height>
 						<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 						<texture background="true" diffuse="thumbs/video_diffuse.png">thumbs/thumb_back.png</texture>
 						<fadetime>800</fadetime>
@@ -155,9 +155,9 @@
 					<control type="image" id="1">
 						<left>8</left>
 						<top>8</top>
-						<width>149</width>
-						<height>149</height>
-						<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
+						<width>274</width>
+						<height>199</height>
+						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 						<texture background="true" diffuse="thumbs/video_diffuse.png">$VAR[VideoPlayerThumb]</texture>
 						<fadetime>800</fadetime>
 						<visible>!VideoPlayer.HasMenu</visible>
@@ -165,8 +165,8 @@
 					<control type="image" id="1">
 						<left>8</left>
 						<top>8</top>
-						<width>149</width>
-						<height>149</height>
+						<width>274</width>
+						<height>199</height>
 						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 						<texture background="true" fallback="thumbs/fallback_disc_tp.png" diffuse="thumbs/video_diffuse.png">$VAR[VideoPlayerThumb]</texture>
 						<fadetime>800</fadetime>
@@ -175,8 +175,8 @@
 					<control type="image" id="1">
 						<left>0</left>
 						<top>0</top>
-						<width>165</width>
-						<height>165</height>
+						<width>289</width>
+						<height>215</height>
 						<texture background="true">thumbs/video_overlay.png</texture>
 						<aspectratio align="center" aligny="center">stretch</aspectratio>
 						<fadetime>800</fadetime>
@@ -185,8 +185,8 @@
 						<description>paused indicator</description>
 						<left>8</left>
 						<top>8</top>
-						<width>149</width>
-						<height>149</height>
+						<width>274</width>
+						<height>199</height>
 						<texture background="true" diffuse="thumbs/video_diffuse.png">osd/paused-overlay.png</texture>
 						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 						<visible>Player.Paused</visible>
@@ -203,7 +203,7 @@
 						<height>199</height>
 						<texture background="true" diffuse="thumbs/video_diffuse.png">osd/ff-overlay.png</texture>
 						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-						<visible>Player.Forwarding</visible>
+						<visible>Player.Forwarding</visible>						
 						<include>VisibleFadeEffect</include>
 						<animation type="conditional" condition="Player.Forwarding" reversible="true">
 							<effect type="fade" start="0" end="50" time="300" />
@@ -305,7 +305,7 @@
 					<top>100</top>
 					<include>OSDPlotAnimation</include>
 					<visible>[IsEmpty(Window(VideoOSD).Property(ShowPlot)) | IsEmpty(VideoPlayer.Plot)]</visible>
-					<visible>[VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster))]</visible>
+					<visible>SubString(Player.Folderpath,/lovefilm/) | [VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster))]</visible>
 					<control type="label" id="1">
 						<description>Title label</description>
 						<left>0</left>
@@ -371,7 +371,7 @@
 					<top>100</top>
 					<include>OSDPlotAnimation</include>
 					<visible>[IsEmpty(Window(VideoOSD).Property(ShowPlot)) | IsEmpty(VideoPlayer.Plot)]</visible>
-					<visible>[!VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes) + !VideoPlayer.Content(LiveTV)] | [IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster)) + !VideoPlayer.Content(LiveTV)]</visible>
+					<visible>[!SubString(Player.Folderpath,/lovefilm/) + !VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes) + !VideoPlayer.Content(LiveTV)] | [IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster)) + !VideoPlayer.Content(LiveTV) + !SubString(Player.Folderpath,/lovefilm/)]</visible>
 					<control type="label" id="1">
 						<description>Title label</description>
 						<left>0</left>
@@ -431,32 +431,16 @@
 						<pauseatend>5000</pauseatend>
 					</control>
 				</control>
+				<!-- LiveTV Info -->
 				<control type="group" id="1">
 					<left>225</left>
 					<top>100</top>
 					<include>OSDPlotAnimation</include>
 					<visible>[IsEmpty(Window(VideoOSD).Property(ShowPlot)) | IsEmpty(VideoPlayer.Plot)]</visible>
 					<visible>VideoPlayer.Content(LiveTV)</visible>
-					<!-- ======================== -->
-					<!-- ===== OSD & Clock ====== -->
-                    <!-- ======================== -->
-                    <control type="label" id="1">
-                        <left>-50</left>
-                        <top>25</top>
-                        <width>149</width>
-                        <height>30</height>
-                        <font>FontSize_48</font>
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <label>$INFO[System.Time(hh:mm)]</label>
-                        <textcolor>white</textcolor>
-                        <shadowcolor>55000000</shadowcolor>
-                        <animation effect="slide" start="0,0" end="55,0" condition="[VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes) | VideoPlayer.Content(LiveTV)]">Conditional</animation>
-                    </control>
-                    <!-- ======================== -->
 					<control type="label" id="1">
 						<description>Title label</description>
-						<left>150</left><!-- mod +150 -->
+						<left>0</left>
 						<top>15</top>
 						<height>30</height>
 						<width>620</width>
@@ -469,7 +453,7 @@
 					</control>
 					<control type="label" id="1">
 						<description>Label</description>
-						<left>150</left><!-- mod +150 -->
+						<left>0</left>
 						<top>46</top>
 						<height>30</height>
 						<width>620</width>
@@ -480,20 +464,18 @@
 						<textcolor>99white</textcolor>
 						<shadowcolor>55000000</shadowcolor>
 					</control>
-					<control type="label" id="1">
+					<control type="fadelabel" id="1">
 						<left>0</left>
 						<top>90</top>
-						<width>620</width><!-- mod +200 -->
+						<width>420</width>
 						<height>45</height>
 						<font>FontSize_20</font>
 						<align>left</align>
 						<aligny>center</aligny>
 						<textcolor>99white</textcolor>
-						<shadowcolor>55000000</shadowcolor>
-						<!--
+						<shadowcolor>55000000</shadowcolor>						
 						<label>$INFO[VideoPlayer.Genre,[COLOR=white]$LOCALIZE[515]:[/COLOR] ]</label>
 						<label>$INFO[VideoPlayer.ChannelGroup,[COLOR=white]$LOCALIZE[31033]:[/COLOR] ]</label>
-						-->
 						<label>$INFO[VideoPlayer.NextTitle,[COLOR=white]$LOCALIZE[19031]:[/COLOR] ,]$INFO[VideoPlayer.NextStartTime, (,)]</label>
 						<scroll>false</scroll>
 						<scrollout>false</scrollout>
@@ -508,13 +490,13 @@
 					<top>240</top>
 					<include>OSDPlotAnimation</include>
 					<visible>[IsEmpty(Window(VideoOSD).Property(ShowPlot)) | IsEmpty(VideoPlayer.Plot)]</visible>
-					<animation effect="slide" start="0,0" end="90,0" condition="VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes) | VideoPlayer.Content(LiveTV)] | [IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster)) + !VideoPlayer.Content(LiveTV)]">Conditional</animation>
+					<animation effect="slide" start="0,0" end="90,0" condition="![SubString(Player.Folderpath,/lovefilm/) | VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes) | VideoPlayer.Content(LiveTV)] | [IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster)) + !VideoPlayer.Content(LiveTV) + !SubString(Player.Folderpath,/lovefilm/)]">Conditional</animation>
 					<animation effect="slide" start="0,0" end="15,-20" condition="VideoPlayer.Content(LiveTV)">Conditional</animation>
 					<control type="group" id="1">
 						<visible>VideoPlayer.Content(LiveTV)</visible>
 						<top>10</top>
 						<control type="label" id="1">
-							<left>3</left>
+							<left>3</left>							
 							<width>175</width>
 							<height>40</height>
 							<font>FontSize_18</font>
@@ -525,7 +507,7 @@
 							<shadowcolor>55000000</shadowcolor>
 						</control>
 						<control type="label" id="1">
-							<left>422</left>
+							<left>422</left>							
 							<width>175</width>
 							<height>40</height>
 							<font>FontSize_18</font>
@@ -533,15 +515,15 @@
 							<aligny>center</aligny>
 							<label>$INFO[Player.FinishTime]</label>
 							<textcolor>99white</textcolor>
-							<shadowcolor>55000000</shadowcolor>
+							<shadowcolor>55000000</shadowcolor>							
 						</control>
 					</control>
 					<control type="label" id="1">
-						<left>167</left> <!-- mod -200  -->
-						<top>15</top> <!-- mod +40 -->
+						<left>367</left>
+						<top>-25</top>
 						<width>175</width>
 						<height>40</height>
-						<font>FontSize_18</font>
+						<font>FontSize_20</font>
 						<align>right</align>
 						<aligny>center</aligny>
 						<label>$INFO[Player.Time]$INFO[Player.Duration, / ]</label>
@@ -595,7 +577,7 @@
 						<overlaytexture>-</overlaytexture>
 						<colordiffuse>44FFFFFF</colordiffuse>
 					</control>
-				</control>
+				</control>	
 			</control>
 			<!-- Media Flags -->
 			<control type="grouplist" id="1">
@@ -617,7 +599,7 @@
 					<effect type="fade" start="100" end="0" time="450" delay="0" tween="sine" easing="out" />
 				</animation>
 				<right>50</right>
-				<top>525</top><!-- mod +90 -->
+				<top>435</top>
 				<width>600</width>
 				<align>right</align>
 				<itemgap>10</itemgap>
@@ -725,7 +707,7 @@
 			<animation type="Visible" reversible="false">
 				<effect type="zoom" time="350" center="640,360" start="150" end="100" tween="cubic" easing="out"/>
 				<effect type="fade" time="350" start="0" easing="out" end="100"/>
-			</animation>
+			</animation>			
 			<animation type="Hidden" reversible="false">
 				<effect type="zoom" time="350" center="640,360" start="100" end="150" tween="cubic" easing="in"/>
 				<effect type="fade" time="350" start="100" easing="in" end="0"/>
@@ -736,7 +718,7 @@
 			</animation>-->
 			<control type="image" id="1">
 				<left>450</left>
-				<top>255</top><!-- mod +90 -->
+				<top>165</top>
 				<width>395</width>
 				<height>395</height>
 				<texture background="true">osd/osd_controls_bg.png</texture>
@@ -744,7 +726,7 @@
 			</control>
 			<control type="group" id="1">
 				<left>485</left>
-				<top>285</top><!-- mod +90 -->
+				<top>195</top>
 				<control type="image" id="1">
 					<width>330</width>
 					<height>330</height>
@@ -777,7 +759,7 @@
 
 			<control type="group" id="1">
 				<left>485</left>
-				<top>305</top><!-- mod +90 -->
+				<top>215</top>
 				<control type="group" id="1">
 					<left>3</left>
 					<visible>!Player.ChapterCount</visible>
@@ -816,7 +798,7 @@
 				</control>
 				<control type="group" id="1">
 					<left>3</left>
-					<visible>Player.ChapterCount</visible>
+					<visible>Player.ChapterCount</visible>		
 					<control type="label" id="1">
 						<description>Seek Time Label</description>
 						<width>320</width>
@@ -871,7 +853,7 @@
 				<control type="label" id="1">
 					<description>Time Label</description>
 					<left>0</left>
-					<top>350</top><!-- mod +85 -->
+					<top>265</top>
 					<width>80</width>
 					<height>20</height>
 					<font>FontSize_18</font>
@@ -884,7 +866,7 @@
 				<control type="label" id="1">
 					<description>Time Remaining Label</description>
 					<right>470</right>
-					<top>350</top><!-- mod +85 -->
+					<top>265</top>
 					<width>80</width>
 					<height>20</height>
 					<font>FontSize_18</font>
@@ -897,7 +879,7 @@
 				<control type="progress" id="1">
 					<description>Progressbar</description>
 					<left>-2</left>
-					<top>370</top><!-- mod +90 -->
+					<top>280</top>
 					<width>327</width>
 					<height>25</height>
 					<info>Player.Progress</info>
@@ -911,7 +893,7 @@
 				<control type="progress" id="1">
 					<description>Progressbar</description>
 					<left>-2</left>
-					<top>370</top><!-- mod +90 -->
+					<top>280</top>
 					<width>327</width>
 					<height>25</height>
 					<info>Player.CacheLevel</info>
@@ -925,7 +907,7 @@
 				<control type="progress" id="1">
 					<description>Progressbar</description>
 					<left>-2</left>
-					<top>370</top><!-- mod +90 -->
+					<top>280</top>
 					<width>327</width>
 					<height>25</height>
 					<info>Player.ProgressCache</info>
@@ -938,7 +920,7 @@
 					<colordiffuse>44FFFFFF</colordiffuse>
 				</control>
 			</control>
-		</control>
+		</control>	
 
 
 		<!-- =========================== -->
@@ -1019,7 +1001,7 @@
 
 		<!-- ======================== -->
 		<!-- === Weather & Clock ==== -->
-		<!-- ======================== -->
+		<!-- ======================== -->		
 		<control type="group" id="1">
 			<left>25</left>
 			<top>45</top>
@@ -1049,7 +1031,7 @@
 				<effect type="slide" start="0,0" end="0,35" time="350" tween="sine" easing="out" />
 			</animation>
 			<visible>!Window.IsActive(SubtitleSearch)</visible>
-			<visible>[Player.ShowInfo | Window.IsActive(VideoOSD) | Player.Paused]</visible>
-		</control>
+			<visible>[Player.ShowInfo | Window.IsActive(VideoOSD) | Player.Paused]</visible>			
+		</control>		
 	</controls>
 </window>

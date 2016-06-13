@@ -30,6 +30,10 @@
 				<onleft>10000</onleft>
 				<onright>10000</onright>
 			</control>
+			<control type="label" id="14">
+				<description>Default Label</description>
+				<include>DialogsButton</include>
+			</control>
 			<control type="button" id="7">
 				<description>Default Button</description>
 	      <include>DialogsButton</include>

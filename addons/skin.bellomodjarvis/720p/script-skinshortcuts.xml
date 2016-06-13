@@ -8,7 +8,7 @@
 
 		<control type="group">
 			<include>DialogAnimation</include>
-			<visible>!Window.IsActive(ShutdownMenu) + !Window.IsActive(PlayerControls) + IsEmpty(Window.Property(additionalDialog)) + !Window.IsActive(SelectDialog) + !Window.IsActive(DialogSelect.xml) + !Window.IsActive(FileBrowser) + !Window.IsActive(VirtualKeyboard) + !Window.IsActive(progressdialog) + !Window.IsActive(okdialog) + !Window.IsActive(yesnodialog) + !Window.IsActive(1105)</visible>
+			<visible>!Window.IsActive(ShutdownMenu) + !Window.IsActive(PlayerControls) + IsEmpty(Window.Property(additionalDialog)) + !Window.IsActive(SelectDialog) + !Window.IsActive(DialogSelect.xml) + !Window.IsActive(FileBrowser) + !Window.IsActive(VirtualKeyboard) + !Window.IsActive(progressdialog) + !Window.IsActive(okdialog) + !Window.IsActive(yesnodialog)</visible>
 			<control type="image">
 				<left>213</left>
 				<top>116</top>
@@ -338,42 +338,6 @@
 						<label>$ADDON[script.skinshortcuts 32072]</label>
 						<visible>StringCompare(Window.Property("groupname"),mainmenu)</visible>
 					</control>
-
-					<!-- WIP new widgets source stuff -->
-					<control id="998" type="button">
-						<visible>StringCompare(Window.Property("groupname"),mainmenu)</visible>
-						<description>edit SubMenu</description>
-						<width>400</width>
-						<height>40</height>
-						<font>FontSize_20</font>
-						<textcolor>77white</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<disabledcolor>33white</disabledcolor>
-						<shadowcolor>99000000</shadowcolor>
-						<texturefocus>buttons/focus.png</texturefocus>
-						<texturenofocus>-</texturenofocus>
-						<align>left</align>
-						<textoffsetx>10</textoffsetx>
-						<label>Configure Widget Group #$INFO[Container(211).CurrentItem]</label>
-						<onclick condition="StringCompare(Container(211).CurrentItem,1)">SetProperty(SubMenu,1,home)</onclick>
-						<onclick condition="StringCompare(Container(211).CurrentItem,2)">SetProperty(SubMenu,2,home)</onclick>
-						<onclick condition="StringCompare(Container(211).CurrentItem,3)">SetProperty(SubMenu,3,home)</onclick>
-						<onclick condition="StringCompare(Container(211).CurrentItem,4)">SetProperty(SubMenu,4,home)</onclick>
-						<onclick condition="StringCompare(Container(211).CurrentItem,5)">SetProperty(SubMenu,5,home)</onclick>
-						<onclick condition="StringCompare(Container(211).CurrentItem,6)">SetProperty(SubMenu,6,home)</onclick>
-						<onclick condition="StringCompare(Container(211).CurrentItem,7)">SetProperty(SubMenu,7,home)</onclick>
-						<onclick condition="StringCompare(Container(211).CurrentItem,8)">SetProperty(SubMenu,8,home)</onclick>
-						<onclick condition="StringCompare(Container(211).CurrentItem,9)">SetProperty(SubMenu,9,home)</onclick>
-						<onclick condition="StringCompare(Container(211).CurrentItem,10)">SetProperty(SubMenu,10,home)</onclick>
-						<onclick condition="StringCompare(Container(211).CurrentItem,11)">SetProperty(SubMenu,11,home)</onclick>
-						<onclick condition="StringCompare(Container(211).CurrentItem,12)">SetProperty(SubMenu,12,home)</onclick>
-						<onclick condition="StringCompare(Container(211).CurrentItem,13)">SetProperty(SubMenu,13,home)</onclick>
-						<onclick condition="StringCompare(Container(211).CurrentItem,14)">SetProperty(SubMenu,14,home)</onclick>
-						<onclick condition="StringCompare(Container(211).CurrentItem,15)">SetProperty(SubMenu,15,home)</onclick>
-						<onclick>ActivateWindow(1105)</onclick>
-					</control>
-					<!--end-->
-
 					<control type="button" id="309">
 						<description>add widget</description>
 						<width>400</width>

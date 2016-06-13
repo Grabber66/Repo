@@ -74,11 +74,9 @@
 				<description>Default SpinControlex</description>
 				<include>DialogsSpincontrolex</include>
 			</control>
-			<control type="image" id="14">
-				<description>Default Label</description>
-				<height>2</height>
-				<label>-</label>
-				<visible>false</visible>
+			<control type="label" id="14">
+				<description>Default Button</description>
+				<include>DialogsButton</include>
 			</control>
 <!--
 		<control type="image" id="11">

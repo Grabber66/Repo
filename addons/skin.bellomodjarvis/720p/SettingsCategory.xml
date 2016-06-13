@@ -60,7 +60,7 @@
 				</control>
 				<control type="label" id="14">
 					<description>Default Label</description>
-					<include>SettingsLabel</include>
+					<include>DialogsButton</include>
 				</control>
 			</control>
 			<control type="group" id="9001">

@@ -96,6 +96,19 @@
 							<aligny>center</aligny>
 							<scroll>false</scroll>
 							<label fallback="0.0">$INFO[ListItem.Rating]</label>
+							<visible>IsEmpty(ListItem.Userrating)</visible>
+						</control>
+						<control type="label">
+							<height>40</height>
+							<width min="10" max="1280">auto</width>
+							<font>FontSize_40</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<scroll>false</scroll>
+							<label fallback="0.0">$INFO[ListItem.Userrating]</label>
+							<visible>!IsEmpty(ListItem.Userrating)</visible>
 						</control>
 					</control>
 				</control>
@@ -625,7 +638,7 @@
 							<textcolor>white</textcolor>
 							<shadowcolor>99000000</shadowcolor>
 							<selectedcolor>white</selectedcolor>
-							<label>$INFO[ListItem.Label] $INFO[ListItem.Label2,$LOCALIZE[20347] ]</label>
+							<label>$INFO[ListItem.Label]:  [COLOR=99white]$INFO[ListItem.Label2][/COLOR]</label>
 							<visible>Control.HasFocus(50)</visible>
 							<animation effect="fade" start="0" end="100" time="200" condition="Control.HasFocus(50)">Conditional</animation>
 							<animation reversible="false" effect="fade" start="0" end="100" time="400">Focus</animation>
@@ -764,6 +777,11 @@
 					<include>TopButton</include>
 					<visible>!substring(Container.FolderPath,plugin://plugin.video,left)</visible>
 				</control>
+				<control type="button" id="7">
+					<description>Set My Rating</description>
+					<label>38023</label>
+					<include>TopButton</include>
+				</control>
 			</control>
 			<!-- Main Labels -->
 			<control type="grouplist">
@@ -840,6 +858,13 @@
 					<animation effect="fade" start="100" end="70" time="200" tween="cubic" easing="inout" condition="!Control.HasFocus(18)" reversible="true">Conditional</animation>
 					<animation effect="zoom"  start="100" end="90" time="200" tween="cubic" easing="inout" center="auto" condition="!Control.HasFocus(18)" reversible="true">Conditional</animation>
 					<visible>!substring(Container.FolderPath,plugin://plugin.video,left)</visible>
+				</control>
+				<control type="label">
+					<description>Set My Rating</description>
+					<include>TopSmallLabel</include>
+					<label>$INFO[Control.GetLabel(7)]</label>
+					<animation effect="fade" start="100" end="70" time="200" tween="cubic" easing="inout" condition="!Control.HasFocus(7)" reversible="true">Conditional</animation>
+					<animation effect="zoom"  start="100" end="90" time="200" tween="cubic" easing="inout" center="auto" condition="!Control.HasFocus(7)" reversible="true">Conditional</animation>
 				</control>
 			</control>
 

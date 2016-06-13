@@ -39,7 +39,6 @@
 				<top>192</top>
 				<width>560</width>
 				<include>DialogsHeaderLabel</include>
-				<label>Remove ID to Test, Remove ID to Test, Remove</label>
 			</control>
 
 			<control type="image">
@@ -79,7 +78,7 @@
 				<textcolor>blue</textcolor>
 				<label>Remove ID to Test, Remove ID to Test</label>
 			</control>
-			<control type="label.">
+			<control type="label">
 				<description>profile name label</description>
 				<left>457</left>
 				<top>290</top>
@@ -114,11 +113,9 @@
 				<description>Default SpinControlex</description>
 				<include>DialogsSpincontrolex</include>
 			</control>
-			<control type="image" id="14">
+			<control type="label" id="14">
 				<description>Default Label</description>
-				<height>2</height>
-				<label>-</label>
-				<visible>false</visible>
+				<include>DialogsButton</include>
 			</control>
 
 			<!-- Control Buttons -->

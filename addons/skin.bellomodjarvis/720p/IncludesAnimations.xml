@@ -412,19 +412,19 @@
 	</include>
 
 	<include name="SettingsSlideAnimations">
-		<animation type="WindowOpen" condition="!Window.Previous(AppearanceSettings) + !Window.Previous(NetworkSettings) + !Window.Previous(VideosSettings) + !Window.Previous(PVRSettings) + !Window.Previous(SystemSettings) + !Window.Previous(MusicSettings) + !Window.Previous(WeatherSettings) + !Window.Previous(ProgramsSettings) + !Window.Previous(PicturesSettings) + !Window.Previous(Profiles) + !Window.Previous(SystemInfo) + !Window.Previous(SkinSettings) + !Window.Previous(EventLog)">
+		<animation type="WindowOpen" condition="!Window.Previous(AppearanceSettings) + !Window.Previous(NetworkSettings) + !Window.Previous(VideosSettings) + !Window.Previous(PVRSettings) + !Window.Previous(SystemSettings) + !Window.Previous(MusicSettings) + !Window.Previous(WeatherSettings) + !Window.Previous(ProgramsSettings) + !Window.Previous(PicturesSettings) + !Window.Previous(Profiles) + !Window.Previous(SystemInfo) + !Window.Previous(SkinSettings)">
 			<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
 			<effect type="slide" start="0,-55" end="0,0" time="350" tween="cubic" easing="out" />
 		</animation>
-		<animation type="WindowClose" condition="!Window.Next(AppearanceSettings) + !Window.Next(NetworkSettings) + !Window.Next(VideosSettings) + !Window.Next(PVRSettings) + !Window.Next(SystemSettings) + !Window.Next(MusicSettings) + !Window.Next(WeatherSettings) + !Window.Next(ProgramsSettings) + !Window.Next(PicturesSettings) + !Window.Next(Profiles) + !Window.Next(SystemInfo) + !Window.Next(SkinSettings) + !Window.Next(EventLog)">
+		<animation type="WindowClose" condition="!Window.Next(AppearanceSettings) + !Window.Next(NetworkSettings) + !Window.Next(VideosSettings) + !Window.Next(PVRSettings) + !Window.Next(SystemSettings) + !Window.Next(MusicSettings) + !Window.Next(WeatherSettings) + !Window.Next(ProgramsSettings) + !Window.Next(PicturesSettings) + !Window.Next(Profiles) + !Window.Next(SystemInfo) + !Window.Next(SkinSettings)">
 			<effect type="fade" start="100" end="0" time="300" delay="250" tween="sine" easing="out" />
 			<effect type="slide" start="0,0" end="0,-55" time="350" delay="250" tween="sine" easing="out" />
 		</animation>
-		<animation type="Visible" condition="!Window.Previous(AppearanceSettings) + !Window.Previous(NetworkSettings) + !Window.Previous(VideosSettings) + !Window.Previous(PVRSettings) + !Window.Previous(SystemSettings) + !Window.Previous(MusicSettings) + !Window.Previous(WeatherSettings) + !Window.Previous(ProgramsSettings) + !Window.Previous(PicturesSettings) + !Window.Previous(Profiles) + !Window.Previous(SystemInfo) + !Window.Previous(SkinSettings) + !Window.Previous(EventLog)">
+		<animation type="Visible" condition="!Window.Previous(AppearanceSettings) + !Window.Previous(NetworkSettings) + !Window.Previous(VideosSettings) + !Window.Previous(PVRSettings) + !Window.Previous(SystemSettings) + !Window.Previous(MusicSettings) + !Window.Previous(WeatherSettings) + !Window.Previous(ProgramsSettings) + !Window.Previous(PicturesSettings) + !Window.Previous(Profiles) + !Window.Previous(SystemInfo) + !Window.Previous(SkinSettings)">
 			<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
 			<effect type="slide" start="0,35" end="0,0" time="350" tween="cubic" easing="out" />
 		</animation>
-		<animation type="Hidden" condition="!Window.Next(AppearanceSettings) + !Window.Next(NetworkSettings) + !Window.Next(VideosSettings) + !Window.Next(PVRSettings) + !Window.Next(SystemSettings) + !Window.Next(MusicSettings) + !Window.Next(WeatherSettings) + !Window.Next(ProgramsSettings) + !Window.Next(PicturesSettings) + !Window.Next(Profiles) + !Window.Next(SystemInfo) + !Window.Next(SkinSettings) + !Window.Next(EventLog)">
+		<animation type="Hidden" condition="!Window.Next(AppearanceSettings) + !Window.Next(NetworkSettings) + !Window.Next(VideosSettings) + !Window.Next(PVRSettings) + !Window.Next(SystemSettings) + !Window.Next(MusicSettings) + !Window.Next(WeatherSettings) + !Window.Next(ProgramsSettings) + !Window.Next(PicturesSettings) + !Window.Next(Profiles) + !Window.Next(SystemInfo) + !Window.Next(SkinSettings)">
 			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
 			<effect type="slide" start="0,0" end="0,35" time="350" tween="sine" easing="out" />
 		</animation>

@@ -53,7 +53,6 @@
 					<width>55</width>
 					<height>55</height>
 					<aspectratio>stretch</aspectratio>
-					<texture diffuse="icons/icon_diffuse.png">icons/notification_info.png</texture>
 				</control>
 			</control>
 		</control>

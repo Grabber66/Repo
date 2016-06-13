@@ -362,21 +362,11 @@
 				  <include>TopButton</include>
 					<label>24022</label>
 				</control>
-				<control type="radiobutton" id="13">
-					<description>Auto-update button</description>
-					<width>220</width>
-					<height>43</height>
+					<control type="radiobutton" id="13">
+					<description>Autoupdate</description>
+					<include>TopButton</include>
 					<label>21340</label>
-					<align>center</align>
-					<font>font12_title</font>
 				</control>
-<!--
-				<control type="button" id="12">
-					<description>Launch</description>
-				  <include>TopButton</include>
-					<label>518</label>
-				</control>
--->
 				<control type="button" id="7">
 					<description>Enable/Disable</description>
 				  <include>TopButton</include>
@@ -436,6 +426,14 @@
 					<animation effect="fade" start="100" end="60" time="200" tween="cubic" easing="inout" condition="!Control.IsEnabled(6)" reversible="true">Conditional</animation>
 					<animation effect="fade" start="100" end="70" time="200" tween="cubic" easing="inout" condition="!Control.HasFocus(6)" reversible="true">Conditional</animation>
           <animation effect="zoom" start="100" end="90" time="200" tween="cubic" easing="inout" center="auto" condition="!Control.HasFocus(6)" reversible="true">Conditional</animation>
+				</control>
+				<control type="label">
+					<description>Autoupdate</description>
+				  <include>TopSmallLabel</include>
+					<label>$INFO[Control.GetLabel(13)]</label>
+					<animation effect="fade" start="100" end="60" time="200" tween="cubic" easing="inout" condition="!Control.IsEnabled(13)" reversible="true">Conditional</animation>
+					<animation effect="fade" start="100" end="70" time="200" tween="cubic" easing="inout" condition="!Control.HasFocus(13)" reversible="true">Conditional</animation>
+					<animation effect="zoom" start="100" end="90" time="200" tween="cubic" easing="inout" center="auto" condition="!Control.HasFocus(13)" reversible="true">Conditional</animation>
 				</control>
 <!--
 				<control type="label">
@@ -520,7 +518,7 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<label>1038</label>
-				<visible>Window.IsVisible(Music) | Window.IsVisible(MusicFiles)</visible>
+				<visible>Window.IsVisible(MusicLibrary) | Window.IsVisible(MusicFiles)</visible>
 			</control>
 			<control type="label">
 				<width>300</width>

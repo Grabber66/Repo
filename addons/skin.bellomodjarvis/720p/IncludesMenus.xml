@@ -248,7 +248,7 @@
 				<control type="label">
 					<include>TopZoomedSmallLabel</include>
 					<label>3</label>
-					<visible>!Container.Content(Movies) + !Container.Content(TVShows) + !Container.Content(Seasons) + !Container.Content(Episodes) + !Window.IsVisible(Music) + !Window.IsVisible(MusicFiles) + !Substring(Container.FolderPath,addons://) + !Window.IsVisible(Favourites)</visible>
+					<visible>!Container.Content(Movies) + !Container.Content(TVShows) + !Container.Content(Seasons) + !Container.Content(Episodes) + !Window.IsVisible(MusicLibrary) + !Window.IsVisible(MusicFiles) + !Substring(Container.FolderPath,addons://) + !Window.IsVisible(Favourites)</visible>
 				</control>
 				<control type="label">
 					<include>TopZoomedSmallLabel</include>
@@ -273,7 +273,7 @@
 				<control type="label">
 					<include>TopZoomedSmallLabel</include>
 					<label>31021</label>
-					<visible>Window.IsVisible(Music) + ![StringCompare(Container.FolderPath,special://musicplaylists/) | Substring(Container.FolderPath,.m3u,Right) | Substring(Container.FolderPath,.xsp,Right)]</visible>
+					<visible>Window.IsVisible(MusicLibrary) + ![StringCompare(Container.FolderPath,special://musicplaylists/) | Substring(Container.FolderPath,.m3u,Right) | Substring(Container.FolderPath,.xsp,Right)]</visible>
 				</control>
 				<control type="label">
 					<include>TopZoomedSmallLabel</include>
@@ -288,13 +288,13 @@
 				<control type="label">
 					<include>TopZoomedSmallLabel</include>
 					<label>24001</label>
-					<visible>Substring(Container.FolderPath,addons://) + !Window.IsVisible(Music) + !Window.IsVisible(MusicFiles)</visible>
+					<visible>Substring(Container.FolderPath,addons://) + !Window.IsVisible(MusicLibrary) + !Window.IsVisible(MusicFiles)</visible>
 				</control>
 				<control type="label">
 					<include>TopZoomedSmallLabel</include>
 					<label>24048</label>
 					<visible>Window.IsVisible(AddonInformation)</visible>
-					<visible>Substring(Container.FolderPath,addons://) + !Window.IsVisible(Music) + !Window.IsVisible(MusicFiles)</visible>
+					<visible>Substring(Container.FolderPath,addons://) + !Window.IsVisible(MusicLibrary) + !Window.IsVisible(MusicFiles)</visible>
 				</control>
 			</control>
 		</control>

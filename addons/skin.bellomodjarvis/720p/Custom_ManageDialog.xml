@@ -155,20 +155,20 @@
 					<selected>!Skin.HasSetting(QuickNavCleanVideoLibraryButton)</selected>
 				</control>
 				<control type="radiobutton" id="8623">
-					<description>Update Music Button</description>
+					<description>Update MusicLibrary Button</description>
 					<width>425</width>
 					<include>DialogsButton</include>
 					<label>$LOCALIZE[31371]</label>
-					<onclick>Skin.ToggleSetting(QuickNavUpdateMusicButton)</onclick>
-					<selected>!Skin.HasSetting(QuickNavUpdateMusicButton)</selected>
+					<onclick>Skin.ToggleSetting(QuickNavUpdateMusicLibraryButton)</onclick>
+					<selected>!Skin.HasSetting(QuickNavUpdateMusicLibraryButton)</selected>
 				</control>
 				<control type="radiobutton" id="8624">
-					<description>Clean Music Button</description>
+					<description>Clean MusicLibrary Button</description>
 					<width>425</width>
 					<include>DialogsButton</include>
 					<label>$LOCALIZE[31373]</label>
-					<onclick>Skin.ToggleSetting(QuickNavCleanMusicButton)</onclick>
-					<selected>!Skin.HasSetting(QuickNavCleanMusicButton)</selected>
+					<onclick>Skin.ToggleSetting(QuickNavCleanMusicLibraryButton)</onclick>
+					<selected>!Skin.HasSetting(QuickNavCleanMusicLibraryButton)</selected>
 				</control>
 				<control type="radiobutton" id="8625">
 					<description>Favourites Button</description>

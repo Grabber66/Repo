@@ -306,9 +306,9 @@
 
 
     <!-- Control Buttons -->
-	  <control type="group" id="10000">
-			<left>1071</left>
-			<top>531</top>
+	<control type="group" id="10000">
+		<left>1071</left>
+		<top>531</top>
   		<control type="button" id="29">
 				<description>Save</description>
     		<width>150</width>
@@ -362,43 +362,39 @@
   			<onup>25</onup>
   			<ondown>27</ondown>
 				<label>$LOCALIZE[31353]</label>
-  		</control>		
+  		</control>
 		<control type="radiobutton" id="25">
-			<description>Hide Group</description>
-			<top>-200</top>
+					<description>Hide Unhide Group</description>
+					<top>-200</top>
     		<width>200</width>
 		    <textwidth>150</textwidth>
-	        <include>DialogsButtonsText</include>
-    		<texturefocus border="49,0,49,0">dialogs/buttons/empty_focus.png</texturefocus>
-    		<texturenofocus border="49,0,49,0">dialogs/buttons/empty_nofocus.png</texturenofocus>
-			<textureradioonfocus>dialogs/buttons/hide_radio_on.png</textureradioonfocus>
-    		<textureradioonnofocus>dialogs/buttons/hide_radio_on.png</textureradioonnofocus>
-  			<textureradioofffocus>dialogs/buttons/hide_radio_off.png</textureradioofffocus>
-    		<textureradiooffnofocus>dialogs/buttons/hide_radio_off.png</textureradiooffnofocus>
-  			<onleft>10010</onleft>
-  			<onright>10010</onright>
-  			<onup>29</onup>
-  			<ondown>28</ondown>
-			<label>19289</label>
-			<radioposx>11</radioposx>
-			<radioposy>11</radioposy>
-			<radiowidth>24</radiowidth>
-			<radioheight>24</radioheight>
-			</control>
+	      <include>DialogsButtonsText</include>
+    		<texturefocus border="49,0,49,0">dialogs/buttons/switch_focus.png</texturefocus>
+    		<texturenofocus border="49,0,49,0">dialogs/buttons/switch_nofocus.png</texturenofocus>
+			<textureradioonfocus>buttons/radio_button_on.png</textureradioonfocus>
+			<textureradioonnofocus>-</textureradioonnofocus>
+			<textureradioofffocus>buttons/radio_button_off.png</textureradioofffocus>
+			<textureradiooffnofocus>-</textureradiooffnofocus>
+					<label>19289</label>
+					<onleft>10010</onleft>
+					<onright>10010</onright>
+					<onup>29</onup>
+					<ondown>28</ondown>
+		</control>		
 		</control>
 		<control type="label" id="20">
 			<description>Fake Label used to pass on name label</description>
 			<visible>false</visible>
 		</control>
 		<control type="label" id="21">
-	    <description>Fake Hidden TVChannels Label</description>
+		   <description>Fake Hidden TVChannels Label</description>
 			<visible>false</visible>
 		</control>
 		<control type="label" id="22">
-	    <description>Fake Visible TVChannels Label</description>
+			<description>Fake Visible TVChannels Label</description>
 			<visible>false</visible>
 		</control>		
-	 </control>
+	</control>
 		
 	</controls>
 </window>

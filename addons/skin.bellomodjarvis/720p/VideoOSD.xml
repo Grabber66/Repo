@@ -2,7 +2,7 @@
 <window  id="2901">
 	<onload condition="!VideoPlayer.Content(LiveTV)">SetFocus(103)</onload>
 	<onload condition="VideoPlayer.Content(LiveTV)">SetFocus(109)</onload>
-
+	
 	<onunload>ClearProperty(ShowPlot,VideoOSD)</onunload>
 	<controls>
 		<control type="group">
@@ -26,7 +26,7 @@
 			</animation>
 			<control type="grouplist" id="100">
 				<right>35</right>
-				<top>628</top><!-- mod +90 -->
+				<top>538</top>
 				<width>370</width>
 				<height>55</height>
 				<itemgap>-10</itemgap>
@@ -67,7 +67,7 @@
 				<texturenofocus>osd/rec_nf.png</texturenofocus>
 				<onclick>PlayerControl(Record)</onclick>
 				<visible>Player.CanRecord + VideoPlayer.Content(LiveTV)</visible>
-			</control>
+			</control>						
 			<control type="button" id="108">
 				<width>55</width>
 				<height>55</height>
@@ -87,7 +87,7 @@
 				<texturenofocus>osd/channelDOWN_nf.png</texturenofocus>
 				<onclick>PlayerControl(Next)</onclick>
 				<visible>VideoPlayer.Content(LiveTV)</visible>
-			</control>
+			</control>		    
 			<control type="button" id="101">
 				<width>55</width>
 				<height>55</height>
@@ -273,7 +273,7 @@
 				<description>Video Settings</description>
 				<include>TopButton</include>
 				<label>157</label>
-				<onclick>ActivateWindow(OSDVideoSettings)</onclick>
+				<onclick>ActivateWindow(OSDVideoSettings)</onclick>				
 			</control>
 			<control type="button" id="1002">
 				<description>Audio Settings</description>
@@ -320,7 +320,7 @@
 				<description>Teletext</description>
 				<include>TopButton</include>
 				<label>$LOCALIZE[31068]</label>
-				<onclick condition="VideoPlayer.Content(Movies)">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[VideoPlayer.Title])</onclick>
+				<onclick condition="VideoPlayer.Content(Movies)">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[VideoPlayer.Title])</onclick>				
 				<onclick condition="VideoPlayer.Content(Episodes)">RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[VideoPlayer.TVShowTitle])</onclick>
 				<visible>VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)</visible>
 			</control>
@@ -329,7 +329,7 @@
 
 	<control type="group">
 		<left>245</left>
-		<top>535</top><!-- mod +90 -->
+		<top>445</top>
 		<include>OSDPlotAnimation</include>
 		<visible>Window.IsActive(VideoOSD)</visible>
 		<visible>![Window.IsActive(ShutdownMenu) | Window.IsActive(favourites) | IsEmpty(VideoPlayer.Plot)] + Control.HasFocus(200) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>

@@ -28,13 +28,13 @@
   			<aspectratio>stretch</aspectratio>
   			<texture background="true">dialogs/other/header_line.png</texture>
   		 </control>
-  		<control type="label">
+  		<control type="label" id="2">
   			<description>header label</description>
 				<left>325</left>
 				<top>165</top>
 				<width>620</width>
   	    <include>DialogsHeaderLabel</include>
-        <label>$LOCALIZE[21432]</label>
+        <label>-</label>
   		</control>
 			
 			<control type="group">

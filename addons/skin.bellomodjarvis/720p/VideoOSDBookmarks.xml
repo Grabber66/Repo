@@ -94,7 +94,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>center</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label]$INFO[ListItem.Label2, - ]</label>
+						<info>ListItem.Label:  [COLOR=99white]$INFO[ListItem.Label2][/COLOR]</info>
 					</control>
 				</itemlayout>
 				<focusedlayout width="306">
@@ -155,7 +155,7 @@
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
-							<label>$INFO[ListItem.Label]$INFO[ListItem.Label2, - ]</label>
+							<info>ListItem.Label:  [COLOR=99white]$INFO[ListItem.Label2][/COLOR]</info>
 							<visible>!Control.HasFocus(11)</visible>
 						</control>
 						<control type="label">
@@ -169,7 +169,7 @@
 							<selectedcolor>blue</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
-							<label>$INFO[ListItem.Label]$INFO[ListItem.Label2, - ]</label>
+							<info>ListItem.Label:  [COLOR=99white]$INFO[ListItem.Label2][/COLOR]</info>
 							<visible>Control.HasFocus(11)</visible>
 						</control>
 					</control>

@@ -28,7 +28,7 @@
 				<align>center</align>
 				<scroll>true</scroll>
 				<scrollspeed>20</scrollspeed>
-				<label>Remove ID to Test, Remove ID to Test, , Remove ID to Test, Remove ID to Test</label>
+				<label>-</label>
 			</control>
 
 			<control type="edit" id="312">

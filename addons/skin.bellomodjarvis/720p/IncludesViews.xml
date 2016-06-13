@@ -28,7 +28,7 @@
     <include condition="!Skin.HasSetting(ShelfView)">ViewShelf</include> <!-- id = 583 -->      
   </include>
 
-  <include name="MusicViews">
+  <include name="MusicLibraryViews">
     <include>ListView_Music</include> <!-- id = 50 -->
     <include condition="!Skin.HasSetting(SlideViewMusic)">SlideView_Music</include> <!-- id = 51 -->
     <include condition="!Skin.HasSetting(GalleryViewMusic)">GalleryView_Music</include> <!-- id = 52 -->

@@ -34,7 +34,7 @@
 		<font>FontSize_18</font>
 		<textcolor>77white</textcolor>
 		<focusedcolor>white</focusedcolor>
-		<disabledcolor>33white</disabledcolor>
+	  <disabledcolor>33white</disabledcolor>
 		<texturefocus>buttons/focus.png</texturefocus>
 		<texturenofocus>-</texturenofocus>
 		<textoffsetx>7</textoffsetx>
@@ -49,7 +49,7 @@
 		<font>FontSize_18</font>
 		<textcolor>77white</textcolor>
 		<focusedcolor>white</focusedcolor>
-		<disabledcolor>33white</disabledcolor>
+	  <disabledcolor>33white</disabledcolor>
 		<textoffsetx>0</textoffsetx>
 		<textoffsety>0</textoffsety>
 		<align>left</align>
@@ -63,15 +63,13 @@
 		<font>FontSize_18</font>
 		<textcolor>77white</textcolor>
 		<focusedcolor>white</focusedcolor>
-		<disabledcolor>33white</disabledcolor>
+	  <disabledcolor>33white</disabledcolor>
 		<texturefocus>buttons/focus.png</texturefocus>
 		<texturenofocus>-</texturenofocus>
 		<textureradioonfocus>buttons/radio_button_on.png</textureradioonfocus>
 		<textureradioonnofocus>buttons/radio_button_on.png</textureradioonnofocus>
 		<textureradioofffocus>buttons/radio_button_off.png</textureradioofffocus>
 		<textureradiooffnofocus>buttons/radio_button_off.png</textureradiooffnofocus>
-		<textureradioondisabled>buttons/radio_button_on.png</textureradioondisabled>
-		<textureradiooffdisabled>buttons/radio_button_off.png</textureradiooffdisabled>
 		<align>left</align>
 		<aligny>center</aligny>
 		<pulseonselect>no</pulseonselect>
@@ -83,14 +81,14 @@
 		<font>FontSize_18</font>
 		<textcolor>77white</textcolor>
 		<focusedcolor>white</focusedcolor>
-		<disabledcolor>33white</disabledcolor>
+	  <disabledcolor>33white</disabledcolor>
 		<texturefocus>-</texturefocus>
 		<texturenofocus>-</texturenofocus>
 		<texturebg>-</texturebg>
-		<textureleft>buttons/arrow_left.png</textureleft>
-		<textureleftfocus>buttons/arrow_left.png</textureleftfocus>
-		<textureright>buttons/arrow_right.png</textureright>
-		<texturerightfocus>buttons/arrow_right.png</texturerightfocus>
+    <textureleft>buttons/arrow_left.png</textureleft>
+    <textureleftfocus>buttons/arrow_left.png</textureleftfocus>
+    <textureright>buttons/arrow_right.png</textureright>
+    <texturerightfocus>buttons/arrow_right.png</texturerightfocus>
 		<align>left</align>
 		<aligny>center</aligny>
 		<pulseonselect>no</pulseonselect>
@@ -102,18 +100,16 @@
 		<font>FontSize_18</font>
 		<textcolor>77white</textcolor>
 		<focusedcolor>white</focusedcolor>
-		<disabledcolor>33white</disabledcolor>
+	  <disabledcolor>33white</disabledcolor>
 		<texturefocus>buttons/focus.png</texturefocus>
 		<texturenofocus>-</texturenofocus>
 		<textureup>buttons/arrow_up_nf.png</textureup>
 		<texturedown>buttons/arrow_down_nf.png</texturedown>
-		<textureupdisabled>buttons/arrow_up_nf.png</textureupdisabled>
-		<texturedowndisabled>buttons/arrow_down_nf.png</texturedowndisabled>
 		<textureupfocus>buttons/arrow_up_fo.png</textureupfocus>
 		<texturedownfocus>buttons/arrow_down_fo.png</texturedownfocus>
 		<spinposx>0</spinposx>
 		<spinposy>0</spinposy>
-		<align>left</align>
+    <align>left</align>
 		<aligny>center</aligny>
 		<reverse>yes</reverse>
 		<subtype>text</subtype>
@@ -126,13 +122,11 @@
 		<font>FontSize_18</font>
 		<textcolor>77white</textcolor>
 		<focusedcolor>white</focusedcolor>
-		<disabledcolor>33white</disabledcolor>
+	  <disabledcolor>33white</disabledcolor>
 		<texturefocus>buttons/focus.png</texturefocus>
 		<texturenofocus>-</texturenofocus>
 		<textureup>buttons/arrow_up_nf.png</textureup>
 		<texturedown>buttons/arrow_down_nf.png</texturedown>
-		<textureupdisabled>buttons/arrow_up_nf.png</textureupdisabled>
-		<texturedowndisabled>buttons/arrow_down_nf.png</texturedowndisabled>
 		<textureupfocus>buttons/arrow_up_fo.png</textureupfocus>
 		<texturedownfocus>buttons/arrow_down_fo.png</texturedownfocus>
 		<spinposx>0</spinposx>
@@ -147,7 +141,7 @@
 		<font>FontSize_18</font>
 		<textcolor>77white</textcolor>
 		<focusedcolor>white</focusedcolor>
-		<disabledcolor>33white</disabledcolor>
+	  <disabledcolor>33white</disabledcolor>
 		<texturefocus>buttons/focus.png</texturefocus>
 		<texturenofocus>-</texturenofocus>
 		<texturesliderbar>osd/osd_slider_bg.png</texturesliderbar>
@@ -155,7 +149,7 @@
 		<textureslidernibfocus>osd/osd_slider_nib_fo.png</textureslidernibfocus>
 		<sliderwidth>200</sliderwidth>
 		<sliderheight>25</sliderheight>
-		<align>left</align>
+    <align>left</align>
 		<aligny>center</aligny>
 		<pulseonselect>no</pulseonselect>
 	</default>

@@ -6,7 +6,7 @@
 			<include>DialogAnimation</include>
 			<visible>!Window.IsActive(virtualkeyboard) + !Window.IsActive(numericinput)</visible>
 			<include>DialogSelectBackground</include>
-			<control type="label">
+			<control type="label" id="2">
 				<description>header label</description>
 				<left>360</left>
 				<top>152</top>
@@ -57,9 +57,7 @@
 				</control>
 				<control type="image" id="14">
 					<description>Default Label</description>
-					<height>2</height>
-					<label>-</label>
-					<visible>false</visible>
+					<include>DialogsButton</include>
 				</control>
 			</control>
 

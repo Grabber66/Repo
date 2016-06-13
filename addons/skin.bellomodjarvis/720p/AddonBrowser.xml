@@ -99,6 +99,11 @@
 					<altlabel>$LOCALIZE[25001]: $LOCALIZE[31011]</altlabel>
 					<include>TopLeftMenusButton</include>
 				</control>
+				<control type="button" id="9">
+					<description>Auto Update</description>
+					<include>TopLeftMenusButton</include>
+					<label>24034</label>
+				</control>
 			</control>
 			<!-- Main Options Labels -->
 			<control type="grouplist.">
@@ -181,6 +186,14 @@
 					<animation effect="fade" start="100" end="70" time="200" tween="cubic" easing="in" condition="!ControlGroup(9111).HasFocus(6)" reversible="true">Conditional</animation>
 					<animation effect="zoom"  start="100" end="90" time="200" tween="cubic" easing="in" center="auto" condition="!ControlGroup(9111).HasFocus(6)" reversible="true">Conditional</animation>
 					<visible>!SubString(Control.GetLabel(6),*)</visible>
+				</control>
+				<control type="label">
+					<description>Repo Updates Check</description>
+					<include>TopSmallLabel</include>
+					<label>24034</label>
+					<animation effect="fade" start="100" end="70" time="200" tween="cubic" easing="in" condition="!ControlGroup(9111).HasFocus(9)" reversible="true">Conditional</animation>
+					<animation effect="zoom"  start="100" end="90" time="200" tween="cubic" easing="in" center="auto" condition="!ControlGroup(9111).HasFocus(9)" reversible="true">Conditional</animation>
+					<visible>!SubString(Control.GetLabel(9),*)</visible>
 				</control>
 			</control>
 		</control>		

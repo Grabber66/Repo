@@ -6,7 +6,7 @@
 	<views>50,51,52,56,560,582,583,57,59</views>
 	<controls>
 		<include>BackgroundItems</include>
-		<include>MusicViews</include>
+		<include>MusicLibraryViews</include>
 		<include>CommonItems</include>
 
 		<!-- ==================== -->
@@ -125,14 +125,6 @@
 					<label>$LOCALIZE[137]</label>
 					<onclick>right</onclick>
 					<include>TopLeftMenusButton</include>
-				</control>
-				<control type="button" id="99">
-					<description>Files</description>
-					<label>$LOCALIZE[744]</label>
-					<include>TopLeftMenusButton</include>
-					<onclick>SetFocus(50)</onclick>
-					<onclick>ReplaceWindow(MusicFiles)</onclick>
-					<selected>Window.IsVisible(MusicFiles)</selected>
 				</control>
 				<control type="togglebutton" id="16">
 					<description>Party Mode</description>
