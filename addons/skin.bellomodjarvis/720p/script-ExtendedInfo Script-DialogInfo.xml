@@ -464,100 +464,6 @@
 					</focusedlayout>
 				</control>
 
-				<!-- youtube list -->
-				<control type="fixedlist" id="350">
-					<description>youtube</description>
-					<posx>0</posx>
-					<posy>19</posy>
-					<width>960</width>
-					<height>250</height>
-					<orientation>horizontal</orientation>
-					<scrolltime tween="cubic" easing="out">350</scrolltime>
-					<onleft>350</onleft>
-					<onright>350</onright>
-					<onup>9000</onup>
-					<ondown>Action(select)</ondown>
-					<preloaditems>2</preloaditems>
-					<visible>StringCompare(Window.Property(switchcontent),3)</visible>
-					<itemlayout width="296" height="250">
-						<control type="group">
-							<animation reversible="true" effect="slide" end="70,5" time="150" condition="Control.HasFocus(350)">Conditional</animation>
-							<control type="image">
-								<left>7</left>
-								<top>7</top>
-								<width>276</width>
-								<height>168</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" diffuse="thumbs/video_diffuse.png">thumbs/thumb_back.png</texture>
-							</control>
-							<control type="image">
-								<left>7</left>
-								<top>7</top>
-								<width>276</width>
-								<height>168</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-								<texture background="true" fallback="thumbs/fallback_poster.png" diffuse="thumbs/music_diffuse.png">$INFO[ListItem.Icon]</texture>
-							</control>
-							<control type="image">
-								<left>0</left>
-								<top>0</top>
-								<width>290</width>
-								<height>182</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" diffuse="thumbs/video_diffuse.png">thumbs/video_overlay_noglass.png</texture>
-							</control>
-						</control>
-					</itemlayout>
-					<focusedlayout width="296" height="250">
-						<control type="group">
-							<animation reversible="true" effect="zoom" start="100" end="125" center="6,-11" time="150" condition="Control.HasFocus(350)">Conditional</animation>
-							<control type="image">
-								<left>7</left>
-								<top>7</top>
-								<width>276</width>
-								<height>168</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" diffuse="thumbs/video_diffuse.png">thumbs/thumb_back.png</texture>
-							</control>
-							<control type="image">
-								<left>7</left>
-								<top>7</top>
-								<width>276</width>
-								<height>168</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-								<texture background="true" fallback="thumbs/fallback_poster.png" diffuse="thumbs/video_diffuse.png">$INFO[ListItem.Icon]</texture>
-							</control>
-							<control type="image">
-								<left>0</left>
-								<top>0</top>
-								<width>290</width>
-								<height>182</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" diffuse="thumbs/video_diffuse.png">thumbs/video_overlay_noglass.png</texture>
-							</control>
-						</control>
-						<control type="label">
-							<posx>372</posx>
-							<posy>190</posy>
-							<width>500</width>
-							<height>40</height>
-							<font>FontSize_22</font>
-							<scroll>true</scroll>
-							<scrollspeed>50</scrollspeed>
-							<align>left</align>
-							<aligny>center</aligny>
-							<textcolor>white</textcolor>
-							<shadowcolor>99000000</shadowcolor>
-							<selectedcolor>white</selectedcolor>
-							<label>$INFO[ListItem.Label]</label>
-							<visible>Control.HasFocus(350)</visible>
-							<animation effect="fade" start="0" end="100" time="200" condition="Control.HasFocus(350)">Conditional</animation>
-							<animation reversible="false" effect="fade" start="0" end="100" time="400">Focus</animation>
-							<animation reversible="false" effect="fade" start="100" end="0" time="0">Unfocus</animation>
-						</control>
-					</focusedlayout>
-				</control>
-
 				<!-- artwork list -->
 				<control type="fixedlist" id="450">
 					<description>artworks</description>
@@ -808,13 +714,6 @@
 					<include>TopButton</include>
 					<visible>IntegerGreaterThan(Container(250).NumItems,0)</visible>
 				</control>				
-				<control type="button" id="8">
-					<description>youtube</description>
-					<label>$LOCALIZE[31077]</label>
-					<onclick>SetProperty(switchcontent,3)</onclick>
-					<include>TopButton</include>
-					<visible>IntegerGreaterThan(Container(350).NumItems,0)</visible>
-				</control>			
 				<control type="button" id="9">
 					<description>artwork</description>
 					<label>$LOCALIZE[31076]</label>

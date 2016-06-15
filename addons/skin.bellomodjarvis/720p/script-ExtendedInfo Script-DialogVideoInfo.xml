@@ -467,56 +467,6 @@
 				</control>
 
 				<!-- ================== -->
-				<!-- YouTube List 		 -->
-				<!-- ================== --> 
-				<control type="fixedlist" id="350">
-					<description>youtube</description>
-					<posx>0</posx>
-					<posy>19</posy>
-					<width>960</width>
-					<height>250</height>
-					<orientation>horizontal</orientation>
-					<scrolltime tween="cubic" easing="out">350</scrolltime>
-					<onleft>150</onleft>
-					<onright>150</onright>
-					<onup>9000</onup>
-					<ondown>Action(select)</ondown>
-					<preloaditems>2</preloaditems>
-					<visible>StringCompare(Window.Property(switchcontent),3)</visible>
-					<itemlayout width="296" height="250">
-						<control type="group">
-							<animation reversible="true" effect="slide" end="70,5" time="150" condition="Control.HasFocus(350)">Conditional</animation>
-							<include>ExtendedLandscapeLayout-nf</include>
-						</control>
-					</itemlayout>
-					<focusedlayout width="296" height="250">
-						<control type="group">
-							<animation reversible="true" effect="zoom" start="100" end="125" center="6,-11" time="150" condition="Control.HasFocus(350)">Conditional</animation>
-							<include>ExtendedLandscapeLayout-fo</include>
-						</control>
-						<control type="label">
-							<posx>372</posx>
-							<posy>190</posy>
-							<width>475</width>
-							<height>40</height>
-							<font>FontSize_22</font>
-							<scroll>true</scroll>
-							<scrollspeed>50</scrollspeed>
-							<align>left</align>
-							<aligny>center</aligny>
-							<textcolor>white</textcolor>
-							<shadowcolor>99000000</shadowcolor>
-							<selectedcolor>white</selectedcolor>
-							<label>$INFO[ListItem.Label]</label>
-							<visible>Control.HasFocus(350)</visible>
-							<animation effect="fade" start="0" end="100" time="200" condition="Control.HasFocus(350)">Conditional</animation>
-							<animation reversible="false" effect="fade" start="0" end="100" time="400">Focus</animation>
-							<animation reversible="false" effect="fade" start="100" end="0" time="0">Unfocus</animation>
-						</control>
-					</focusedlayout>
-				</control>
-
-				<!-- ================== -->
 				<!-- Fanart List 		 -->
 				<!-- ================== --> 
 				<control type="fixedlist" id="1350">
@@ -846,13 +796,6 @@
 					<include>TopButton</include>
 					<visible>IntegerGreaterThan(Container(150).NumItems,0)</visible>
 				</control>				
-				<control type="button" id="23">
-					<description>youtube</description>
-					<label>$LOCALIZE[31077]</label>
-					<onclick>SetProperty(switchcontent,3)</onclick>
-					<include>TopButton</include>
-					<visible>IntegerGreaterThan(Container(350).NumItems,0)</visible>
-				</control>			
 				<control type="button" id="24">
 					<description>fanart</description>
 					<label>$LOCALIZE[20445]</label>
@@ -945,15 +888,6 @@
 					<animation effect="fade" start="100" end="60" time="200" tween="cubic" easing="inout" condition="!Control.IsEnabled(22)" reversible="true">Conditional</animation>
 					<animation effect="fade" start="100" end="70" time="200" tween="cubic" easing="inout" condition="!Control.HasFocus(22)" reversible="true">Conditional</animation>
 					<animation effect="zoom" start="100" end="90" time="200" tween="cubic" easing="inout" center="auto" condition="!Control.HasFocus(22)" reversible="true">Conditional</animation>
-				</control>
-				<control type="label">
-					<description>youtube videos</description>
-					<include>TopSmallLabel</include>
-					<label>$INFO[Control.GetLabel(23)]</label>
-					<visible>IntegerGreaterThan(Container(350).NumItems,0)</visible>
-					<animation effect="fade" start="100" end="60" time="200" tween="cubic" easing="inout" condition="!Control.IsEnabled(23)" reversible="true">Conditional</animation>
-					<animation effect="fade" start="100" end="70" time="200" tween="cubic" easing="inout" condition="!Control.HasFocus(23)" reversible="true">Conditional</animation>
-					<animation effect="zoom" start="100" end="90" time="200" tween="cubic" easing="inout" center="auto" condition="!Control.HasFocus(23)" reversible="true">Conditional</animation>
 				</control>
 				<control type="label">
 					<description>fanart</description>
