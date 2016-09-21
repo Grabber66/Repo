@@ -12,9 +12,9 @@
 			  <width>2000</width>
 			  <height>476</height>
 			  <aspectratio>stretch</aspectratio>
-			  <texture background="true">skin/button_klein_tranz90.png</texture>	
+			  <texture background="true">skin/button_klein_tranz90.png</texture>
 			  <bordertexture border="10">ThumbShadow.png</bordertexture>
-			  <bordersize>7</bordersize>	
+			  <bordersize>7</bordersize>
 			  <colordiffuse>$VAR[ColorButtonDialogeBack]</colordiffuse>
 			  <visible>!VideoPlayer.Content(LiveTV)</visible>
 			</control>
@@ -39,9 +39,9 @@
 				<width>2000</width>
 				<height>296</height>
 				<aspectratio>stretch</aspectratio>
-				<texture background="true">skin/button_klein_tranz90.png</texture>	
+				<texture background="true">skin/button_klein_tranz90.png</texture>
 				<bordertexture border="10">ThumbShadow.png</bordertexture>
-				<bordersize>7</bordersize>	
+				<bordersize>7</bordersize>
 				<colordiffuse>$VAR[ColorButtonDialogeBack]</colordiffuse>
 			  </control>
 			  <control type="image" id="1">
@@ -233,8 +233,9 @@
 				<shadowcolor>$VAR[ColorFontShadow]</shadowcolor>
 			  </control>
 			</control>
+
 			<!-- Tuner info -->
-			<control type="group" id="1"> 
+			<control type="group" id="1">
 			<left>1460</left>
 			<top>920</top>
 			<visible>VideoPlayer.Content(LiveTV)</visible>
@@ -338,8 +339,8 @@
 				<visible>substring(PVR.ActStreamDevice,#3)</visible>
 			</control>
 		</control>
-		
 		<!-- Encryption -->
+<!--
 		<control type="group" id="1">
 		<left>20</left>
 		<top>920</top>
@@ -521,7 +522,9 @@
 				<label>$INFO[PVR.ActStreamEncryptionName]</label>
 			</control>
 		</control>
+-->
 		<!-- GROUP FOR INFOS REC LiveTV -->
+<!--
 		<control type="group" id="1">
 		  <left>550</left>
 		  <top>500</top>
@@ -580,7 +583,49 @@
 			<shadowcolor>$VAR[ColorFontShadow]</shadowcolor>
 		  </control>
 		</control>
-		
+
+-->
+		<!-- GROUP FOR INFOS REC LiveTV new-->
+		<control type="group" id="1">
+		  <left>20</left>
+		  <top>920</top>
+		  <visible>VideoPlayer.Content(LiveTV)</visible>
+		  <visible>Pvr.IsRecording</visible>
+		  <control type="label" id="1">
+		    <left>10</left>
+			<width>900</width>
+			<height>38</height>
+			<label>50208</label>
+			<scroll>true</scroll>
+			<align>left</align>
+			<font>primal_18</font>
+			<textcolor>$VAR[ColorFontNormal]</textcolor>
+			<shadowcolor>$VAR[ColorFontShadow]</shadowcolor>
+		  </control>
+		  <control type="label" id="1">
+			<left>250</left>
+			<width>200</width>
+			<height>38</height>
+			<scroll>true</scroll>
+			<label>$INFO[Pvr.NowRecordingDateTime]</label>
+			<align>left</align>
+			<font>primal_18</font>
+			<textcolor>$VAR[ColorFontNormal]</textcolor>
+			<shadowcolor>$VAR[ColorFontShadow]</shadowcolor>
+		  </control>
+		  <control type="label" id="1">
+			<left>460</left>
+			<width>900</width>
+			<height>38</height>
+			<scroll>true</scroll>
+			<label>$INFO[Pvr.NowRecordingChannel] |  $INFO[Pvr.NowRecordingTitle]</label>
+			<align>left</align>
+			<font>primal_18</font>
+			<textcolor>$VAR[ColorFontNormal]</textcolor>
+			<shadowcolor>$VAR[ColorFontShadow]</shadowcolor>
+		  </control>
+		</control>
+
 		<control type="group" id="1">
 		  <left>220</left>
 		  <top>385</top>
@@ -669,7 +714,7 @@
 		  <info>Player.Progress</info>
 		</control>
 	   </control>
-	   
+
 	   <control type="group" id="1">
 		<left>20</left>
 		<top>0</top>
@@ -719,7 +764,7 @@
 		</control>
 	  </control>
 	 </control>
-	 
+
 	 <!-- codec info -->
 	 <control type="group" id="0">
 		<left>0</left>
@@ -1095,8 +1140,8 @@
 			<shadowcolor>$VAR[ColorFontShadow]</shadowcolor>
 		</control>
 	</control>
-			
 
-	
+
+
 	</controls>
 </window>
