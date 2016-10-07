@@ -21,10 +21,7 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.burningseries"
-	   name="Burning Series"
-	   version="1.5.1.1"
-	   provider-name="chmee phreekz">
+<addon id="plugin.video.burningseries" name="Burning Series" version="1.5.1.1" provider-name="chmee phreekz">
   <requires>
 	<import addon="script.module.t0mm0.common"/>
 	<import addon="script.module.urlresolver"/>
