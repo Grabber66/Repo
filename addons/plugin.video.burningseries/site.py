@@ -38,7 +38,7 @@ def login(username, password):
 		
 	if(username == "" or password == ""):
 		return ""
-	inhalt = web.postPage("http://bs.to/api/login/", "login[user]="+username+"&login[pass]="+password)
+	inhalt = web.postPage("https://bs.to/api/login/", "login[user]="+username+"&login[pass]="+password)
 	print '##'
 	print inhalt
 	print '###'
@@ -53,12 +53,12 @@ def login(username, password):
 		xbmcgui.Dialog().ok(line1, line2)
 
 def getFavorites():
-	url = "http://bs.to/api/user/series"
+	url = "https://bs.to/api/user/series"
 	daten = getPage(url)
 	return daten
 
 def setFavorites(ids):
-	url = "http://bs.to/api/user/series/set/"+(','.join(ids))
+	url = "https://bs.to/api/user/series/set/"+(','.join(ids))
 	daten = json.loads(getPage(url), 'UTF-8')
 	return daten
 	

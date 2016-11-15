@@ -25,8 +25,8 @@ dataUrl = xbmc.translatePath(addonInfo.getAddonInfo('profile'))
 # -- check if watched status is in profile-path v1.5.1 --
 checkUserPath()
 
-urlHost = "http://bs.to/api/"
-urlPics = "http://s.bs.to/img/cover/"
+urlHost = "https://bs.to/api/"
+urlPics = "https://s.bs.to/img/cover/"
 
 # --------------
 # main functions

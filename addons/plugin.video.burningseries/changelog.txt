@@ -1,3 +1,6 @@
+[B]Version 1.5.1.2[/B]
+- change internet protocol to https
+
 [B]Version 1.5.1.1[/B]
 - error on migration if watched.data does not exist
 

@@ -10,8 +10,8 @@ addonInfo = xbmcaddon.Addon ('plugin.video.burningseries')
 dataPath = xbmc.translatePath(addonInfo.getAddonInfo('profile'))
 addonPath = addonInfo.getAddonInfo('path')
 
-urlHost = "http://bs.to/api/"
-urlPics = "http://s.bs.to/img/cover/"
+urlHost = "https://bs.to/api/"
+urlPics = "https://s.bs.to/img/cover/"
 
 def getUrl(url):
 	try:
