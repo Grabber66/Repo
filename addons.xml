@@ -68,63 +68,7 @@
   </extension>
 </addon>
 
-<addon id="skin.bellomod" name="Bello Fredo Mod" version="4.6.3" provider-name="Grabber66, thx sualfred">
-  <requires>
-        <import addon="xbmc.gui" version="5.9.0" />
-        <import addon="service.skin.widgets" version="0.0.29"/>
-        <import addon="service.library.data.provider" version="0.0.1" />
-        <import addon="script.artwork.downloader" version="12.0.24" />
-        <import addon="script.globalsearch" version="2.0.8" />
-        <import addon="script.artistslideshow" version="1.6.5" />
-        <import addon="script.playalbum" version="1.0.1" />
-        <import addon="script.extendedinfo" version="2.0.10" />
-        <import addon="script.skin.info.service" version="1.0.0" />
-        <import addon="script.grab.fanart" version="0.12.8" />
-        <import addon="script.skinshortcuts" version="0.5.0" />
-        <import addon="script.playalbum" version="2.0.1" />
-        <import addon="weather.openweathermap.extended" version="1.0.1" />
-        <import addon="plugin.audio.tuneinradio" version="2.1.0" />
-        <import addon="script.toolbox" version="1.0.0" />
-        <import addon="script.imdbupdate" version="0.7.4" />
-        <import addon="script.bellofredo.extrapack" version="1.1.1" />
-        <import addon="script.favourites" version="6.0.1" />
-    </requires>
-    <extension point="xbmc.gui.skin" defaultthemename="Textures.xbt" effectslowdown="0.75" debugging="false">
-        <res width="1280" height="720" aspect="16:9" default="true" folder="720p"/>
-    </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">A GUI for Kodi Media Center</summary>
-    <description lang="en">This skin started as an unofficial Port of the Bello skin (by Nessus) for the Kodi 15.x Nightlies and ended up in an independent skin with a lot of modifications, such as 100% customizable widgets, new themes, modded elements, hundreds of improvements, and much more...</description>
-    <disclaimer lang="en">Mouse usage is not supported</disclaimer>
-    <platform>all</platform>
-    <license>Creative Commons Attribution-NonCommercial-Share Alike 3.0 Unported License</license>
-    <forum>http://forum.kodi.tv/showthread.php?tid=219378</forum>
-    <email></email>
-    <source>https://github.com/Grabber66/Bello-Fredo-Isengard</source>
-  </extension>
-</addon>
-
-<addon id="skin.destiny" name="Destiny" version="1.5.7" provider-name="Jugger">
-  <requires>
-    <import addon="xbmc.gui" version="5.10.0"/> 
-  </requires>
-  <extension
-    point="xbmc.gui.skin"
-    debugging="false"
-    effectslowdown="0.75">
-    <res width="1920" height="1080" aspect="16:9" default="true" folder="1080i" />
-  </extension>
-  <extension point="xbmc.addon.metadata">
-  <summary lang="en">skin created and design by Jugger</summary> 
-  <summary lang="de">Skin Destiny von Jugger</summary>
-  <description lang="en">The skin is kept simple but Destiny Modern skin but has a lot to offer.</description>
-  <description lang="de">Der Skin Destiny ist ein schlicht gehaltener aber Moderner Skin der aber auch einiges zu bieten hat.[CR]Support gibt es unter http://www.kodinerds.net</description>
-  <disclaimer lang="en">no official skin use at your own risk.</disclaimer>
-  <platform>all</platform> 
-  </extension>
-</addon>
-
-<addon id="skin.destiny2" name="Destiny" version="2.0.5" provider-name="Jugger">
+<addon id="skin.destiny" name="Destiny" version="2.0.7" provider-name="Jugger">
   <requires>
     <import addon="xbmc.gui" version="5.12.0"/>
   </requires>
