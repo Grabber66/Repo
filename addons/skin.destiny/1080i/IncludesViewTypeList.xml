@@ -92,6 +92,16 @@
 	<include name="ViewsidTimers">
 		<views>50</views>
     </include>
+	
+	<include name="ViewsidPlaylist">
+		<views>55</views>
+    </include>
+	<include name="ViewsPlaylist">
+		<control type="group" id="777">
+			<visible>!Window.IsVisible(selectdialog)</visible>
+			<include>View_55_FileMode</include> 
+		</control>
+    </include>
 	    
     <include name="ViewTypeList">
 		<control type="group">

@@ -2,6 +2,7 @@
 <includes>
   <include name="HomeWidgetsHorizontal">	 
 	  <control type="group">
+	  <visible>!Skin.HasSetting(BigWidgets)</visible>
 	  <visible>!Container(9000).HasFocus(30) + !Skin.HasSetting(NoWidgets)</visible>
 	  <include condition="!Skin.HasSetting(HomeMainMenu2)">WidgetsTopWebOS</include>
       <include condition="Skin.HasSetting(HomeMainMenu2)">WidgetsTopTizen</include>
@@ -16,6 +17,7 @@
 	  <top>0</top>	
 	  <visible>Container(9000).Hasfocus(2)</visible>
 	  <include>Animation.ZoomIn</include>
+	  <include>widget_outzoom_submenu</include>
 	  <control type="list" id="8305">
           <left>80</left>
 		  <top>250</top>
@@ -187,6 +189,7 @@
 	  <control type="group">
 	  <visible>Container(9000).Hasfocus(3)</visible>	
 	  <include>Animation.ZoomIn</include>
+	  <include>widget_outzoom_submenu</include>
 	  <control type="wraplist" id="8306">
           <left>110</left>
 		  <top>130</top>
@@ -341,6 +344,7 @@
 	<top>0</top>
 	<visible>Container(9000).Hasfocus(8)</visible>	
 	<include>Animation.ZoomIn</include>
+	<include>widget_outzoom_submenu</include>
 	<control type="wraplist" id="8307">
 		<left>110</left>
 		<top>130</top>
@@ -670,6 +674,7 @@
 	  <control type="group">
 	  <visible>Container(9000).Hasfocus(4)</visible>	
 	  <include>Animation.ZoomIn</include>
+	  <include>widget_outzoom_submenu</include>
 	  <control type="wraplist" id="8322">
           <left>110</left>
 		  <top>130</top>
@@ -822,6 +827,7 @@
 	<control type="group">
 	<visible>Container(9000).Hasfocus(11)</visible>	
 	<include>Animation.ZoomIn</include>
+	<include>widget_outzoom_submenu</include>
 	<control type="wraplist" id="8308">
 		<left>120</left>
 		<top>130</top>
@@ -966,6 +972,7 @@
 	<control type="group">
 	<visible>Container(9000).Hasfocus(10)</visible>	
 	<include>Animation.ZoomIn</include>
+	<include>widget_outzoom_submenu</include>
 	<control type="wraplist" id="8309">
 		<left>120</left>
 		<top>130</top>
@@ -1110,8 +1117,9 @@
 	<control type="group">
 	<left>0</left>
 	<top>0</top>
-	<visible>Container(9000).Hasfocus(5) | Container(9000).Hasfocus(6) | Container(9000).Hasfocus(7) | Container(9000).Hasfocus(19) | Container(9000).Hasfocus(20)</visible>	
+	<visible>Container(9000).Hasfocus(5) | Container(9000).Hasfocus(6) | Container(9000).Hasfocus(7) | Container(9000).Hasfocus(19) | Container(9000).Hasfocus(20) | Container(9000).Hasfocus(41) | Container(9000).Hasfocus(42) | Container(9000).Hasfocus(43) | Container(9000).Hasfocus(44) | Container(9000).Hasfocus(45)</visible>	
 	<include>Animation.ZoomIn</include>
+	<include>widget_outzoom_submenu</include>
 	<control type="wraplist" id="8310">
 		  <left>110</left>
 		  <top>130</top>
@@ -1264,6 +1272,7 @@
 	<control type="group">
 	<visible>Container(9000).Hasfocus(12)</visible>	
 	<include>Animation.ZoomIn</include>
+	<include>widget_outzoom_submenu</include>
 	<control type="wraplist" id="8312">
 		  <left>110</left>
 		  <top>130</top>
@@ -1417,6 +1426,7 @@
 	<visible>Container(9000).Hasfocus(13)</visible>	
 	<visible>System.HasAddon(plugin.image.mypicsdb)</visible>
 	<include>Animation.ZoomIn</include>
+	<include>widget_outzoom_submenu</include>
 	<control type="list" id="8321">
 	  <left>80</left>
 	  <top>330</top>
@@ -1579,6 +1589,7 @@
 	<top>250</top>
 	<visible>Container(9000).Hasfocus(14)</visible>	
 	<include>Animation.ZoomIn</include>
+	<include>widget_outzoom_submenu</include>
 	<control type="image"><!-- Tag 1 -->
 		<left>0</left>
 		<top>0</top>
@@ -1589,7 +1600,7 @@
 		<bordersize>6</bordersize>
 		<aspectratio>stretch</aspectratio>
 		<colordiffuse>$VAR[ColorButtonDialogeBack]</colordiffuse>
-		<visible>!StringCompare(Window(weather).Property(Daily.1.LongDay),$LOCALIZE[16]) + !StringCompare(Window(weather).Property(Daily.1.LongDay),$LOCALIZE[17])</visible>
+		<visible>!String.IsEqual(Window(weather).Property(Daily.1.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window(weather).Property(Daily.1.LongDay),$LOCALIZE[17])</visible>
 	</control>
 	<control type="image">
 		<left>0</left>
@@ -1601,7 +1612,7 @@
 		<bordersize>6</bordersize>
 		<aspectratio>stretch</aspectratio>
 		<colordiffuse>$VAR[BackColorFront]</colordiffuse>
-		<visible>StringCompare(Window(weather).Property(Daily.1.LongDay),$LOCALIZE[16]) | StringCompare(Window(weather).Property(Daily.1.LongDay),$LOCALIZE[17])</visible>
+		<visible>String.IsEqual(Window(weather).Property(Daily.1.LongDay),$LOCALIZE[16]) | String.IsEqual(Window(weather).Property(Daily.1.LongDay),$LOCALIZE[17])</visible>
 	</control>
 	<control type="image">
 		<left>28</left>
@@ -1727,7 +1738,7 @@
 		<bordersize>6</bordersize>
 		<aspectratio>stretch</aspectratio>
 		<colordiffuse>$VAR[ColorButtonDialogeBack]</colordiffuse>
-		<visible>!StringCompare(Window(weather).Property(Daily.2.LongDay),$LOCALIZE[16]) + !StringCompare(Window(weather).Property(Daily.2.LongDay),$LOCALIZE[17])</visible>
+		<visible>!String.IsEqual(Window(weather).Property(Daily.2.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window(weather).Property(Daily.2.LongDay),$LOCALIZE[17])</visible>
 	</control>
 	<control type="image">
 		<left>0</left>
@@ -1739,7 +1750,7 @@
 		<bordersize>6</bordersize>
 		<aspectratio>stretch</aspectratio>
 		<colordiffuse>$VAR[BackColorFront]</colordiffuse>
-		<visible>StringCompare(Window(weather).Property(Daily.2.LongDay),$LOCALIZE[16]) | StringCompare(Window(weather).Property(Daily.2.LongDay),$LOCALIZE[17])</visible>
+		<visible>String.IsEqual(Window(weather).Property(Daily.2.LongDay),$LOCALIZE[16]) | String.IsEqual(Window(weather).Property(Daily.2.LongDay),$LOCALIZE[17])</visible>
 	</control>
 	<control type="image">
 		<left>28</left>
@@ -1865,7 +1876,7 @@
 		<bordersize>6</bordersize>
 		<aspectratio>stretch</aspectratio>
 		<colordiffuse>$VAR[ColorButtonDialogeBack]</colordiffuse>
-		<visible>!StringCompare(Window(weather).Property(Daily.3.LongDay),$LOCALIZE[16]) + !StringCompare(Window(weather).Property(Daily.3.LongDay),$LOCALIZE[17])</visible>
+		<visible>!String.IsEqual(Window(weather).Property(Daily.3.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window(weather).Property(Daily.3.LongDay),$LOCALIZE[17])</visible>
 	</control>
 	<control type="image">
 		<left>0</left>
@@ -1877,7 +1888,7 @@
 		<bordersize>6</bordersize>
 		<aspectratio>stretch</aspectratio>
 		<colordiffuse>$VAR[BackColorFront]</colordiffuse>
-		<visible>StringCompare(Window(weather).Property(Daily.3.LongDay),$LOCALIZE[16]) | StringCompare(Window(weather).Property(Daily.3.LongDay),$LOCALIZE[17])</visible>
+		<visible>String.IsEqual(Window(weather).Property(Daily.3.LongDay),$LOCALIZE[16]) | String.IsEqual(Window(weather).Property(Daily.3.LongDay),$LOCALIZE[17])</visible>
 	</control>
 	<control type="image">
 		<left>28</left>
@@ -2003,7 +2014,7 @@
 		<bordersize>6</bordersize>
 		<aspectratio>stretch</aspectratio>
 		<colordiffuse>$VAR[ColorButtonDialogeBack]</colordiffuse>
-		<visible>!StringCompare(Window(weather).Property(Daily.4.LongDay),$LOCALIZE[16]) + !StringCompare(Window(weather).Property(Daily.4.LongDay),$LOCALIZE[17])</visible>
+		<visible>!String.IsEqual(Window(weather).Property(Daily.4.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window(weather).Property(Daily.4.LongDay),$LOCALIZE[17])</visible>
 	</control>
 	<control type="image">
 		<left>0</left>
@@ -2015,7 +2026,7 @@
 		<bordersize>6</bordersize>
 		<aspectratio>stretch</aspectratio>
 		<colordiffuse>$VAR[BackColorFront]</colordiffuse>
-		<visible>StringCompare(Window(weather).Property(Daily.4.LongDay),$LOCALIZE[16]) | StringCompare(Window(weather).Property(Daily.4.LongDay),$LOCALIZE[17])</visible>
+		<visible>String.IsEqual(Window(weather).Property(Daily.4.LongDay),$LOCALIZE[16]) | String.IsEqual(Window(weather).Property(Daily.4.LongDay),$LOCALIZE[17])</visible>
 	</control>
 	<control type="image">
 		<left>28</left>
@@ -2141,7 +2152,7 @@
 		<bordersize>6</bordersize>
 		<aspectratio>stretch</aspectratio>
 		<colordiffuse>$VAR[ColorButtonDialogeBack]</colordiffuse>
-		<visible>!StringCompare(Window(weather).Property(Daily.5.LongDay),$LOCALIZE[16]) + !StringCompare(Window(weather).Property(Daily.5.LongDay),$LOCALIZE[17])</visible>
+		<visible>!String.IsEqual(Window(weather).Property(Daily.5.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window(weather).Property(Daily.5.LongDay),$LOCALIZE[17])</visible>
 	</control>
 	<control type="image">
 		<left>0</left>
@@ -2153,7 +2164,7 @@
 		<bordersize>6</bordersize>
 		<aspectratio>stretch</aspectratio>
 		<colordiffuse>$VAR[BackColorFront]</colordiffuse>
-		<visible>StringCompare(Window(weather).Property(Daily.5.LongDay),$LOCALIZE[16]) | StringCompare(Window(weather).Property(Daily.5.LongDay),$LOCALIZE[17])</visible>
+		<visible>String.IsEqual(Window(weather).Property(Daily.5.LongDay),$LOCALIZE[16]) | String.IsEqual(Window(weather).Property(Daily.5.LongDay),$LOCALIZE[17])</visible>
 	</control>
 	<control type="image">
 		<left>28</left>
@@ -2279,7 +2290,7 @@
 		<bordersize>6</bordersize>
 		<aspectratio>stretch</aspectratio>
 		<colordiffuse>$VAR[ColorButtonDialogeBack]</colordiffuse>
-		<visible>!StringCompare(Window(weather).Property(Daily.6.LongDay),$LOCALIZE[16]) + !StringCompare(Window(weather).Property(Daily.6.LongDay),$LOCALIZE[17])</visible>
+		<visible>!String.IsEqual(Window(weather).Property(Daily.6.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window(weather).Property(Daily.6.LongDay),$LOCALIZE[17])</visible>
 	</control>
 	<control type="image">
 		<left>0</left>
@@ -2291,7 +2302,7 @@
 		<bordersize>6</bordersize>
 		<aspectratio>stretch</aspectratio>
 		<colordiffuse>$VAR[BackColorFront]</colordiffuse>
-		<visible>StringCompare(Window(weather).Property(Daily.6.LongDay),$LOCALIZE[16]) | StringCompare(Window(weather).Property(Daily.6.LongDay),$LOCALIZE[17])</visible>
+		<visible>String.IsEqual(Window(weather).Property(Daily.6.LongDay),$LOCALIZE[16]) | String.IsEqual(Window(weather).Property(Daily.6.LongDay),$LOCALIZE[17])</visible>
 	</control>
 	<control type="image">
 		<left>28</left>
@@ -2417,7 +2428,7 @@
 		<bordersize>6</bordersize>
 		<aspectratio>stretch</aspectratio>
 		<colordiffuse>$VAR[ColorButtonDialogeBack]</colordiffuse>
-		<visible>!StringCompare(Window(weather).Property(Daily.7.LongDay),$LOCALIZE[16]) + !StringCompare(Window(weather).Property(Daily.7.LongDay),$LOCALIZE[17])</visible>
+		<visible>!String.IsEqual(Window(weather).Property(Daily.7.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window(weather).Property(Daily.7.LongDay),$LOCALIZE[17])</visible>
 	</control>
 	<control type="image">
 		<left>0</left>
@@ -2429,7 +2440,7 @@
 		<bordersize>6</bordersize>
 		<aspectratio>stretch</aspectratio>
 		<colordiffuse>$VAR[BackColorFront]</colordiffuse>
-		<visible>StringCompare(Window(weather).Property(Daily.7.LongDay),$LOCALIZE[16]) | StringCompare(Window(weather).Property(Daily.7.LongDay),$LOCALIZE[17])</visible>
+		<visible>String.IsEqual(Window(weather).Property(Daily.7.LongDay),$LOCALIZE[16]) | String.IsEqual(Window(weather).Property(Daily.7.LongDay),$LOCALIZE[17])</visible>
 	</control>
 	<control type="image">
 		<left>28</left>
@@ -2548,6 +2559,7 @@
     <top>330</top>
 	<visible>Container(9000).Hasfocus(15)</visible>	
 	<include>Animation.ZoomIn</include>
+	<include>widget_outzoom_submenu</include>
 		<control type="image">
 		  <left>0</left>
 		  <top>0</top>
@@ -2743,6 +2755,7 @@
 	<control type="group" id="61500">
 	<visible>Container(9000).Hasfocus(18)</visible>	
 	<include>Animation.ZoomIn</include>
+	<animation effect="zoom" end="60" time="1000" center="0,200" tween="back" easing="inout" condition="ControlGroup(9001).HasFocus">Conditional</animation>
     <control type="group">
 	  <control type="label">
 		<left>100</left>

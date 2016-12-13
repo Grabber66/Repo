@@ -329,6 +329,15 @@
 			  <onclick>Skin.ToggleSetting(homenocolorbutton)</onclick>
 			  <selected>Skin.HasSetting(homenocolorbutton)</selected>
 			</control>
+			<control type="radiobutton" id="3050">
+			  <width>1337</width>
+			  <height>50</height>
+			  <font>primal_20</font>
+			  <textoffsetx>30</textoffsetx>
+			  <label>Big Widgets</label>
+			  <onclick>Skin.ToggleSetting(BigWidgets)</onclick>
+			  <selected>Skin.HasSetting(BigWidgets)</selected>
+			</control>
           </control>
 		  <control type="scrollbar" id="65">
 		     <include>Animation.ZoomIn</include>
@@ -609,6 +618,25 @@
 		  <align>left</align>
 		  <aligny>center</aligny>
 		</control>		
+		<control type="radiobutton" id="3111">
+		  <font>primal_20</font>
+		  <width>1337</width>
+		  <height>50</height>
+		  <label>Weathericons Default</label>
+		  <onclick>Skin.ToggleSetting(weathericonsdefault)</onclick>
+		  <selected>!Skin.HasSetting(weathericonsdefault)</selected>
+		  <onclick>Skin.Reset(weathericons3dcoloured)</onclick> 
+		  <onclick>Skin.Reset(weathericons3dwhite)</onclick>
+		  <onclick>Skin.Reset(weathericonsanimated)</onclick>
+		  <onclick>Skin.Reset(weathericonscoloured)</onclick>
+		  <onclick>Skin.Reset(weathericonsflat)</onclick>
+		  <onclick>Skin.Reset(weathericonsgrey)</onclick>
+		  <onclick>Skin.Reset(weathericonsoutline)</onclick>
+		  <onclick>Skin.Reset(weathericonsoutlinehd)</onclick>
+		  <onclick>Skin.Reset(weathericonstransparent)</onclick>
+		  <onclick>Skin.Reset(weathericonswhite)</onclick>
+		  <visible>System.HasAddon(resource.images.weathericons.default)</visible>
+		</control>
 		<control type="radiobutton" id="3112">
 		  <font>primal_20</font>
 		  <width>1337</width>

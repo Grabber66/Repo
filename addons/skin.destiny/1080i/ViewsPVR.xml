@@ -479,9 +479,9 @@
 						<width>380</width>
 						<height>8</height>
 						<texturebg border="0" colordiffuse="$VAR[ColorFontNormal]">progress/bg.png</texturebg>
-						<lefttexture border="0" colordiffuse="$VAR[ColorButtonDialogeBack]">progress/blank.png</lefttexture>
-						<midtexture border="0" colordiffuse="$VAR[ColorButtonDialogeBack]">progress/blank.png</midtexture>
-						<righttexture border="0" colordiffuse="$VAR[ColorButtonDialogeBack]">progress/blank.png</righttexture>
+						<lefttexture border="0" colordiffuse="$VAR[ColorProgress]">progress/blank.png</lefttexture>
+						<midtexture border="0" colordiffuse="$VAR[ColorProgress]">progress/blank.png</midtexture>
+						<righttexture border="0" colordiffuse="$VAR[ColorProgress]">progress/blank.png</righttexture>
 						<info>ListItem.Progress</info>
 					</control>
 					<control type="image">

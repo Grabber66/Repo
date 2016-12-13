@@ -13,14 +13,18 @@
 
 	  <include>CommonHomeBack</include>	
 	  <include>HomeWidgetsHorizontal</include>	
+	  <include>HomeWidgetsSubmenu</include>
 	  <include>HomePlaying</include>	
+	  <include>HomeMyContent</include>  	
 	  <include>HomeMainMenuHorizontal</include>		
 	  <include>CommonHomeButton</include>
-	  <include>CommonHomeWidgetControl</include>			
+	  <include>CommonHomeWidgetControl</include>	
+	  <include>CommonHomeBigWidgetControl</include>  			
 	  <include>BigInfosTime</include>
 	  <include>BigInfosDatabaseCount</include>
 	  <include>BigInfosWeather</include>
 	  <include>HomeSubmenu</include>
+	  <include>HomeSubmenuAddons</include>
 
   </controls>
 </window>
