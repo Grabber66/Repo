@@ -166,6 +166,33 @@
 		<value condition="Container(23010).Hasfocus(23106)">plugin://plugin.program.newscenter/?methode=get_buli_naechsterspieltag_items&buliliga=2</value>
 	</variable>	
 	
+	<variable name="SubmenuPlaylistWidgets">
+	  <value condition="Container(9010).Hasfocus(270101)">$INFO[Skin.String(movieplaylistButtonPathScript_101)]</value>
+	  <value condition="Container(9010).Hasfocus(270102)">$INFO[Skin.String(movieplaylistButtonPathScript_102)]</value>
+	  <value condition="Container(9010).Hasfocus(270103)">$INFO[Skin.String(movieplaylistButtonPathScript_103)]</value>
+	  <value condition="Container(9010).Hasfocus(270104)">$INFO[Skin.String(movieplaylistButtonPathScript_104)]</value>
+	  <value condition="Container(9010).Hasfocus(270105)">$INFO[Skin.String(movieplaylistButtonPathScript_105)]</value>
+	  <value condition="Container(9010).Hasfocus(270106)">$INFO[Skin.String(movieplaylistButtonPathScript_106)]</value>
+	  <value condition="Container(9010).Hasfocus(270107)">$INFO[Skin.String(movieplaylistButtonPathScript_107)]</value>
+	  <value condition="Container(9010).Hasfocus(270108)">$INFO[Skin.String(movieplaylistButtonPathScript_108)]</value>	  
+	  <value condition="Container(9010).Hasfocus(270201)">$INFO[Skin.String(movieplaylistButtonPathScript_201)]</value>
+	  <value condition="Container(9010).Hasfocus(270202)">$INFO[Skin.String(movieplaylistButtonPathScript_202)]</value>
+	  <value condition="Container(9010).Hasfocus(270203)">$INFO[Skin.String(movieplaylistButtonPathScript_203)]</value>
+	  <value condition="Container(9010).Hasfocus(270204)">$INFO[Skin.String(movieplaylistButtonPathScript_204)]</value>
+	  <value condition="Container(9010).Hasfocus(270205)">$INFO[Skin.String(movieplaylistButtonPathScript_205)]</value>
+	  <value condition="Container(9010).Hasfocus(270206)">$INFO[Skin.String(movieplaylistButtonPathScript_206)]</value>
+	  <value condition="Container(9010).Hasfocus(270207)">$INFO[Skin.String(movieplaylistButtonPathScript_207)]</value>
+	  <value condition="Container(9010).Hasfocus(270208)">$INFO[Skin.String(movieplaylistButtonPathScript_208)]</value>	  
+	  <value condition="Container(9010).Hasfocus(270301)">$INFO[Skin.String(movieplaylistButtonPathScript_301)]</value>
+	  <value condition="Container(9010).Hasfocus(270302)">$INFO[Skin.String(movieplaylistButtonPathScript_302)]</value>
+	  <value condition="Container(9010).Hasfocus(270303)">$INFO[Skin.String(movieplaylistButtonPathScript_303)]</value>
+	  <value condition="Container(9010).Hasfocus(270304)">$INFO[Skin.String(movieplaylistButtonPathScript_304)]</value>
+	  <value condition="Container(9010).Hasfocus(270305)">$INFO[Skin.String(movieplaylistButtonPathScript_305)]</value>
+	  <value condition="Container(9010).Hasfocus(270306)">$INFO[Skin.String(movieplaylistButtonPathScript_306)]</value>
+	  <value condition="Container(9010).Hasfocus(270307)">$INFO[Skin.String(movieplaylistButtonPathScript_307)]</value>
+	  <value condition="Container(9010).Hasfocus(270308)">$INFO[Skin.String(movieplaylistButtonPathScript_308)]</value>
+	</variable>
+	
 	<!-- ======================= Widget Umschalt Begin ================================= -->
 	<variable name="MovieWidgetsSettingVar">
 	  <value condition="Skin.HasSetting(recommendedmovies)">$LOCALIZE[50005]</value>
@@ -239,15 +266,18 @@
 	  <value condition="Skin.HasSetting(randommusic)">special://skin/playlists/Random Album.xsp</value>
 	</variable>
 	<variable name="LiveTVWidgetsSettingVar">
-	  <value condition="Skin.HasSetting(tvhighlight)">TV Digital Highlights</value>
+	  <value condition="Skin.HasSetting(livetvrec)">Live TV Aufnahmen</value>
 	  <value condition="Skin.HasSetting(serienplaner)">Serienplaner</value>
 	  <value>LiveTV Vorschau</value>
 	</variable>
 	<variable name="HomeWidgetsLiveTV">
-	  <value condition="Container(9000).Hasfocus(1)">pvr://channels/tv/All&amp;channels/</value>
+	  <value condition="Container(9000).Hasfocus(1)">pvr://channels/tv/*?view</value>
+	</variable>
+	<variable name="HomeWidgetsLiveTVRec">
+	  <value condition="Container(9000).Hasfocus(1)">pvr://recordings/tv/active?view=flat</value>
 	</variable>
 	<variable name="HomeWidgetsRadio">
-	  <value condition="Container(9000).Hasfocus(2)">pvr://channels/radio/All&amp;channels/</value>
+	  <value condition="Container(9000).Hasfocus(2)">pvr://channels/radio/*?view</value>
 	</variable>
 	<variable name="HomeWidgetsPlaylisten">
 	  <!--<value condition="String.IsEmpty(Container(9000).ListItem.Property(Widget))">videodb://recentlyaddedmovies/</value>-->	

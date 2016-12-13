@@ -14,6 +14,7 @@
 	  <include>CommonHomeBack</include>	
 	  <include>HomeWidgetsHorizontal</include>	
 	  <include>HomeWidgetsSubmenu</include>
+	  <include condition="System.HasAddon(plugin.service.gto)">HomeWidgetsSubmenuAddons</include>
 	  <include>HomePlaying</include>	
 	  <include>HomeMyContent</include>  	
 	  <include>HomeMainMenuHorizontal</include>		
