@@ -2239,7 +2239,7 @@
 		  <property name="BackWebOS1">home/button/submenubutton.png</property>
 		  <visible>Skin.HasSetting(movieplaylistButton101) + !String.IsEmpty(Skin.String(movieplaylistButton101_label))</visible>
 		  <visible>Container(9000).HasFocus(5)</visible>
-		</item>
+		</item>		
 		<item id="270102">
 		  <label>$INFO[Skin.String(movieplaylistButton102_label)]</label>
 		  <onclick>XBMC.ActivateWindow(10025,$INFO[Skin.String(movieplaylistButtonPathScript_102)],return)</onclick>
@@ -2249,6 +2249,18 @@
 		  <property name="BackWebOS2">home/button/submenubutton.png</property>
 		  <visible>Skin.HasSetting(movieplaylistButton102) + !String.IsEmpty(Skin.String(movieplaylistButton102_label))</visible>
 		  <visible>Container(9000).HasFocus(5)</visible>
+		  <visible>!String.IsEmpty(Skin.String(movieplaylistButton102_Path))</visible>
+		</item>
+		<item id="2701022">
+		  <label>$INFO[system.addontitle(Skin.String(movieaddonButton2))]</label>
+		  <onclick>RunAddon($INFO[Skin.String(movieaddonButton2)])</onclick>
+		  <thumb>$VAR[HomePreviewSubmenuBackground]</thumb>
+		  <property name="MenuIcon">home/homeicons/folder.png</property>
+		  <property name="MenuIcon_over">home/homeicons/folder.png</property>
+		  <property name="BackWebOS1">home/button/submenubutton.png</property>
+		  <visible>Skin.HasSetting(movieplaylistButton102) + !String.IsEmpty(Skin.String(movieplaylistButton102_label))</visible>
+		  <visible>Container(9000).HasFocus(5)</visible>
+		  <visible>!String.IsEmpty(Skin.String(movieaddonButton2))</visible>
 		</item>
 		<item id="270103">
 		  <label>$INFO[Skin.String(movieplaylistButton103_label)]</label>
@@ -2259,6 +2271,18 @@
 		  <property name="BackWebOS3">home/button/submenubutton.png</property>
 		  <visible>Skin.HasSetting(movieplaylistButton103) + !String.IsEmpty(Skin.String(movieplaylistButton103_label))</visible>
 		  <visible>Container(9000).HasFocus(5)</visible>
+		  <visible>!String.IsEmpty(Skin.String(movieplaylistButton103_Path))</visible>
+		</item>
+		<item id="2701023">
+		  <label>$INFO[system.addontitle(Skin.String(movieaddonButton3))]</label>
+		  <onclick>RunAddon($INFO[Skin.String(movieaddonButton3)])</onclick>
+		  <thumb>$VAR[HomePreviewSubmenuBackground]</thumb>
+		  <property name="MenuIcon">home/homeicons/folder.png</property>
+		  <property name="MenuIcon_over">home/homeicons/folder.png</property>
+		  <property name="BackWebOS1">home/button/submenubutton.png</property>
+		  <visible>Skin.HasSetting(movieplaylistButton103) + !String.IsEmpty(Skin.String(movieplaylistButton103_label))</visible>
+		  <visible>Container(9000).HasFocus(5)</visible>
+		  <visible>!String.IsEmpty(Skin.String(movieaddonButton3))</visible>
 		</item>
 		<item id="270104">
 		  <label>$INFO[Skin.String(movieplaylistButton104_label)]</label>
@@ -2269,6 +2293,18 @@
 		  <property name="BackWebOS4">home/button/submenubutton.png</property>
 		  <visible>Skin.HasSetting(movieplaylistButton104) + !String.IsEmpty(Skin.String(movieplaylistButton104_label))</visible>
 		  <visible>Container(9000).HasFocus(5)</visible>
+		  <visible>!String.IsEmpty(Skin.String(movieplaylistButton104_Path))</visible>
+		</item>
+		<item id="2701024">
+		  <label>$INFO[system.addontitle(Skin.String(movieaddonButton4))]</label>
+		  <onclick>RunAddon($INFO[Skin.String(movieaddonButton4)])</onclick>
+		  <thumb>$VAR[HomePreviewSubmenuBackground]</thumb>
+		  <property name="MenuIcon">home/homeicons/folder.png</property>
+		  <property name="MenuIcon_over">home/homeicons/folder.png</property>
+		  <property name="BackWebOS1">home/button/submenubutton.png</property>
+		  <visible>Skin.HasSetting(movieplaylistButton104) + !String.IsEmpty(Skin.String(movieplaylistButton104_label))</visible>
+		  <visible>Container(9000).HasFocus(5)</visible>
+		  <visible>!String.IsEmpty(Skin.String(movieaddonButton4))</visible>
 		</item>
 		<item id="270105">
 		  <label>$INFO[Skin.String(movieplaylistButton105_label)]</label>
@@ -2279,7 +2315,19 @@
 		  <property name="BackWebOS5">home/button/submenubutton.png</property>
 		  <visible>Skin.HasSetting(movieplaylistButton105) + !String.IsEmpty(Skin.String(movieplaylistButton105_label))</visible>
 		  <visible>Container(9000).HasFocus(5)</visible>
-		</item>		  
+		<visible>!String.IsEmpty(Skin.String(movieplaylistButton105_Path))</visible>
+		</item>
+		<item id="2701025">
+		  <label>$INFO[system.addontitle(Skin.String(movieaddonButton5))]</label>
+		  <onclick>RunAddon($INFO[Skin.String(movieaddonButton5)])</onclick>
+		  <thumb>$VAR[HomePreviewSubmenuBackground]</thumb>
+		  <property name="MenuIcon">home/homeicons/folder.png</property>
+		  <property name="MenuIcon_over">home/homeicons/folder.png</property>
+		  <property name="BackWebOS1">home/button/submenubutton.png</property>
+		  <visible>Skin.HasSetting(movieplaylistButton105) + !String.IsEmpty(Skin.String(movieplaylistButton105_label))</visible>
+		  <visible>Container(9000).HasFocus(5)</visible>
+		  <visible>!String.IsEmpty(Skin.String(movieaddonButton5))</visible>
+		</item>	  
 		<item id="270106">
 		  <label>$INFO[Skin.String(movieplaylistButton106_label)]</label>
 		  <onclick>XBMC.ActivateWindow(10025,$INFO[Skin.String(movieplaylistButtonPathScript_106)],return)</onclick>
@@ -2289,6 +2337,18 @@
 		  <property name="BackWebOS6">home/button/submenubutton.png</property>
 		  <visible>Skin.HasSetting(movieplaylistButton106) + !String.IsEmpty(Skin.String(movieplaylistButton106_label))</visible>
 		  <visible>Container(9000).HasFocus(5)</visible>
+		  <visible>!String.IsEmpty(Skin.String(movieplaylistButton106_Path))</visible>
+		</item>
+		<item id="2701026">
+		  <label>$INFO[system.addontitle(Skin.String(movieaddonButton6))]</label>
+		  <onclick>RunAddon($INFO[Skin.String(movieaddonButton6)])</onclick>
+		  <thumb>$VAR[HomePreviewSubmenuBackground]</thumb>
+		  <property name="MenuIcon">home/homeicons/folder.png</property>
+		  <property name="MenuIcon_over">home/homeicons/folder.png</property>
+		  <property name="BackWebOS1">home/button/submenubutton.png</property>
+		  <visible>Skin.HasSetting(movieplaylistButton106) + !String.IsEmpty(Skin.String(movieplaylistButton106_label))</visible>
+		  <visible>Container(9000).HasFocus(5)</visible>
+		  <visible>!String.IsEmpty(Skin.String(movieaddonButton6))</visible>
 		</item>
 		<item id="270107">
 		  <label>$INFO[Skin.String(movieplaylistButton107_label)]</label>
@@ -2299,6 +2359,18 @@
 		  <property name="BackWebOS7">home/button/submenubutton.png</property>
 		  <visible>Skin.HasSetting(movieplaylistButton107) + !String.IsEmpty(Skin.String(movieplaylistButton107_label))</visible>
 		  <visible>Container(9000).HasFocus(5)</visible>
+		  <visible>!String.IsEmpty(Skin.String(movieplaylistButton107_Path))</visible>
+		</item>
+		<item id="2701027">
+		  <label>$INFO[system.addontitle(Skin.String(movieaddonButton7))]</label>
+		  <onclick>RunAddon($INFO[Skin.String(movieaddonButton7)])</onclick>
+		  <thumb>$VAR[HomePreviewSubmenuBackground]</thumb>
+		  <property name="MenuIcon">home/homeicons/folder.png</property>
+		  <property name="MenuIcon_over">home/homeicons/folder.png</property>
+		  <property name="BackWebOS1">home/button/submenubutton.png</property>
+		  <visible>Skin.HasSetting(movieplaylistButton107) + !String.IsEmpty(Skin.String(movieplaylistButton107_label))</visible>
+		  <visible>Container(9000).HasFocus(5)</visible>
+		  <visible>!String.IsEmpty(Skin.String(movieaddonButton7))</visible>
 		</item>
 		<item id="270108">
 		  <label>$INFO[Skin.String(movieplaylistButton108_label)]</label>
@@ -2309,6 +2381,18 @@
 		  <property name="BackWebOS8">home/button/submenubutton.png</property>
 		  <visible>Skin.HasSetting(movieplaylistButton108) + !String.IsEmpty(Skin.String(movieplaylistButton108_label))</visible>
 		  <visible>Container(9000).HasFocus(5)</visible>
+		  <visible>!String.IsEmpty(Skin.String(movieplaylistButton108_Path))</visible>
+		</item>
+		<item id="2701028">
+		  <label>$INFO[system.addontitle(Skin.String(movieaddonButton8))]</label>
+		  <onclick>RunAddon($INFO[Skin.String(movieaddonButton8)])</onclick>
+		  <thumb>$VAR[HomePreviewSubmenuBackground]</thumb>
+		  <property name="MenuIcon">home/homeicons/folder.png</property>
+		  <property name="MenuIcon_over">home/homeicons/folder.png</property>
+		  <property name="BackWebOS1">home/button/submenubutton.png</property>
+		  <visible>Skin.HasSetting(movieplaylistButton108) + !String.IsEmpty(Skin.String(movieplaylistButton108_label))</visible>
+		  <visible>Container(9000).HasFocus(5)</visible>
+		  <visible>!String.IsEmpty(Skin.String(movieaddonButton8))</visible>
 		</item>
 	</include>
 	<include name="HomeSubMenuPlaylist2">

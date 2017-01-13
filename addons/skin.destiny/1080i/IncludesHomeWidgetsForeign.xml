@@ -35,29 +35,33 @@
 		      <bordersize>6</bordersize>
               <aspectratio>stretch</aspectratio>
 			  <colordiffuse>$VAR[ColorButtonDialogeBack]</colordiffuse>
+            </control>			
+            <control type="image">
+              <left>5</left>
+              <top>5</top>
+              <width>240</width>
+              <height>170</height>
+              <texture background="true" fallback="default/nologo.png">$INFO[ListItem.Icon]</texture>
+			  <bordertexture border="10">ThumbShadow.png</bordertexture>
+		      <bordersize>6</bordersize>
+              <aspectratio align="center" aligny="center">scale</aspectratio>
             </control>
 			<control type="image">
-              <left>10</left>
-              <top>174</top>
-              <width>230</width>
-              <height>246</height>
+              <left>5</left>
+              <top>159</top>
+              <width>240</width>
+              <height>266</height>
               <texture background="true">skin/button_klein.png</texture>
+			  <bordertexture border="10">ThumbShadow.png</bordertexture>
+		      <bordersize>6</bordersize>
               <aspectratio>stretch</aspectratio>
 			  <colordiffuse>$VAR[BackColorFront]</colordiffuse>
             </control>
-            <control type="image">
-              <left>25</left>
-              <top>-10</top>
-              <width>200</width>
-              <height>200</height>
-              <texture background="true" fallback="default/nologo.png">$INFO[ListItem.Icon]</texture>
-              <aspectratio>keep</aspectratio>
-            </control>
 			<control type="label">
-			  <left>15</left>
+			  <left>20</left>
 			  <top>170</top>
 			  <height>45</height>
-			  <width>220</width>
+			  <width>210</width>
 			  <label>$INFO[ListItem.Title]</label>
 			  <align>left</align>
 			  <aligny>center</aligny>
@@ -67,10 +71,10 @@
 			  <scroll>false</scroll>
 			</control>
 			<control type="label">
-			  <left>15</left>
+			  <left>20</left>
 			  <top>200</top>
 			  <height>45</height>
-			  <width>220</width>
+			  <width>210</width>
 			  <label>$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, / ]</label>
 			  <align>left</align>
 			  <aligny>center</aligny>
@@ -81,9 +85,9 @@
 			</control>
 			<control type="textbox">
 			  <description>Movie Plot</description>
-			  <left>15</left>
+			  <left>20</left>
 			  <top>255</top>
-			  <width>220</width>
+			  <width>210</width>
 			  <height>160</height>
 			  <font>primal_14</font>
 			  <align>left</align>
@@ -118,27 +122,31 @@
 			  <visible>Control.HasFocus(8304)</visible>
             </control>
 			<control type="image">
-              <left>10</left>
-              <top>174</top>
-              <width>230</width>
-              <height>246</height>
+              <left>5</left>
+              <top>5</top>
+              <width>240</width>
+              <height>170</height>
+              <texture background="true" fallback="default/nologo.png">$INFO[ListItem.Icon]</texture>
+			  <bordertexture border="10">ThumbShadow.png</bordertexture>
+		      <bordersize>6</bordersize>
+              <aspectratio align="center" aligny="center">scale</aspectratio>
+            </control>
+			<control type="image">
+              <left>5</left>
+              <top>159</top>
+              <width>240</width>
+              <height>266</height>
               <texture background="true">skin/button_klein.png</texture>
+			  <bordertexture border="10">ThumbShadow.png</bordertexture>
+		      <bordersize>6</bordersize>
               <aspectratio>stretch</aspectratio>
 			  <colordiffuse>$VAR[BackColorFront]</colordiffuse>
             </control>
-            <control type="image">
-              <left>25</left>
-              <top>-10</top>
-              <width>200</width>
-              <height>200</height>
-              <texture background="true" fallback="default/nologo.png">$INFO[ListItem.Icon]</texture>
-              <aspectratio>keep</aspectratio>
-            </control>
 			<control type="label">
-			  <left>15</left>
+			  <left>20</left>
 			  <top>170</top>
 			  <height>45</height>
-			  <width>220</width>
+			  <width>210</width>
 			  <label>$INFO[ListItem.Title]</label>
 			  <align>left</align>
 			  <aligny>center</aligny>
@@ -148,10 +156,10 @@
 			  <scroll>false</scroll>
 			</control>
 			<control type="label">
-			  <left>15</left>
+			  <left>20</left>
 			  <top>200</top>
 			  <height>45</height>
-			  <width>220</width>
+			  <width>210</width>
 			  <label>$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, / ]</label>
 			  <align>left</align>
 			  <aligny>center</aligny>
@@ -162,9 +170,9 @@
 			</control>
 			<control type="textbox">
 			  <description>Movie Plot</description>
-			  <left>15</left>
+			  <left>20</left>
 			  <top>255</top>
-			  <width>220</width>
+			  <width>210</width>
 			  <height>160</height>
 			  <font>primal_14</font>
 			  <align>left</align>

@@ -1215,12 +1215,12 @@ msgid "Choose playlists for Preview - playlist"
 msgstr "Wähle Playlisten für Preview - Playlist"
 
 msgctxt "#50271"
-msgid " - assign label"
-msgstr " - Label zuweisen"
+msgid "   - assign label"
+msgstr "   - Label zuweisen"
 
 msgctxt "#50272"
-msgid "- Choose playlists"
-msgstr "- Wähle Playliste"
+msgid "   - Choose playlists"
+msgstr "   - Wähle Playliste"
 
 msgctxt "#50273"
 msgid "Random albums"
@@ -1279,8 +1279,8 @@ msgid "TV-Guide"
 msgstr "TV-Guide"
 
 msgctxt "#50287"
-msgid " - assigning favorites"
-msgstr " - Favorit zuweisen"
+msgid "   - assigning favorites"
+msgstr "   - Favorit zuweisen"
 
 msgctxt "#50288"
 msgid "Home Music button opens Artist"
@@ -1350,6 +1350,9 @@ msgctxt "#50304"
 msgid "Weather Fanart Path:"
 msgstr "Wetter Fanart Pfad:"
 
+msgctxt "#50305"
+msgid "   - Wähle Addon"
+msgstr "   - Wähle Addon"
 
 
 msgctxt "#50307"

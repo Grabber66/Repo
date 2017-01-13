@@ -17,7 +17,7 @@
   <include file="IncludesViewWalls.xml" />
   <include file="IncludesHomePlaylistFanart.xml" />
   <include file="IncludesHomeWidgetsHorizontal.xml" />
-  <include file="IncludesHomeMyContent.xml" />
+  <include file="IncludesHomeWidgetsBigHorizontal.xml" />
   <include file="IncludesHomeWidgetsSubmenu.xml" />
   <include file="IncludesHomeWidgetsSubmenuAddons.xml" />
   <include file="IncludesHomeWidgetsForeign.xml" />
@@ -54,6 +54,26 @@
   <constant name="DepthBackground">-0.80</constant>
   <constant name="DepthFloor">-0.20</constant>
   <constant name="DepthSideBlade">0.15</constant>
+  
+  <include name="termo_slider">
+	  <control type="slider" id="709059">
+		  <description>Thermostat temperature Slider</description>
+		  <left>200</left>
+		  <top>330</top>
+		  <width>250</width>
+		  <height>15</height>
+		  <visible>true</visible>
+		  <texturesliderbar>button/slider_bg.png</texturesliderbar>
+		  <textureslidernib>button/SliderNibNF.png</textureslidernib>
+		  <textureslidernibfocus>button/SliderNibFO.png</textureslidernibfocus>
+		  <focusedcolor>white</focusedcolor>
+		  <orientation>horizontal</orientation>
+		  <onup>58501</onup>
+		  <ondown>58501</ondown>
+		  <onleft>709059</onleft>
+		  <onright>709059</onright>
+	   </control>
+  </include>
   
   <include name="no_tv_theme">
 	  <onfocus>SetFocus(55)</onfocus>
@@ -276,8 +296,8 @@
       <timeperimage>8000</timeperimage>
       <randomize>true</randomize>
       <fadetime>500</fadetime>
-	  <visible>ControlGroup(9001).HasFocus | Control.HasFocus(43444) | Control.HasFocus(43445) | Control.HasFocus(43944)</visible> 
-	  <animation effect="fade" start="0" end="100" time="1000" delay="600" condition="ControlGroup(9001).HasFocus | Control.HasFocus(43444) | Control.HasFocus(43445) | Control.HasFocus(43944)">Conditional</animation>
+	  <visible>ControlGroup(9001).HasFocus | Control.HasFocus(43444) | Control.HasFocus(43445) | Control.HasFocus(43644) | Control.HasFocus(43944)</visible> 
+	  <animation effect="fade" start="0" end="100" time="1000" delay="600" condition="ControlGroup(9001).HasFocus | Control.HasFocus(43444) | Control.HasFocus(43445) | Control.HasFocus(43644) | Control.HasFocus(43944)">Conditional</animation>
 	</control>
 	<control type="videowindow">
 	  <left>0</left>
@@ -362,7 +382,29 @@
 	  <bordersize>7</bordersize>
 	  <aspectratio>stretch</aspectratio>
 	  <colordiffuse>$VAR[ColorButtonDialogeBack]</colordiffuse>
-	</control>
+	</control>	
+  </include>
+  <include name="CommonAllForSmartHome"> 
+    <control type="group">
+    <include>Animation.ZoomIn</include>
+	<control type="image">
+	  <left>0</left>
+	  <top>0</top>
+	  <width>1920</width>
+	  <height>1080</height>
+	  <texture background="true">special://skin/backgrounds/fallback_addons.jpg</texture>
+	  <aspectratio scalediffuse="false" align="center" aligny="center">stretch</aspectratio>
+    </control>
+	<control type="image">
+	  <left>0</left>
+	  <top>0</top>
+	  <width>1920</width>
+	  <height>1080</height>
+	  <texture background="true">skin/HMShadow2.png</texture>
+	  <aspectratio>stretch</aspectratio>
+	  <colordiffuse>$VAR[BackColorBackground]</colordiffuse>
+	</control>	
+   </control>
   </include>
   <!-- PVR End -->
   <include name="BehindDialogFadeOut">
@@ -2803,10 +2845,10 @@
       <animation effect="rotate" center="360,640" start="-2" end="2" time="11000" tween="cubic" easing="inout" pulse="true" condition="!Skin.HasSetting(animation_bg)">Conditional</animation>
 	</include>	
 	<include name="widget_outzoom_submenu">
-	  <animation effect="fade" start="100" end="0" time="500" tween="sine" easing="out" condition="ControlGroup(9001).HasFocus | Control.HasFocus(43444) | Control.HasFocus(43445) | Control.HasFocus(43944)">Conditional</animation>
+	  <animation effect="fade" start="100" end="0" time="500" tween="sine" easing="out" condition="ControlGroup(9001).HasFocus | Control.HasFocus(43444) | Control.HasFocus(43445) | Control.HasFocus(43644) | Control.HasFocus(43944)">Conditional</animation>
 	</include>
 	<include name="widget_inzoom_submenu">
-	  <animation effect="fade" start="0" end="100" time="1000" delay="1000" condition="ControlGroup(9001).HasFocus | Control.HasFocus(43444) | Control.HasFocus(43445) | Control.HasFocus(43944)">Conditional</animation>
+	  <animation effect="fade" start="0" end="100" time="1000" delay="1000" condition="ControlGroup(9001).HasFocus | Control.HasFocus(43444) | Control.HasFocus(43445) | Control.HasFocus(43644) | Control.HasFocus(43944)">Conditional</animation>
 	</include>
 	<include name="box4fade">
       <animation effect="fade" time="1500" delay="300">Visible</animation>

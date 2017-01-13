@@ -193,6 +193,13 @@
 	  <value condition="Container(9010).Hasfocus(270308)">$INFO[Skin.String(movieplaylistButtonPathScript_308)]</value>
 	</variable>
 	
+	<variable name="SubmenuAddonWidgets">
+	  <value condition="Container(9010).Hasfocus(260090)">addons://sources/executable/</value>
+	  <value condition="Container(9010).Hasfocus(260091)">addons://sources/video/</value>
+	  <value condition="Container(9010).Hasfocus(260092)">addons://sources/audio/</value>
+	  <value condition="Container(9010).Hasfocus(260093)">androidapp://sources/apps/</value>
+	</variable>
+	
 	<!-- ======================= Widget Umschalt Begin ================================= -->
 	<variable name="MovieWidgetsSettingVar">
 	  <value condition="Skin.HasSetting(recommendedmovies)">$LOCALIZE[50005]</value>

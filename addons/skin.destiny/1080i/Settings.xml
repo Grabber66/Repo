@@ -178,7 +178,7 @@
           </item>
 		  <item id="14">
             <label>$LOCALIZE[20077]</label>
-            <label2>$LOCALIZE[50246]</label2>
+            <label2>$LOCALIZE[50070]</label2>
             <onclick>ActivateWindow(SkinSettings)</onclick>
             <thumb>home/homeicons/blume.png</thumb>
           </item>

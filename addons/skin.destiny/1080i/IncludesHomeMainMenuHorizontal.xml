@@ -3,7 +3,7 @@
   
   <include name="HomeMainMenuHorizontal">
 	<control type="group">
-	<animation effect="slide" end="0,400" time="1000" tween="back" easing="inout" condition="ControlGroup(9001).HasFocus | Control.HasFocus(43444) | Control.HasFocus(43445) | Control.HasFocus(43944)">Conditional</animation>
+	<animation effect="slide" end="0,400" time="1000" tween="back" easing="inout" condition="ControlGroup(9001).HasFocus | Control.HasFocus(43444) | Control.HasFocus(43445) | Control.HasFocus(43644) | Control.HasFocus(43944)">Conditional</animation>
 	<control type="list" id="9000">	
 	  <include condition="!Skin.HasSetting(HomeMainMenu2)">HomemenuLeftWebOS</include>
       <include condition="Skin.HasSetting(HomeMainMenu2)">HomemenuLeftTizen</include>
@@ -338,16 +338,17 @@
     <control type="group" id="9001">
       <left>0</left>
       <top>0</top>
-	  <animation effect="fade" start="0" time="100" condition="ControlGroup(9001).HasFocus | Control.HasFocus(43444) | Control.HasFocus(43445) | Control.HasFocus(43944)">Conditional</animation>
-	  <animation effect="slide" end="-500,0" time="1000" tween="Back" easing="inout" condition="ControlGroup(9001).HasFocus | Control.HasFocus(43444) | Control.HasFocus(43445) | Control.HasFocus(43944)">Conditional</animation>
+	  <animation effect="fade" start="0" time="100" condition="ControlGroup(9001).HasFocus | Control.HasFocus(43444) | Control.HasFocus(43445) | Control.HasFocus(43644) | Control.HasFocus(43944)">Conditional</animation>
+	  <animation effect="slide" end="-500,0" time="1000" tween="Back" easing="inout" condition="ControlGroup(9001).HasFocus | Control.HasFocus(43444) | Control.HasFocus(43445) | Control.HasFocus(43644) | Control.HasFocus(43944)">Conditional</animation>
       <control type="list" id="9010">
 	    <left>1900</left>
 	    <top>190</top>
 		<width>500</width>
 		<height>720</height>
 		<onright>9000</onright>
-        <onleft condition="!Container(9000).Hasfocus(1) + !Container(9000).Hasfocus(2) + !Container(9000).Hasfocus(5) + !Container(9000).Hasfocus(6) + !Container(9000).Hasfocus(7)">43444</onleft>
+        <onleft condition="!Container(9000).Hasfocus(1) + !Container(9000).Hasfocus(2) + !Container(9000).Hasfocus(5) + !Container(9000).Hasfocus(6) + !Container(9000).Hasfocus(7) + !Container(9000).Hasfocus(11)">43444</onleft>
 		<onleft condition="Container(9000).Hasfocus(1) | Container(9000).Hasfocus(2)">43445</onleft>
+		<onleft condition="Container(9000).Hasfocus(11)">43644</onleft>
 		<onleft condition="Container(9000).Hasfocus(5) | Container(9000).Hasfocus(6) | Container(9000).Hasfocus(7)">43944</onleft>
         <onup>9010</onup>
         <ondown>9010</ondown>
@@ -370,6 +371,18 @@
           <height>40</height>
           <texture background="true">$INFO[ListItem.Property(MenuIcon)]</texture>
 		  <colordiffuse>$VAR[ColorFontNormalHomemenu]</colordiffuse>
+        </control>
+		<control type="label">
+          <left>0</left>
+          <top>30</top>
+          <width>350</width>
+          <height>36</height>
+          <font>primal_15</font>
+          <label>$INFO[ListItem.Label]</label>
+		  <textcolor>$VAR[ColorButtonNoFocus]</textcolor>
+	      <shadowcolor>$VAR[ColorFontShadow]</shadowcolor>
+		  <align>right</align>
+		  <aligny>center</aligny>	  
         </control>
       </itemlayout>
       <focusedlayout height="120" width="158">
