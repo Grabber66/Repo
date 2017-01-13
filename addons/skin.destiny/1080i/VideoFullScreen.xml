@@ -340,6 +340,7 @@
 		</control>
 		
 		<!-- Encryption -->
+<!--
 		<control type="group" id="1">
 		<left>20</left>
 		<top>920</top>
@@ -521,7 +522,9 @@
 				<label>$INFO[PVR.ActStreamEncryptionName]</label>
 			</control>
 		</control>
+-->
 		<!-- GROUP FOR INFOS REC LiveTV -->
+<!--
 		<control type="group" id="1">
 		  <left>550</left>
 		  <top>500</top>
@@ -580,6 +583,48 @@
 			<shadowcolor>$VAR[ColorFontShadow]</shadowcolor>
 		  </control>
 		</control>
+-->
+		<!-- GROUP FOR INFOS REC LiveTV new-->
+		<control type="group" id="1">
+		  <left>20</left>
+		  <top>920</top>
+		  <visible>VideoPlayer.Content(LiveTV)</visible>
+		  <visible>Pvr.IsRecording</visible>
+		  <control type="label" id="1">
+		    <left>10</left>
+			<width>900</width>
+			<height>38</height>
+			<label>50208</label>
+			<scroll>true</scroll>
+			<align>left</align>
+			<font>primal_18</font>
+			<textcolor>$VAR[ColorFontNormal]</textcolor>
+			<shadowcolor>$VAR[ColorFontShadow]</shadowcolor>
+		  </control>
+		  <control type="label" id="1">
+			<left>250</left>
+			<width>200</width>
+			<height>38</height>
+			<scroll>true</scroll>
+			<label>$INFO[Pvr.NowRecordingDateTime]</label>
+			<align>left</align>
+			<font>primal_18</font>
+			<textcolor>$VAR[ColorFontNormal]</textcolor>
+			<shadowcolor>$VAR[ColorFontShadow]</shadowcolor>
+		  </control>
+		  <control type="label" id="1">
+			<left>460</left>
+			<width>900</width>
+			<height>38</height>
+			<scroll>true</scroll>
+			<label>$INFO[Pvr.NowRecordingChannel] |  $INFO[Pvr.NowRecordingTitle]</label>
+			<align>left</align>
+			<font>primal_18</font>
+			<textcolor>$VAR[ColorFontNormal]</textcolor>
+			<shadowcolor>$VAR[ColorFontShadow]</shadowcolor>
+		  </control>
+		</control>
+
 		
 		<control type="group" id="1">
 		  <left>220</left>
