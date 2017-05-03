@@ -1,3 +1,4 @@
 /addons/plugin.video.osmosis/.git
+!/addons/plugin.video.osmosis/*
 /addons/skin.bellomod/.git
 /addons/skin.bellomodjarvis/.git
