@@ -47,15 +47,17 @@ def initialize_DialogBG(mess1,mess2, barType="BG"):
             thisDialog.dialoge = xbmcgui.DialogProgress()
             thisDialog.dialoge.create("OSMOSIS: " + mess1 + ": " , " " + mess2)
 
-addnon_id = 'plugin.video.osmosis'
-addon = xbmcaddon.Addon(addnon_id)
+addon_id = 'plugin.video.osmosis'
+addon = xbmcaddon.Addon(addon_id)
 addon_version = addon.getAddonInfo('version')
 ADDON_NAME = addon.getAddonInfo('name')
-REAL_SETTINGS = xbmcaddon.Addon(id=addnon_id)
+REAL_SETTINGS = xbmcaddon.Addon(id=addon_id)
 ADDON_SETTINGS = REAL_SETTINGS.getAddonInfo('profile')
 MediaList_LOC = xbmc.translatePath(os.path.join(ADDON_SETTINGS,'MediaList.xml'))
 PAGINGTVshows = REAL_SETTINGS.getSetting('paging_tvshows')
 PAGINGMovies = REAL_SETTINGS.getSetting('paging_movies')
+folder_medialistentry_movie = REAL_SETTINGS.getSetting('folder_medialistentry_movie')
+folder_movie = REAL_SETTINGS.getSetting('folder_movie')
 STRM_LOC = xbmc.translatePath(os.path.join(ADDON_SETTINGS,'STRM_LOC'))
 profile = xbmc.translatePath(addon.getAddonInfo('profile').decode('utf-8'))
 home = xbmc.translatePath(addon.getAddonInfo('path').decode('utf-8'))
@@ -112,7 +114,7 @@ def fillPlugins(cType='video'):
 
 def fillPluginItems(url, media_type='video', file_type=False, strm=False, strm_name='', strm_type='Other', showtitle='None'):
     initialize_DialogBG("Updating", "Getting content..")
-    thisDialog.dialogeBG.update(0, ADDON_NAME + ": Getting: ", strm_name.replace('++RenamedTitle++', ''))
+    thisDialog.dialogeBG.update(0, ADDON_NAME + ": Getting: ", getStrmname(strm_name))
     utils.addon_log('fillPluginItems')
     detail = []
     if url.find("playMode=play")== -1:
@@ -145,22 +147,6 @@ def fillPluginItems(url, media_type='video', file_type=False, strm=False, strm_n
             thisDialog.dialogeBG.close()
             thisDialog.dialogeBG = None 
             return      
-        except:
-            thisDialog.dialogeBG.close()
-            thisDialog.dialogeBG = None
-            guiTools.infoDialog("Unexpected error: " + str(sys.exc_info()[1])+ (". Se your Kodi.log!"))
-            utils.addon_log(("Unexpected error: ") + str(sys.exc_info()[1]))
-            print ("Unexpected error:"), sys.exc_info()[0]
-            raise
-             
-    if strm_type.find('OLDTV-Show') != -1:
-        try:
-            initialize_DialogBG("TV-Show", "Adding")
-            tvShowList = addTVShows(detail, strm_name, strm_type)
-            #dbShows = kodiDB.writeShow(tvShowList)
-            thisDialog.dialogeBG.close()
-            thisDialog.dialogeBG = None
-            return
         except:
             thisDialog.dialogeBG.close()
             thisDialog.dialogeBG = None
@@ -223,8 +209,8 @@ def fillPluginItems(url, media_type='video', file_type=False, strm=False, strm_n
         
         if filetypes and labels and files:
             filetype = filetypes.group(1)
-            label = (stringUtils.cleanLabels(labels.group(1)))
-            file = (files.group(1).replace("\\\\", "\\"))
+            label = stringUtils.cleanLabels(labels.group(1))
+            file = files.group(1).replace("\\\\", "\\")
             strm_name = str(stringUtils.cleanByDictReplacements(strm_name.strip()))
                          
             if not descriptions:
@@ -235,8 +221,8 @@ def fillPluginItems(url, media_type='video', file_type=False, strm=False, strm_n
             thumbnail = thumbnails.group(1) #stringUtils.removeNonAscii(thumbnails.group(1))
             fanart = fanarts.group(1) #stringUtils.removeNonAscii(fanarts.group(1))
             
-            if addon.getSetting('Link_Type') == '0': 
-                link = sys.argv[0] + "?url=" + urllib.quote_plus(file) + "&mode=" + str(10) + "&name=" + urllib.quote_plus(label) + "&fanart=" + urllib.quote_plus(fanart)
+            if addon.getSetting('Link_Type') == '0':
+                link = sys.argv[0] + "?url=" +urllib.quote_plus(stringUtils.uni(file)) + "&mode=" + str(10) + "&name=" +urllib.quote_plus(stringUtils.uni(label)) + "&fanart=" + urllib.quote_plus(fanart)
             else:
                 link = file
         
@@ -298,13 +284,13 @@ def removeItemsFromMediaList(action='list'):
     from modules import dialoge
     utils.addon_log('removingitemsdialog')
     thelist = fileSys.readMediaList(purge=False)
-    items = [((thelist[i]).strip().split('|')[1].lstrip().replace('++RenamedTitle++', '')).format(i) for i in range(len(thelist))]
+    items = [getStrmname(thelist[i].strip().split('|')[1]).format(i) for i in range(len(thelist))]
     dialog = dialoge.MultiChoiceDialog("Select items", items)
     dialog.doModal()
 
     fileSys.removeMediaList(dialog.selected)
         
-    xbmcgui.Dialog().notification("Finished deleting:", "{0}".format(str(dialog.selectedLabels)))
+    xbmcgui.Dialog().notification("Finished deleting:", "{0}".format(", ".join(str(label) for label in dialog.selectedLabels)))
     del dialog
     
 def addAlbum(contentList, strm_name='', strm_type='Other', PAGINGalbums="1"):
@@ -393,7 +379,7 @@ def addAlbum(contentList, strm_name='', strm_type='Other', PAGINGalbums="1"):
                 except:
                     pass             
         else:
-            albumList.append([os.path.join(strm_type, strm_name.strip().replace('++RenamedTitle++', '') , label.strip()), str(stringUtils.cleanByDictReplacements(label.strip())), link])
+            albumList.append([os.path.join(strm_type, getStrmname(strm_name) , label.strip()), str(stringUtils.cleanByDictReplacements(label.strip())), link])
             pagesDone = int(PAGINGalbums)
 
     try:
@@ -456,10 +442,10 @@ def addMovies(contentList, strm_name='', strm_type='Other', provider="n.a"):
                         link = file
                         
                         if label and strm_name:                                              
-                            label = str(stringUtils.cleanByDictReplacements(label.strip()))
+                            label = stringUtils.cleanByDictReplacements(label.strip())
                             thisDialog.dialogeBG.update(j, ADDON_NAME + ": Gettin Movies: ",  " Video: " + label)
                             if filetype == 'file':
-                                movieList.append([os.path.join(strm_type, strm_name.strip().replace('++RenamedTitle++', '')), str(stringUtils.cleanByDictReplacements(label.strip())), link, listName])
+                                movieList.append([getMovieStrmPath(strm_type, strm_name, label), stringUtils.cleanByDictReplacements(getStrmname(label)), link, listName])
                             j = j + len(contentList) * int(PAGINGMovies) / 100
                 except IOError as (errno, strerror):
                     print ("I/O error({0}): {1}").format(errno, strerror)
@@ -483,7 +469,7 @@ def addMovies(contentList, strm_name='', strm_type='Other', provider="n.a"):
                 listName = provGeneral.group(1)
                 if provXST:
                     listName = listName + ": " + provXST.group(1)
-            movieList.append([os.path.join(strm_type, stringUtils.cleanByDictReplacements(strm_name.strip()).replace('++RenamedTitle++', '')), str(stringUtils.cleanByDictReplacements(strm_name.strip())), contentList[1], listName])
+            movieList.append([getMovieStrmPath(strm_type, strm_name), stringUtils.cleanByDictReplacements(getStrmname(strm_name)), contentList[1], listName])
             pagesDone = int(PAGINGMovies)
 
     return movieList
@@ -491,13 +477,15 @@ def addMovies(contentList, strm_name='', strm_type='Other', provider="n.a"):
 def getTVShowFromList(showList, strm_name='', strm_type='Other', pagesDone=0):
     file=''
     filetype=''
-
-    tvShowsList = []
+    dirList = []
     
     while pagesDone < int(PAGINGTVshows):
         strm_type = strm_type.replace('Shows-Collection', 'TV-Shows')
         try:
-            for detailInfo in showList:
+            showList = filter(lambda elem: re.search('"filetype" *: *"(.*?)",', elem), showList)
+            step = float(100.0 / len(showList) if len(showList) > 0 else 1)
+
+            for index, detailInfo in enumerate(showList):
                 detailInfo = stringUtils.removeHTMLTAGS(detailInfo)
                 filetypes = re.search('"filetype" *: *"(.*?)",', detailInfo)
                 if filetypes:
@@ -505,33 +493,25 @@ def getTVShowFromList(showList, strm_name='', strm_type='Other', pagesDone=0):
                     files = re.search('"file" *: *"(.*?)",', detailInfo)
                     episodes = re.search('"episode" *: *(.*?),', detailInfo)
                     seasons = re.search('"season" *: *(.*?),', detailInfo)
-                    showtitles = re.search('"showtitle" *: *"(.*?)",', detailInfo)
                     labels = re.search('"label" *: *"(.*?)",', detailInfo)
                     
-                    if episodes:
-                        if episodes.group(1) != "-1":             
-                            pagesDone = getEpisodes(showList, strm_name, strm_type,pagesDone=pagesDone)
-                            files =  re.search('"file" *: *"(.*?)",',showList[len(showList) -2])
-                            break
-                        else:
-                            if labels:
-                                label = str(labels.group(1).lstrip().rstrip())
-                            else:
-                                label = "None"          
-                            if showtitles: 
-                                showtitle = str(showtitles.group(1).lstrip().rstrip())
-                            else:
-                                label = "None"
-                            if not fileSys.isInMediaList(label, strm_type) and label != "" and label != ">>>" and label != "None" and files.group(1).find("playMode=play") == "-1":            
-                                fileSys.writeMediaList(files.group(1).lstrip().rstrip(), label, strm_type)
-                                      
-                            if files and filetype != 'file' and label != ">>>" :
-                                pagesDone = addTVShows(stringUtils.uni(jsonUtils.requestList(files.group(1), 'video')), strm_name=strm_name, strm_type=strm_type, pagesDone=pagesDone)
-                            else:
-                                if showtitles and seasons and episodes:
-                                    if showtitles and seasons.group(1) == "-1" and episodes.group(1) == "-1":
-                                        xbmc.executebuiltin('Notification(%s, %s, %d, %s)' % (ADDON_NAME, "ShowsList" , 1000, ""))
-                                        pagesDone = getEpisodes(stringUtils.uni(jsonUtils.requestList(files.group(1), 'video')), strm_name.strip(), strm_type, pagesDone=pagesDone)
+                    if labels:
+                        label = str(labels.group(1).strip())
+                    else:
+                        label = "None"          
+
+                    if not fileSys.isInMediaList(label, strm_type) and label != "" and label != ">>>" and label != "None" and files.group(1).find("playMode=play") == "-1":            
+                        fileSys.writeMediaList(files.group(1).strip(), label, strm_type)
+                    
+                    if filetype == 'directory':
+                        dirList.append(stringUtils.uni(jsonUtils.requestList(files.group(1), 'video')))
+                        continue
+
+                    if seasons and episodes and seasons.group(1) != "-1" and episodes.group(1) != "-1" and filetype == 'file': 
+                        j = int(step * (index + 1))
+                        thisDialog.dialogeBG.update(j, "Page: " + str(pagesDone + 1) + " " + getStrmname(strm_name))                    
+                        pagesDone = getEpisodes(detailInfo, strm_name, strm_type,pagesDone=pagesDone)
+                        utils.addon_log("percentdone: " + str(j) + "; step: " + str(step))
                                     
         except IOError as (errno, strerror):
             print ("I/O error({0}): {1}").format(errno, strerror)
@@ -544,48 +524,10 @@ def getTVShowFromList(showList, strm_name='', strm_type='Other', pagesDone=0):
             raise
         
         pagesDone += 1
-        if pagesDone < int(PAGINGTVshows) and filetype != '' and filetype == "directory":
-            showList = []
-            showList = stringUtils.uni(jsonUtils.requestList(files.group(1), 'video'))
-#             dirList = stringUtils.uni(jsonUtils.requestList(files.group(1), 'video'))
-#             for i in dirList:
-#                 showList.append(i)
-        
-def addTVShows(contentList, strm_name='', strm_type='Other',pagesDone=0):
-    showsList = []
-    strm_name
-    sectiveContent = contentList
-    #     while pagesDone < int(PAGINGTVshows):
-    j = 100 / len(contentList)    
+        if pagesDone < int(PAGINGTVshows) and len(dirList) > 0:
+            showList = [item for sublist in dirList for item in sublist]
+            dirList = []
 
-    for detailInfo in contentList:
-        detailInfo = stringUtils.removeHTMLTAGS(detailInfo)
-        filetypes = re.search('"filetype" *: *"(.*?)",', detailInfo)
-        showtitles = re.search('"showtitle" *: *"(.*?)",', detailInfo) 
-        if showtitles:
-            showtitle = showtitles.group(1)
-        try:        
-            if filetypes:
-                filetype = filetypes.group(1)
-                files = re.search('"file" *: *"(.*?)",', detailInfo)            
-                   
-                if filetype != 'file':               
-                    pagesDone = getEpisodes(stringUtils.uni(jsonUtils.requestList(files.group(1), 'video')), strm_name.strip(), strm_type, j, pagesDone=pagesDone)
-                else:              
-                    pagesDone = getEpisodes(detailInfo, strm_name, strm_type, j, pagesDone=pagesDone)
-                thisDialog.dialogeBG.update(j,"Page: " + str(pagesDone + 1) + " " + showtitle)
-                j = j + 100 / len(contentList) 
-        except IOError as (errno, strerror):
-            print ("I/O error({0}): {1}").format(errno, strerror)
-        except ValueError:
-            print ("No valid integer in line.")
-        except:
-            guiTools.infoDialog("Unexpected error: " + str(sys.exc_info()[1])+ (". Se your Kodi.log!"))
-            utils.addon_log(("Unexpected error: ") + str(sys.exc_info()[1]))
-            print ("Unexpected error:"), sys.exc_info()[0]
-            raise
-    return pagesDone
-   
 def getEpisodes(episodesListRaw, strm_name, strm_type, j=0, pagesDone=0):
     episodesList = []
     typeChange = []
@@ -616,10 +558,7 @@ def getEpisodes(episodesListRaw, strm_name, strm_type, j=0, pagesDone=0):
                     listName = provGeneral.group(1)
                     if provXST:
                         listName = listName + ": " + provXST.group(1)
-
-                if filetypes.group(1) == 'directory':
-                    contentList = stringUtils.uni(jsonUtils.requestList(files.group(1), 'video'))
-                    continue       
+     
                 if showtitles and seasons and episodes:
                     filetype = filetypes.group(1)
                     label = (stringUtils.cleanLabels(labels.group(1))) 
@@ -644,7 +583,7 @@ def getEpisodes(episodesListRaw, strm_name, strm_type, j=0, pagesDone=0):
                         fanart = ''
 
                     if strm_name.find("++RenamedTitle++") != -1:
-                        showtitle = strm_name.strip().replace('++RenamedTitle++', '')
+                        showtitle = getStrmname(strm_name)
                     if showtitle != "" and strm_type != "":
                         episodesList.append([strm_type, str('s' + season), str('e'+episode), file, stringUtils.cleanByDictReplacements(showtitle.strip()), listName])
                         
@@ -668,7 +607,19 @@ def getEpisodes(episodesListRaw, strm_name, strm_type, j=0, pagesDone=0):
     
 def getData(url, fanart):
     utils.addon_log('getData, url = ' + cType)
-    
+
+def getMovieStrmPath(strmTypePath, mediaListEntry_name, movie_name=''):
+    if folder_medialistentry_movie and folder_medialistentry_movie == 'true':
+        mediaListEntry_name = stringUtils.cleanByDictReplacements(getStrmname(mediaListEntry_name))
+        strmTypePath = os.path.join(strmTypePath, mediaListEntry_name)
+    if movie_name != '' and folder_movie and folder_movie == 'true':
+        movie_name = stringUtils.cleanByDictReplacements(getStrmname(movie_name))
+        strmTypePath = os.path.join(strmTypePath, movie_name)
+    return strmTypePath
+
+def getStrmname(strm_name):
+    return strm_name.strip().replace('++RenamedTitle++', '')
+
 # def playsetresolved(url, name, iconimage, setresolved=True):
 #     utils.addon_log('playsetresolved')
 #     if setresolved:
