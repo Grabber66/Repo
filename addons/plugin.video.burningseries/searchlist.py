@@ -9,9 +9,10 @@ SEP = os.sep
 addonInfo = xbmcaddon.Addon ('plugin.video.burningseries')
 dataPath = xbmc.translatePath(addonInfo.getAddonInfo('profile'))
 addonPath = addonInfo.getAddonInfo('path')
+icon = addonInfo.getAddonInfo('path') + "\\icon.png"
 
 urlHost = "https://bs.to/api/"
-urlPics = "https://s.bs.to/img/cover/"
+urlPics = "https://bs.to/public/img/cover/"
 
 def getUrl(url):
 	try:
@@ -60,6 +61,6 @@ print out
 
 pDialog.close();
 
-xbmc.executebuiltin("Notification(searchList,success,2000)")
+xbmc.executebuiltin('XBMC.Notification(searchList,success,2000,' + icon + ')')
 
 

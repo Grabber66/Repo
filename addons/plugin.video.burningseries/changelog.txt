@@ -1,5 +1,24 @@
-[B]Version 1.5.1.2[/B]
-- change internet protocol to https
+[B]Version 1.5.7[/B]
+- bug-fixes
+
+[B]Version 1.5.6[/B]
+- embeded specials
+
+[B]Version 1.5.5[/B]
+- fixed watched.data export
+
+[B]Version 1.5.4[/B]
+- search fixed 
+- added some context items
+- removed username and password in settings
+- added watched.data import and export in settings
+
+[B]Version 1.5.3[/B]
+- fixed bs-player for watched state
+- added notification for marked as watched
+
+[B]Version 1.5.2[/B]
+- url fixed
 
 [B]Version 1.5.1.1[/B]
 - error on migration if watched.data does not exist

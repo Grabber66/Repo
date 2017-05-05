@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.burningseries" name="Burning Series" version="1.5.1.2" provider-name="chmee phreekz edit by mashot">
+<addon id="plugin.video.burningseries" name="Burning Series" version="1.5.7" provider-name="chmee phreekz john_117">
   <requires>
 	<import addon="script.module.t0mm0.common"/>
 	<import addon="script.module.urlresolver"/>

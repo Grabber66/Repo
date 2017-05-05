@@ -26,7 +26,7 @@ dataUrl = xbmc.translatePath(addonInfo.getAddonInfo('profile'))
 checkUserPath()
 
 urlHost = "https://bs.to/api/"
-urlPics = "https://s.bs.to/img/cover/"
+urlPics = "https://bs.to/public/img/cover/"
 
 # --------------
 # main functions
@@ -39,7 +39,7 @@ def search():
 	keyboard.doModal()
 	if keyboard.isConfirmed():
 		search_entered = keyboard.getText().replace(' ','+')  # sometimes you need to replace spaces with + or %20
-		if search_entered == None:
+		if search_entered == '':
 			addDirectoryItem("! no input !", {"kindOf":"search"})
 		else:
 			# to find any matches and give me the name and id
@@ -49,11 +49,12 @@ def search():
 			searchString = f.read().decode('utf-8')
 			f.close()
 			foundList = re.findall(findRe,searchString)
-			for fL in foundList:
-				picture = urlPics+str(fL[1])+'.jpg|encoding=gzip'
-				addDirectoryItem(fL[0].encode('utf-8'), {"kindOf":1, "name": fL[0].encode('utf-8'), "id":fL[1].encode('utf-8'),"doFav":"0"},picture)
-			if len(fL) is 0:
+			if len(foundList) == 0:
 				addDirectoryItem("! no match !", {"kindOf":"search"})
+			else:
+				for fL in foundList:
+					picture = urlPics+str(fL[1])+'.jpg|encoding=gzip'
+					addDirectoryItem(fL[0].encode('utf-8'), {"kindOf":1, "name": fL[0].encode('utf-8'), "id":fL[1].encode('utf-8'),"doFav":"0"},picture)
 	xbmcplugin.endOfDirectory(thisPlugin)
 
 def showContent(sortType):
@@ -71,7 +72,7 @@ def showContent(sortType):
 		addDirectoryItem("! a problem with website or network !", {"kindOf":0, "sortType": "A"})
 		return
 	print "[bs][showContent] -- some init data"
-	print "[bs][showContent] len(data): "+str(len(data))
+	#print "[bs][showContent] len(data): "+str(len(data))
 	print "[bs][showContent] sortType: "+sortType
 	if sortType[0] == "A":
 		# -- alphabetical order --
@@ -143,20 +144,27 @@ def showSeasons(n, id):
 	addDirectoryItem("[B]* add to Library[/B]", {"kindOf":"add2lib",'name': name.encode('utf-8'), 'id': str(id)},cover)
 	season = 0
 	seasonWatched = 0
+	errorcount = 0
 	while True:
-		season+=1
 		data = json.loads(getUrl("series/"+str(id)+"/"+str(season)))
 		print "[bs][showSeasons] reading seasons"
 		print data
 		if data.has_key('error'):
-			season-=1
-			break
-		seasonName = "[B] Staffel"+str(season)+"[/B]"
+			season+=1
+			errorcount+=1
+			if errorcount == 2:
+				break
+		seasonName = "[B] Staffel "+str(season)+"[/B]"
 		if readWatchedData((name+"/"+str(season)).encode('utf-8')):
 			seasonWatched += 1
 			seasonName = changeToWatched(seasonName.encode('utf-8'))
 		if data.has_key('series'):
-			addDirectoryItem(seasonName, {"kindOf":2, "name":data['series']['series'].encode('utf-8'), "id":id, "season":season},cover)
+			if seasonName == "[B] Staffel 0[/B]":
+				addDirectoryItem("[B] Specials[/B]", {"kindOf":2, "name":data['series']['series'].encode('utf-8'), "id":id, "season":season},cover)
+			else:
+				addDirectoryItem(seasonName, {"kindOf":2, "name":data['series']['series'].encode('utf-8'), "id":id, "season":season},cover)
+			#print name+"/"+str(season).encode('utf-8')
+			season+=1
 	if seasonWatched == season:
 		markParentEntry(name.encode('utf-8'))
 	print "[bs][showSeasons] --- ok"	
@@ -167,10 +175,13 @@ def showEpisodes(n,id,season):
 	name = n.decode('utf-8')	
 	episodesWatched = 0
 	cover = urlPics+str(id)+'.jpg|encoding=gzip'
-	addDirectoryItem("[B]. "+name.encode('utf-8')+" Staffel "+str(season)+"[/B]", {},cover)
+	if season == "0":
+		addDirectoryItem("[B]. "+name.encode('utf-8')+" Specials"+"[/B]", {},cover)
+	else:
+		addDirectoryItem("[B]. "+name.encode('utf-8')+" Staffel "+str(season)+"[/B]", {},cover)
 	print "[bs][showEpisodes] started with "+name.encode('utf-8')
 	data = json.loads(getUrl("series/"+str(id)+"/"+str(season)))
-	#print data
+	print data
 	for d in data['epi']:
 		episodeName = "#"+str(d['epi'])
 		if 'german' in d:
@@ -195,7 +206,10 @@ def showHosts(n, id, season,episode,episodeName):
 	n = name.decode('utf-8')
 	matchCover = ""
 	cover = urlPics+str(id)+'.jpg|encoding=gzip'
-	addDirectoryItem("[B]."+name+" Staffel "+str(season)+" "+str(episode)+"[/B]", {},cover)
+	if season == "0":
+		addDirectoryItem("[B]. "+name.encode('utf-8')+" Specials"+"[/B]", {},cover)
+	else:
+		addDirectoryItem("[B]. "+name.encode('utf-8')+" Staffel "+str(season)+"[/B]", {},cover)
 	addDirectoryItem("[B]."+episodeName+"[/B]", {},cover)
 	data = json.loads(getUrl("series/"+str(id)+"/"+str(season)+"/"+str(episode)))
 	for d in data['links']:
@@ -363,6 +377,7 @@ def addDirectoryItem(name, parameters={},pic=""):
 		iconpic = "DefaultFolder.png"
 	li = xbmcgui.ListItem(name,iconImage=iconpic, thumbnailImage=pic)
 	li.setProperty('fanart_image', addonInfo.getAddonInfo('fanart'))
+	li.addContextMenuItems([('Refresh', 'Container.Refresh'), ('Go up', 'Action(ParentDir)')])
 	#li.setInfo()
 	u = sys.argv[0] + '?' + urllib.urlencode(parameters)
 	return xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]), url=u, listitem=li, isFolder=True)
