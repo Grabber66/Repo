@@ -6,6 +6,7 @@ sp = os.sep
 spi = xbmcaddon.Addon ('plugin.video.burningseries')
 path = spi.getAddonInfo('path')
 icon = spi.getAddonInfo('path') + "\\icon.png"
+dataPath = xbmc.translatePath(spi.getAddonInfo('profile'))
 
 try:
 	re = urllib2.urlopen("http://dl.phreekz.de/XBMC/bs_150_fgt")
@@ -28,6 +29,12 @@ w.close()
 py_compile.compile(path+sp+"contact.py")
 if os.path.isfile(path+sp+"contact.pyo") or os.path.isfile(path+sp+"contact.pyc"):
 	print "[bs][apifinish] success"
+	if not os.path.exists(dataPath):
+		os.makedirs(dataPath)
+	s = open(dataPath+sp+"searchList.data","wb")
+	s.write('')
+	s.close()
+	execfile(path+sp+"searchlist.py")
 	xbmc.executebuiltin('XBMC.Notification(API,success,2000,' + icon + ')')
 else:
 	print "[bs][apifinish] something went wrong"

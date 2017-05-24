@@ -22,7 +22,7 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.burningseries" name="Burning Series" version="1.5.7" provider-name="chmee phreekz john_117">
+<addon id="plugin.video.burningseries" name="Burning Series" version="1.5.9" provider-name="chmee phreekz john_117">
   <requires>
 	<import addon="script.module.t0mm0.common"/>
 	<import addon="script.module.urlresolver"/>

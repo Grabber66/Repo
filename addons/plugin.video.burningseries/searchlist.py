@@ -11,6 +11,9 @@ dataPath = xbmc.translatePath(addonInfo.getAddonInfo('profile'))
 addonPath = addonInfo.getAddonInfo('path')
 icon = addonInfo.getAddonInfo('path') + "\\icon.png"
 
+#if not os.path.exists(dataPath+SEP+"searchList.data","wb"):
+#	file = open(dataPath+SEP+"searchList.data","wb")
+	
 urlHost = "https://bs.to/api/"
 urlPics = "https://bs.to/public/img/cover/"
 

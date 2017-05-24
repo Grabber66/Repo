@@ -1,3 +1,12 @@
+[B]Version 1.5.9[/B]
+- fixed API finish
+
+[B]Version 1.5.8[/B]
+- fixed hoster selection
+- added description
+- changed names of settings
+- get searchlist with finishing API
+
 [B]Version 1.5.7[/B]
 - bug-fixes
 
