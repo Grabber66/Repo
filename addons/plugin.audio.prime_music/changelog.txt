@@ -1,3 +1,4 @@
+
 0.5.1
 - finally solved the stuttering problem (many thanks to zeripath for finding a solution)
 0.5.0
