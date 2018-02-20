@@ -43,7 +43,7 @@
     </extension>
 </addon>
 
-<addon id="skin.destiny" name="Destiny" version="4.0.0" provider-name="Jugger">
+<addon id="skin.destiny" name="Destiny" version="4.0.1" provider-name="Jugger">
     <requires>
 		<import addon="xbmc.gui" version="5.13.0"/>
 	</requires>

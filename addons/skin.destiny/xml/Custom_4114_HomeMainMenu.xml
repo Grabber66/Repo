@@ -92,6 +92,10 @@
 			  <label>$LOCALIZE[50204]</label>
 			  <onclick>noop</onclick>
 			</item>
+			<item id="52">
+			  <label>Collection</label>
+			  <onclick>noop</onclick>
+			</item>
 			<item id="5">
 			  <label>Playlist 1</label>
 			  <onclick>noop</onclick>
